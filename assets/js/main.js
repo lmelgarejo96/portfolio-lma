@@ -1,19 +1,3 @@
-const hamburger = document.querySelector("#hamburger-btn")
-const menu = document.querySelector(".app-menu")
-const main = document.querySelector("main")
-
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("is-active")
-    menu.classList.toggle("active")
-    main.classList.toggle("blur")
-})
-
-main.addEventListener("click", () => {
-    hamburger.classList.remove("is-active")
-    menu.classList.remove("active")
-    main.classList.remove("blur")
-})
-
 Particles.init({
     selector: ".background-particles",
     color: ["#4dc9ac", "#ff0266", "#4dc9ac"],
@@ -37,7 +21,6 @@ const readDataJson = async(callback) => {
     try {
         const response = await fetch('./assets/data.json')
         const json = await response.json()
-        console.log(json);
         data = json;
         callback(data)
     } catch (error) {
@@ -57,12 +40,35 @@ const loadLangFromLS = () => {
 loadLangFromLS();
 readDataJson((json) => {
     const { menu } = json
-    const instance = new Vue({
+    new Vue({
         el: "#app",
-        data: {
-            lang: gLang,
-            menu: menu
+        data() {
+            return {
+                lang: gLang,
+                menuList: menu,
+                // elements
+                hamburger: null,
+                menu: null,
+                main: null,
+            }
         },
-        mounted() {} // on mounted
+        mounted() {
+            console.log(this.lang, this.menuList);
+            this.hamburger = document.querySelector("#hamburger-btn")
+            this.menu = document.querySelector(".app-menu")
+            this.main = document.querySelector("main")
+        }, // on mounted
+        methods: {
+            onHanburgerClick() {
+                this.hamburger.classList.toggle("is-active")
+                this.menu.classList.toggle("active")
+                this.main.classList.toggle("blur")
+            },
+            onMainClick() {
+                this.hamburger.classList.remove("is-active")
+                this.menu.classList.remove("active")
+                this.main.classList.remove("blur")
+            }
+        }
     })
 })

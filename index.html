@@ -12,7 +12,7 @@
 
     <script src="assets/js/particles.min.js" defer></script>
     <script src="assets/js/vue.min.js" defer></script>
-    <script src="assets/js/main.js?v=20-02-2022" defer></script>
+    <script src="assets/js/main.js?v=2_20-02-2022" defer></script>
 </head>
 
 <body>
@@ -26,18 +26,18 @@
                     <img draggable="false" src="./assets/img/logo.png" alt="Logo Portafolio Luis Melgarejo">
                 </a>
                 <ol class="app-menu">
-                    <li v-for="(item, idx) in menu" :key="`M-`+idx">
+                    <li v-for="(item, idx) in menuList" :key="`M-`+idx">
                         <a :href="item.href" class="app-link">{{ item.name[lang] }}</a>
                     </li>
                 </ol>
-                <div class="hamburger" id="hamburger-btn">
+                <div @click="onHanburgerClick" class="hamburger" id="hamburger-btn">
                     <span class="line"></span>
                     <span class="line"></span>
                     <span class="line"></span>
                 </div>
             </div>
         </nav>
-        <main>
+        <main @click="onMainClick">
             <header class="app-header app-container padding-section">
 
                 <div class="app-hero section-container">
