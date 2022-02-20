@@ -48,16 +48,31 @@ readDataJson((json) => {
                 menuList: menu,
                 aboutSection,
                 // elements
+                scroll: 0,
                 hamburger: null,
                 menu: null,
                 main: null,
+                nav: null
+            }
+        },
+        watch: {
+            scroll(val) {
+                if (val > 50) {
+                    this.nav.classList.add("nav-shadow")
+                } else {
+                    this.nav.classList.remove("nav-shadow")
+                }
             }
         },
         mounted() {
-            console.log(this.lang, this.menuList);
             this.hamburger = document.querySelector("#hamburger-btn")
             this.menu = document.querySelector(".app-menu")
             this.main = document.querySelector("main")
+            this.nav = document.querySelector(".app-nav")
+            window.addEventListener('scroll', (e) => {
+                const scroll = window.scrollY || document.body.scrollTop || document.documentElement.scrollTop
+                this.scroll = scroll
+            })
         }, // on mounted
         methods: {
             onHanburgerClick() {

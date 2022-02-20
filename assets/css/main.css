@@ -175,6 +175,11 @@ p>a::after {
     z-index: 10;
 }
 
+.app-nav.nav-shadow {
+    background-color: rgba(10, 25, 47, 1);
+    box-shadow: 0 10px 30px -10px var(--nav-shadow);
+}
+
 .navbar-container {
     display: flex;
     align-items: center;
