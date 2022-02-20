@@ -35,7 +35,7 @@ let gLang = 'es'
 
 const readDataJson = async(callback) => {
     try {
-        const response = await fetch('/assets/data.json')
+        const response = await fetch('./assets/data.json')
         const json = await response.json()
         console.log(json);
         data = json;
