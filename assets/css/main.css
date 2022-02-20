@@ -176,8 +176,12 @@ p>a::after {
 }
 
 .app-nav.nav-shadow {
-    background-color: rgba(10, 25, 47, 1);
+    background-color: rgba(10, 25, 47, .85);
     box-shadow: 0 10px 30px -10px var(--nav-shadow);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+    filter: none !important;
+    pointer-events: auto !important;
 }
 
 .navbar-container {
