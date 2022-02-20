@@ -61,7 +61,7 @@
                         <div v-html="aboutSection.content[lang]" class="resume-container"></div>
                         <div class="img-about">
                             <div class="wrapper-img">
-                                <img src="assets/img/about.png" draggable="false" alt="">
+                                <img decoding="async" loading="lazy" src="assets/img/about.png" draggable="false" alt="Luis Melgarejo">
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,9 @@
                         <div class="skills">
                             <h4 class="item-title">{{ expSection.skills.title[lang] }}</h4>
                             <ul class="skills-list">
-
+                                <li v-for="(skill, idx) in expSection.skills.list">
+                                    <img height="48" draggable="false" decoding="async" loading="lazy" class="skill-item" :src="`${skill.src}`" :alt="skill.name" :title="skill.name">
+                                </li>
                             </ul>
                         </div>
                     </div>

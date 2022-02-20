@@ -113,7 +113,56 @@
             "title": {
                 "en": "Technologies I currently use",
                 "es": "Tecnologías que utilizo"
-            }
+            },
+            "list": [{
+                    "src": "assets/img/icons/javascript.svg",
+                    "name": "Javascript (ES6+)"
+                },
+                {
+                    "src": "./assets/img/icons/html.svg",
+                    "name": "HTML"
+                },
+                {
+                    "src": "./assets/img/icons/css.svg",
+                    "name": "CSS 3"
+                },
+                {
+                    "src": "./assets/img/icons/sass.svg",
+                    "name": "Sass"
+                },
+                {
+                    "src": "./assets/img/icons/node.svg",
+                    "name": "Node.js"
+                },
+                {
+                    "src": "./assets/img/icons/vue.svg",
+                    "name": "Vue.js"
+                },
+                {
+                    "src": "./assets/img/icons/react.svg",
+                    "name": "React.js"
+                },
+                {
+                    "src": "./assets/img/icons/typescript.svg",
+                    "name": "Typescript"
+                },
+                {
+                    "src": "./assets/img/icons/php.svg",
+                    "name": "PHP 7.0+"
+                },
+                {
+                    "src": "./assets/img/icons/mysql.svg",
+                    "name": "MySQL"
+                },
+                {
+                    "src": "./assets/img/icons/php.svg",
+                    "name": "PHP 7.0+"
+                },
+                {
+                    "src": "./assets/img/icons/graphql.svg",
+                    "name": "GraphQL"
+                }
+            ]
         }
     },
     "title": {

@@ -766,6 +766,25 @@ ul.rb .item-toogle-btn {
     font-size: var(--fsize-sm);
 }
 
+.skills {
+    padding: 0 18px;
+}
+
 .skills-list {
-    padding: 0 20px;
+    list-style: none;
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(60px, 1fr));
+    grid-gap: 8px;
+}
+
+.skills-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-list img {
+    max-width: 48px;
+    filter: grayscale(30%) contrast(1);
 }
