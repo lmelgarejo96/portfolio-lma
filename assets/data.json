@@ -1,0 +1,35 @@
+{
+    "menu": [{
+            "name": {
+                "en": "About me",
+                "es": "Acerca de mi"
+            },
+            "href": "#about-me"
+        },
+        {
+            "name": {
+                "en": "My Skills",
+                "es": "Mis Habilidades"
+            },
+            "href": "#skills"
+        },
+        {
+            "name": {
+                "en": "My projects",
+                "es": "Mis proyectos"
+            },
+            "href": "#projects"
+        },
+        {
+            "name": {
+                "en": "Contact me",
+                "es": "Contactame"
+            },
+            "href": "#contact"
+        }
+
+    ],
+    "title": {
+
+    }
+}

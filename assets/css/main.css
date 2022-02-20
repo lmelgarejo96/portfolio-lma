@@ -147,7 +147,7 @@ span {
 .app-nav .app-menu {
     display: flex;
     justify-content: space-between;
-    flex-basis: 600px;
+    flex-basis: 630px;
     counter-reset: item;
     list-style-type: none;
 }
