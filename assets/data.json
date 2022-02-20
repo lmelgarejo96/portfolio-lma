@@ -201,6 +201,77 @@
         "title": {
             "en": "My projects",
             "es": "Mis proyectos"
-        }
+        },
+        "list": [{
+                "title": {
+                    "en": "Poke App with Web Speech",
+                    "es": "Poke App con Web Speech"
+                },
+                "description": {
+                    "en": "Pokemons web application created using the Vue.js framework, in which you can listen to the description of each Pokemon with the voice of the browser.",
+                    "es": "Aplicación web de Pokemons creada utilizando el framework Vue.js, en la cual se puede escuchar la descripción de cada Pokemon con la voz del navegador."
+                },
+                "demoURL": "https://lmelgarejo96.github.io/poke-api-web-speech/",
+                "repoURL": "https://github.com/lmelgarejo96/poke-api-web-speech",
+                "coverImg": "./assets/img/projects/pokeapp.png",
+                "technologies": ["Vue", "Bootstrap", "Axios"]
+            },
+            {
+                "title": {
+                    "en": "Poke App with Web Speech",
+                    "es": "Poke App con Web Speech"
+                },
+                "description": {
+                    "en": "Pokemons web application created using the Vue.js framework, in which you can listen to the description of each Pokemon with the voice of the browser.",
+                    "es": "Aplicación web de Pokemons creada utilizando el framework Vue.js, en la cual se puede escuchar la descripción de cada Pokemon con la voz del navegador."
+                },
+                "demoURL": "https://lmelgarejo96.github.io/poke-api-web-speech/",
+                "repoURL": "https://github.com/lmelgarejo96/poke-api-web-speech",
+                "coverImg": "./assets/img/projects/pokeapp.png",
+                "technologies": ["Vue", "Bootstrap", "Axios"]
+            },
+            {
+                "title": {
+                    "en": "Poke App with Web Speech",
+                    "es": "Poke App con Web Speech"
+                },
+                "description": {
+                    "en": "Pokemons web application created using the Vue.js framework, in which you can listen to the description of each Pokemon with the voice of the browser.",
+                    "es": "Aplicación web de Pokemons creada utilizando el framework Vue.js, en la cual se puede escuchar la descripción de cada Pokemon con la voz del navegador."
+                },
+                "demoURL": "https://lmelgarejo96.github.io/poke-api-web-speech/",
+                "repoURL": "https://github.com/lmelgarejo96/poke-api-web-speech",
+                "coverImg": "./assets/img/projects/pokeapp.png",
+                "technologies": ["Vue", "Bootstrap", "Axios"]
+            },
+            {
+                "title": {
+                    "en": "Poke App with Web Speech",
+                    "es": "Poke App con Web Speech"
+                },
+                "description": {
+                    "en": "Pokemons web application created using the Vue.js framework, in which you can listen to the description of each Pokemon with the voice of the browser.",
+                    "es": "Aplicación web de Pokemons creada utilizando el framework Vue.js, en la cual se puede escuchar la descripción de cada Pokemon con la voz del navegador."
+                },
+                "demoURL": "https://lmelgarejo96.github.io/poke-api-web-speech/",
+                "repoURL": "https://github.com/lmelgarejo96/poke-api-web-speech",
+                "coverImg": "./assets/img/projects/pokeapp.png",
+                "technologies": ["Vue", "Bootstrap", "Axios"]
+            },
+            {
+                "title": {
+                    "en": "Poke App with Web Speech",
+                    "es": "Poke App con Web Speech"
+                },
+                "description": {
+                    "en": "Pokemons web application created using the Vue.js framework, in which you can listen to the description of each Pokemon with the voice of the browser.",
+                    "es": "Aplicación web de Pokemons creada utilizando el framework Vue.js, en la cual se puede escuchar la descripción de cada Pokemon con la voz del navegador."
+                },
+                "demoURL": "https://lmelgarejo96.github.io/poke-api-web-speech/",
+                "repoURL": "https://github.com/lmelgarejo96/poke-api-web-speech",
+                "coverImg": "./assets/img/projects/pokeapp.png",
+                "technologies": ["Vue", "Bootstrap", "Axios"]
+            }
+        ]
     }
 }

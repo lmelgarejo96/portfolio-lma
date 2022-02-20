@@ -1,3 +1,6 @@
+const loader = document.querySelector("#loader")
+const logoSplash = document.querySelector(".logo-splash")
+
 Particles.init({
     selector: ".background-particles",
     color: ["#4dc9ac", "#ff0266", "#4dc9ac"],
@@ -23,6 +26,7 @@ const readDataJson = async(callback) => {
         const response = await fetch('./assets/data.json')
         const json = await response.json()
         data = json;
+        logoSplash.classList.add("morph-color")
         callback(data)
     } catch (error) {
         // catch error
@@ -35,6 +39,9 @@ const loadLangFromLS = () => {
     if (!langs.includes(lang)) return
     gLang = lang
 }
+
+
+// Intersection API
 
 
 
@@ -53,6 +60,12 @@ readDataJson((json) => {
                 projectsSection,
                 // elements
                 scroll: 0,
+                optionsIntersection: {
+                    root: document.body,
+                    rootMargin: '0px',
+                    threshold: 0.30
+                },
+                observer: null,
                 hamburger: null,
                 menu: null,
                 main: null,
@@ -73,10 +86,19 @@ readDataJson((json) => {
             this.menu = document.querySelector(".app-menu")
             this.main = document.querySelector("main")
             this.nav = document.querySelector(".app-nav")
-            window.addEventListener('scroll', (e) => {
+
+            document.body.addEventListener("scroll", () => {
                 const scroll = window.scrollY || document.body.scrollTop || document.documentElement.scrollTop
                 this.scroll = scroll
             })
+
+            this.observer = new IntersectionObserver(this.handleIntersection, this.optionsIntersection);
+            document.querySelectorAll(".scroll-item").forEach(el => {
+                this.observer.observe(el);
+            })
+            setTimeout(() => {
+                loader.classList.add("no-active")
+            }, 1200);
         }, // on mounted
         methods: {
             onHanburgerClick() {
@@ -94,6 +116,17 @@ readDataJson((json) => {
             },
             addShortDescription(ref) {
                 this.$refs[ref][0].classList.add("short-description")
+            },
+            handleIntersection(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let elem = entry.target;
+                        elem.classList.add("active-top")
+                        if (entry.intersectionRatio >= 0.75) {
+                            console.log("75%")
+                        }
+                    }
+                })
             }
         }
     })

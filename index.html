@@ -17,7 +17,7 @@
 
 <body class="scrollable">
 
-    <canvas class="background-particles"></canvas>
+    <canvas class="background-particles active"></canvas>
 
     <div id="app">
         <nav class="app-nav">
@@ -56,11 +56,11 @@
 
             <section class="app-container padding-section" id="about-me">
                 <div class="section-container">
-                    <h2 class="app-section-title">{{ aboutSection.title[lang] }}</h2>
+                    <h2 class="app-section-title scroll-item">{{ aboutSection.title[lang] }}</h2>
                     <div class="about-inner">
-                        <div v-html="aboutSection.content[lang]" class="resume-container"></div>
+                        <div v-html="aboutSection.content[lang]" class="resume-container scroll-item"></div>
                         <div class="img-about">
-                            <div class="wrapper-img">
+                            <div class="wrapper-img scroll-item">
                                 <img decoding="async" loading="lazy" src="assets/img/about.png" draggable="false" alt="Luis Melgarejo">
                             </div>
                         </div>
@@ -70,12 +70,12 @@
 
             <section class="app-container padding-section" id="experience">
                 <div class="section-container">
-                    <h2 class="app-section-title">{{ expSection.title[lang] }}</h2>
+                    <h2 class="app-section-title scroll-item">{{ expSection.title[lang] }}</h2>
                     <div class="about-inner">
                         <div class="experience-list">
                             <div class="rb-container">
                                 <ul class="rb">
-                                    <li class="rb-item short-description" v-for="(exp, idx) in expSection.timeline" :ref="`expLi${idx}`">
+                                    <li class="rb-item short-description scroll-item" v-for="(exp, idx) in expSection.timeline" :ref="`expLi${idx}`">
                                         <h4 class="item-title">{{ exp.jobTitle[lang] }}</h4>
                                         <span class="item-subtitle">{{ exp.business[lang] }}</span>
                                         <span class="timestamp">
@@ -91,9 +91,9 @@
                             </div>
                         </div>
                         <div class="skills">
-                            <h4 class="item-title">{{ expSection.skills.title[lang] }}</h4>
+                            <h4 class="item-title scroll-item">{{ expSection.skills.title[lang] }}</h4>
                             <ul class="skills-list">
-                                <li v-for="(skill, idx) in expSection.skills.list">
+                                <li v-for="(skill, idx) in expSection.skills.list" class="scroll-item">
                                     <img height="48" draggable="false" decoding="async" loading="lazy" class="skill-item" :src="`${skill.src}`" :alt="skill.name" :title="skill.name">
                                 </li>
                             </ul>
@@ -103,16 +103,51 @@
             </section>
             <section class="app-container padding-section" id="projects">
                 <div class="section-container">
-                    <h2 class="app-section-title">{{ projectsSection.title[lang] }}</h2>
+                    <h2 class="app-section-title scroll-item">{{ projectsSection.title[lang] }}</h2>
+                    <div class="projects-list">
+                        <div class="project  scroll-item" v-for="(project, idx) in projectsSection.list">
+                            <div class="project-img">
+                                <img :src="project.coverImg" draggable="false" alt="">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title"><a :href="project.demoURL ? project.demoURL : project.repoURL" target="_blank" class="project-link">{{ project.title[lang] }}</a></h3>
+                                <p class="project-description">{{ project.description[lang] }}</p>
+                                <ul class="project-technologies">
+                                    <li v-for="(t, i) in project.technologies"><span>{{ t }}</span></li>
+                                </ul>
+                                <div class="project-share">
+                                    <a v-if="project.repoURL" :href="project.repoURL" target="_blank" class="repo-url">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" width="20" heigth="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                    <a v-if="project.demoURL" :href="project.demoURL" target="_blank" class="demo-url">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" width="20" heigth="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
         </main>
     </div>
 
-    <template>
-        
-    </template>
+    <div class="loader-page" id="loader">
+        <div class="logo-splash">
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="239.000000pt" height="291.000000pt" viewBox="0 0 239.000000 291.000000" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,291.000000) scale(0.100000,-0.100000)"
+            fill="#d5d8e0" stroke="none">
+            <path d="M971 2736 l-81 -84 0 -916 0 -916 480 0 c264 0 480 -4 480 -8 0 -4
+            -28 -36 -63 -70 l-63 -62 -492 0 -492 0 0 899 c0 495 -4 902 -8 905 -10 6
+            -475 -459 -491 -491 -8 -15 -11 -283 -11 -916 0 -748 2 -896 14 -906 10 -8
+            174 -11 615 -9 l601 3 87 88 88 87 -613 0 -612 0 0 793 0 793 68 67 c37 37 71
+            67 75 67 4 0 7 -351 7 -780 l0 -780 617 0 617 0 243 242 c134 133 243 246 243
+            250 0 5 -272 8 -605 8 l-605 0 0 904 c0 498 -4 907 -9 910 -4 3 -45 -32 -90
+            -78z"/>
+            </g>
+            </svg>
+        </div>
+    </div>
 
 
 </body>
