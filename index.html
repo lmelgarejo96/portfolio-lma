@@ -68,6 +68,38 @@
                 </div>
             </section>
 
+            <section class="app-container padding-section" id="experience">
+                <div class="section-container">
+                    <h2 class="app-section-title">{{ expSection.title[lang] }}</h2>
+
+                    <div class="about-inner">
+                        <div class="experience-list">
+                            <div class="rb-container">
+                                <ul class="rb">
+                                    <li class="rb-item short-description" v-for="(exp, idx) in expSection.timeline" :ref="`expLi${idx}`">
+                                        <h4 class="item-title">{{ exp.jobTitle[lang] }}</h4>
+                                        <span class="item-subtitle">{{ exp.business[lang] }}</span>
+                                        <span class="timestamp">
+                                            {{ exp.date[lang] }}
+                                        </span>
+                                        <p class="pre-wrapp">{{ exp.description[lang] }}</p>
+                                        <p class="item-toogle-btn">
+                                            <a @click.prevent="removeShortDescription(`expLi${idx}`)" class="see-more" href="#">{{ expSection.timelineBtn.seeMore[lang] }}</a>
+                                            <a @click.prevent="addShortDescription(`expLi${idx}`)" class="see-less" href="#">{{ expSection.timelineBtn.seeLess[lang] }}</a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="skills">
+                            <h4 class="item-title">{{ expSection.skills.title[lang] }}</h4>
+                            <ul class="skills-list">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 

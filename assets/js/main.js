@@ -39,7 +39,7 @@ const loadLangFromLS = () => {
 
 loadLangFromLS();
 readDataJson((json) => {
-    const { menu, aboutSection } = json
+    const { menu, aboutSection, expSection } = json
     new Vue({
         el: "#app",
         data() {
@@ -47,6 +47,7 @@ readDataJson((json) => {
                 lang: gLang,
                 menuList: menu,
                 aboutSection,
+                expSection,
                 // elements
                 scroll: 0,
                 hamburger: null,
@@ -84,6 +85,12 @@ readDataJson((json) => {
                 this.hamburger.classList.remove("is-active")
                 this.menu.classList.remove("active")
                 this.main.classList.remove("blur")
+            },
+            removeShortDescription(ref) {
+                this.$refs[ref][0].classList.remove("short-description")
+            },
+            addShortDescription(ref) {
+                this.$refs[ref][0].classList.add("short-description")
             }
         }
     })

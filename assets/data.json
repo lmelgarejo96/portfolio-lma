@@ -8,10 +8,10 @@
         },
         {
             "name": {
-                "en": "My Skills",
-                "es": "Mis Habilidades"
+                "en": "My experience",
+                "es": "Mi experiencia"
             },
-            "href": "#skills"
+            "href": "#experience"
         },
         {
             "name": {
@@ -37,6 +37,83 @@
         "content": {
             "en": "<p>Hello! My name is Luis and I am a Peruvian Software Developer who is finishing his studies in Systems Engineering and Computer Science at the Technological University of Peru.</p><p>I have almost 3 years of experience working as a Developer of software at the Web, Desktop and Mobile level, using technologies such as JavaScript (<a href='https://nodejs.org/es/' target='_blank'>NodeJs</a>, <a href='https: //vuejs.org/' target='_blank'>Vue.js</a>, <a href='https://es.reactjs.org/' target='_blank'>React</a>, <a href='https://angular.io/' target='_blank'>Angular</a> and <a href='https://reactnative.dev/' target='_blank'>React Native</a >), TypeScript, SQL(<a href='https://www.microsoft.com/es-es/sql-server' target='_blank'>SQL Server</a>, <a href='https: //www.mysql.com/' target='_blank'>MySQL</a>), NoSQL(<a href='https://www.mongodb.com/atlas/database' target='_blank'>Mongo DB</a>), C++(<a href='https://www.arduino.cc/' target='_blank'>Arduino</a>) and cloud deployment co mo <a href='https://www.digitalocean.com/' target='_blank'>DigitalOcean</a> and <a href='https://www.heroku.com/' target='_blank' >Heroku</a>.</p><p>I have always had an interest in working in a technological area that allows me to continue learning more about the technological world we inhabit every day.</p><p>My job objective is to demonstrate all my potential and skills acquired over several years of university education and my knowledge acquired in my previous jobs, apart from making an important objective for me, the vision of the company in the to work.</p>",
             "es": "<p>Hola! Me llamo Luis y soy un Desarrollador de software peruano que se encuentra culminando sus estudios de la carrera de Ingeniería de Sistemas e informática en la Universidad Tecnológica del Perú.</p><p>Cuento con casi ya 3 años de experiencia trabajando como Desarrollador de software a nivel Web, Desktop y Mobile, utilizando tecnologías como JavaScript (<a href='https://nodejs.org/es/' target='_blank'>NodeJs</a>, <a href='https://vuejs.org/' target='_blank'>Vue.js</a>, <a href='https://es.reactjs.org/' target='_blank'>React</a>, <a href='https://angular.io/' target='_blank'>Angular</a> y <a href='https://reactnative.dev/' target='_blank'>React Native</a>), TypeScript, SQL(<a href='https://www.microsoft.com/es-es/sql-server' target='_blank'>SQL Server</a>, <a href='https://www.mysql.com/' target='_blank'>MySQL</a>), NoSQL(<a href='https://www.mongodb.com/atlas/database' target='_blank'>Mongo DB</a>), C++(<a href='https://www.arduino.cc/' target='_blank'>Arduino</a>) y despliegue en nubes como <a href='https://www.digitalocean.com/' target='_blank'>DigitalOcean</a> y <a href='https://www.heroku.com/' target='_blank'>Heroku</a>.</p><p>Siempre he tenido el interés de trabajar en un área tecnológica que me permita seguir aprendiendo cada día más acerca del mundo tecnologizado en el que habitamos.</p><p>Mi objetivo laboral es el de demostrar todo mi potencial y habilidades adquiridas a lo largo de varios años de formación universitaria y de mi conocimiento adquirido en mis anteriores puestos laborales, muy aparte de convertir en un objetivo importante para mí, la visión de la empresa en la que labore.</p>"
+        }
+    },
+    "expSection": {
+        "title": {
+            "en": "My work experience",
+            "es": "Mi experiencia de trabajo"
+        },
+        "timelineBtn": {
+            "seeMore": {
+                "en": "See more",
+                "es": "Ver más"
+            },
+            "seeLess": {
+                "en": "See less",
+                "es": "Ver menos"
+            }
+        },
+        "timeline": [{
+                "jobTitle": {
+                    "en": "FullStack Developer",
+                    "es": "Desarrollador FullStack"
+                },
+                "business": {
+                    "en": "EMILIMA S.A",
+                    "es": "EMILIMA S.A"
+                },
+                "date": {
+                    "en": "Oct. 2020 - present",
+                    "es": "Oct. 2020 - actualidad"
+                },
+                "description": {
+                    "en": "At EMILIMA I have the opportunity to work as a FullStack Developer of Web, desktop and mobile technology solutions, under the MEVN stacks (Node.js, MongoDB and Vue.js together with Nuxt.js), MERN (Node.js, MongoDB and React/ React Native) and finally the PHP stack (HTML5, Bootstrap, CSS, Javascript, PHP, MySQL).\n\nSome of the functions I fulfill:\n- Construction of API's Rest in Node.js(Express) and PHP\n- API documentation\n- Development of desktop applications with Electron.js\n- Construction of web interfaces using Javascript technologies such as Vue.js, React and Nuxt.js.",
+                    "es": "En EMILIMA tengo la oportunidad de desempeñarme como Desarrollador FullStack de soluciones técnologicas Web, desktop y mobile, bajo los stacks MEVN (Node.js, MongoDB y Vue.js junto a Nuxt.js), MERN (Node.js, MongoDB y React/React Native) y por último el stack PHP (HTML5, Bootstrap, CSS, Javascript, PHP, MySQL).\n\nAlgunas de las funciones que cumplo:\n- Construcción de API's Rest en Node.js(Express) y PHP\n- Documentación de las API's\n- Desarrollo de aplicaciones de escritorio con Electron.js\n- Construcción de interfaces web utilizando tecnologías de Javascript como Vue.js, React y Nuxt.js."
+                }
+            },
+            {
+                "jobTitle": {
+                    "en": "Web Developer - Freelancer",
+                    "es": "Desarrollador Web - Freelance"
+                },
+                "business": {
+                    "en": "Castle of Talents · Full-time",
+                    "es": "Castillo de Talentos · Jornada completa"
+                },
+                "date": {
+                    "en": "Mar. 2020 - May. 2020",
+                    "es": "Mar. 2020 - May. 2020"
+                },
+                "description": {
+                    "en": "At the Castillo de Talentos school I had the opportunity to work my first job as a Freelancer to develop an Intranet and a multi page web.\nAs for the intranet, use modern technologies such as NodeJs for the backend and VueJs for the frontend, in the database I opted to choose MongoDB for its fast communication with Javascript. For the multi page web I chose the Nuxtjs framework due to the SEO advantages it provides by using SSR (server side rendering). \n\nThe functions it fulfilled were:\n- Requirements gathering\n- Construction of the Rest API (backend)\n- Design and construction of responsive interfaces (frontend)\n- Documentation of the Rest API\n- Documentation of the manual user\n- Deployment of the project in the DigitalOcean cloud",
+                    "es": "En el colegio Castillo de Talentos tuve la oportunidad de ejercer mi primer empleo como Freelancer para el desarrollo de una Intranet y una web multi page.\nEn cuanto a la intranet utilice tecnologías modernas como NodeJs para el backend y VueJs para el frontend, en la base de datos opté por elegir MongoDB por su rápida comunicación con Javascript. Para la web multi page elegí el framework Nuxtjs por las ventajas de SEO que brinda por utilizar SSR (server side rendering). \n\nLas funciones que cumplía eran:\n- Toma de requerimientos\n- Construcción del API Rest (backend)\n- Diseño y Construcción de interfaces responsivas (frontend)\n- Documentación la API Rest\n- Documentación del manual de usuario\n- Despliegue del proyecto en la nube de DigitalOcean"
+                }
+            },
+            {
+                "jobTitle": {
+                    "en": "Front End Web Developer Training",
+                    "es": "Desarrollador Web Frontend Training "
+                },
+                "business": {
+                    "en": "Casa Andina Hotels Part-time",
+                    "es": "Casa Andina Hoteles · Jornada parcial"
+                },
+                "date": {
+                    "en": "Aug. 2019 - Dec. 2019",
+                    "es": "Ago. 2019 - Dic. 2019"
+                },
+                "description": {
+                    "en": "At the Casa Andina Hotels company, I was part of the training team for the development of a basic CRM that improved lead management within the company.\nSome of the great things that I took away from experience were: \n- I built web interfaces that they adapted to all kinds of devices.\n- I learned to consume API's Rest using a modern Javascript framework (VueJs).\n- I made changes in the views according to the requirements of the project manager.",
+                    "es": "En la empresa Casa Andina Hoteles formé parte del equipo training para el desarrollo de un CRM básico que mejoraba la gestión de leads dentro de la empresa.\nAlgunas de las grandes cosas que me lleve como experiencia fueron: \n- Construí interfaces web que se adaptaban a toda clase de dispositivo.\n- Aprendí a consumir API's Rest utilizando un framework moderno de Javascript (VueJs).\n- Realizaba cambios en las vistas según los requerimientos del encargado del proyecto."
+                }
+            }
+        ],
+        "skills": {
+            "title": {
+                "en": "Technologies I currently use",
+                "es": "Tecnologías que utilizo"
+            }
         }
     },
     "title": {

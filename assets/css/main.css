@@ -11,6 +11,7 @@
 
 :root {
     --primary-color: #4dc9ac;
+    --alternate-primary: #50d890;
     --white-color: #fff;
     --yellow-color: #fca700;
     --pink-color: #ff0266;
@@ -25,6 +26,7 @@
     --nav-height: 100px;
     --brand-height: 60px;
     --all-transition: all ease-in-out .25s;
+    --short-lines-text: 3;
     /* Fonts  sizes */
     --fsize-xxs: 13px;
     --fsize-xs: 14px;
@@ -373,7 +375,7 @@ main {
 }
 
 .section-container {
-    padding: 100px 0px;
+    padding: 150px 0px;
 }
 
 @media screen and (max-width: 900px) {
@@ -645,4 +647,125 @@ main {
     .img-about .wrapper-img {
         max-width: 250px;
     }
+}
+
+
+/* experience */
+
+.rb-container {
+    display: block;
+    position: relative;
+}
+
+.rb-container ul.rb,
+.skills {
+    margin: 2.5em 0;
+    padding: 0;
+    display: inline-block;
+}
+
+@media screen and ( max-width: 500px) {
+    .rb-container ul.rb,
+    .skills {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+}
+
+.rb-container ul.rb li {
+    list-style: none;
+    margin: auto;
+    margin-left: 20px;
+    min-height: 50px;
+    border-left: 1px solid var(--light-color);
+    padding: 0 0 50px 30px;
+    position: relative;
+}
+
+.rb-container ul.rb li:last-child {
+    border-left: 0;
+}
+
+.rb-container ul.rb li::before {
+    position: absolute;
+    left: -18px;
+    top: -5px;
+    content: " ";
+    border: 8px solid var(--light-color);
+    border-radius: 500%;
+    background: var(--primary-color);
+    height: 20px;
+    width: 20px;
+    transition: all 500ms ease-in-out;
+}
+
+.rb-container ul.rb li:hover::before {
+    background: var(--pink-color);
+}
+
+.rb-container ul.rb li:hover::before {
+    /*  border-color: var(--pink-color); */
+    transition: all .25s ease-in-out;
+}
+
+ul.rb li .timestamp {
+    color: var(--primary-color);
+    position: relative;
+    width: 150px;
+    font-size: var(--fsize-xs);
+}
+
+ul.rb li p {
+    color: var(--alternate-light);
+    font-size: var(--fsize-md);
+    font-weight: 400;
+}
+
+ul.rb li.short-description p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--short-lines-text);
+    height: -webkit-calc(var(--short-lines-text)* 1.8);
+    height: calc(var(--short-lines-text)* 1.8);
+    overflow-y: hidden;
+    transition: height ease-in-out .25s;
+}
+
+ul.rb li.short-description p a.see-more,
+ul.rb li p a.see-less {
+    display: inline-block;
+}
+
+ul.rb li p a.see-more,
+ul.rb li.short-description p a.see-less {
+    display: none;
+}
+
+.pre-wrapp {
+    white-space: pre-wrap;
+}
+
+ul.rb .item-title {
+    color: var(--light-color);
+}
+
+ul.rb .item-subtitle {
+    color: var(--alternate-light);
+    font-size: var(--fsize-md);
+    display: block;
+    margin-top: 8px;
+}
+
+ul.rb .item-toogle-btn {
+    margin-bottom: 0px !important;
+}
+
+.item-toogle-btn a {
+    margin: 0;
+    font-size: var(--fsize-sm);
+}
+
+.skills-list {
+    padding: 0 20px;
 }
