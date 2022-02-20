@@ -15,7 +15,7 @@
     <script src="assets/js/main.js?v=2_20-02-2022" defer></script>
 </head>
 
-<body>
+<body class="scrollable">
 
     <canvas class="background-particles"></canvas>
 
@@ -54,9 +54,26 @@
 
             </header>
 
+            <section class="app-container padding-section" id="about-me">
+                <div class="section-container">
+                    <h2 class="app-section-title">{{ aboutSection.title[lang] }}</h2>
+                    <div class="about-inner">
+                        <div v-html="aboutSection.content[lang]" class="resume-container"></div>
+                        <div class="img-about">
+                            <div class="wrapper-img">
+                                <img src="assets/img/about.png" draggable="false" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </main>
     </div>
 
+    <template>
+        
+    </template>
 
 
 </body>

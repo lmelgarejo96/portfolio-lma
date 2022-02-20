@@ -39,13 +39,14 @@ const loadLangFromLS = () => {
 
 loadLangFromLS();
 readDataJson((json) => {
-    const { menu } = json
+    const { menu, aboutSection } = json
     new Vue({
         el: "#app",
         data() {
             return {
                 lang: gLang,
                 menuList: menu,
+                aboutSection,
                 // elements
                 hamburger: null,
                 menu: null,
