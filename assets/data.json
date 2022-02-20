@@ -29,6 +29,38 @@
         }
 
     ],
+    "headerInfo": {
+        "title": {
+            "greeting": {
+                "en": "Hi, my name is",
+                "es": "Hola, me llamo"
+            },
+            "fullname": {
+                "en": "Luis Melgarejo.",
+                "es": "Luis Melgarejo."
+            },
+            "position": {
+                "en": "FullStack Developer",
+                "es": "Desarrollador FullStack"
+            },
+            "country": {
+                "en": "From Peru",
+                "es": "De Perú"
+            }
+        },
+        "description": {
+            "en": "I am a tenth cycle student of the Systems Engineering and Computer Science degree at the Technological University of Peru.<br>I have experience in the development of web, desktop and mobile applications.",
+            "es": "Soy estudiante de décimo ciclo de la carrera Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú.<br>Cuento con experiencia en el desarrollo de aplicaciones web, desktop y mobile."
+        },
+        "resume": {
+            "en": "Download my CV",
+            "es": "Descarga mi CV"
+        },
+        "contact": {
+            "en": "Contact me",
+            "es": "Contáctame"
+        }
+    },
     "aboutSection": {
         "title": {
             "en": "About me",
@@ -155,8 +187,8 @@
                     "name": "MySQL"
                 },
                 {
-                    "src": "./assets/img/icons/php.svg",
-                    "name": "PHP 7.0+"
+                    "src": "./assets/img/icons/mongodb.svg",
+                    "name": "Mongo DB"
                 },
                 {
                     "src": "./assets/img/icons/graphql.svg",
@@ -165,7 +197,10 @@
             ]
         }
     },
-    "title": {
-
+    "projectsSection": {
+        "title": {
+            "en": "My projects",
+            "es": "Mis proyectos"
+        }
     }
 }

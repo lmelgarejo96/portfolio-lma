@@ -1,7 +1,8 @@
 Particles.init({
     selector: ".background-particles",
     color: ["#4dc9ac", "#ff0266", "#4dc9ac"],
-    connectParticles: true,
+    maxParticles: 200,
+    connectParticles: false,
     responsive: [{
         breakpoint: 768,
         options: {
@@ -39,15 +40,17 @@ const loadLangFromLS = () => {
 
 loadLangFromLS();
 readDataJson((json) => {
-    const { menu, aboutSection, expSection } = json
+    const { headerInfo, menu, aboutSection, expSection, projectsSection } = json
     new Vue({
         el: "#app",
         data() {
             return {
                 lang: gLang,
+                headerInfo,
                 menuList: menu,
                 aboutSection,
                 expSection,
+                projectsSection,
                 // elements
                 scroll: 0,
                 hamburger: null,
@@ -81,7 +84,7 @@ readDataJson((json) => {
                 this.menu.classList.toggle("active")
                 this.main.classList.toggle("blur")
             },
-            onMainClick() {
+            closeHamburger() {
                 this.hamburger.classList.remove("is-active")
                 this.menu.classList.remove("active")
                 this.main.classList.remove("blur")

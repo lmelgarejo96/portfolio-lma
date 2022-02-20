@@ -27,7 +27,7 @@
                 </a>
                 <ol class="app-menu">
                     <li v-for="(item, idx) in menuList" :key="`M-`+idx">
-                        <a :href="item.href" class="app-link">{{ item.name[lang] }}</a>
+                        <a @click="closeHamburger" :href="item.href" class="app-link">{{ item.name[lang] }}</a>
                     </li>
                 </ol>
                 <div @click="onHanburgerClick" class="hamburger" id="hamburger-btn">
@@ -37,19 +37,19 @@
                 </div>
             </div>
         </nav>
-        <main @click="onMainClick">
+        <main @click="closeHamburger">
             <header class="app-header app-container padding-section">
 
                 <div class="app-hero section-container">
                     <h1 class="app-title">
-                        <span>Hola, me llamo</span>
-                        <span class="heading">Luis Melgarejo.</span>
-                        <span class="heading primary-color">Desarrollador FullStack</span>
-                        <span>De Perú</span>
+                        <span>{{ headerInfo.title.greeting[lang] }}</span>
+                        <span class="heading">{{ headerInfo.title.fullname[lang] }}</span>
+                        <span class="heading primary-color">{{ headerInfo.title.position[lang] }}</span>
+                        <span>{{ headerInfo.title.country[lang] }}</span>
                     </h1>
-                    <p class="app-description">Soy estudiante de décimo ciclo de la carrera Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú.<br>Cuento con experiencia en el desarrollo de aplicaciones web, desktop y mobile.</p>
-                    <a href="#" class="app-btn-link">Descarga mi CV</a>
-                    <a href="#" class="app-btn-link">Contáctame</a>
+                    <p class="app-description" v-html="headerInfo.description[lang]"></p>
+                    <a href="#" class="app-btn-link">{{ headerInfo.resume[lang] }}</a>
+                    <a href="#" class="app-btn-link">{{ headerInfo.contact[lang] }}</a>
                 </div>
 
             </header>
@@ -71,7 +71,6 @@
             <section class="app-container padding-section" id="experience">
                 <div class="section-container">
                     <h2 class="app-section-title">{{ expSection.title[lang] }}</h2>
-
                     <div class="about-inner">
                         <div class="experience-list">
                             <div class="rb-container">
@@ -102,6 +101,12 @@
                     </div>
                 </div>
             </section>
+            <section class="app-container padding-section" id="projects">
+                <div class="section-container">
+                    <h2 class="app-section-title">{{ projectsSection.title[lang] }}</h2>
+                </div>
+            </section>
+
         </main>
     </div>
 
