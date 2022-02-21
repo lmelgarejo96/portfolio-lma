@@ -48,8 +48,8 @@
                         <span>{{ headerInfo.title.country[lang] }}</span>
                     </h1>
                     <p class="app-description" v-html="headerInfo.description[lang]"></p>
-                    <a href="#" class="app-btn-link">{{ headerInfo.resume[lang] }}</a>
-                    <a href="#" class="app-btn-link">{{ headerInfo.contact[lang] }}</a>
+                    <a href="./assets/CV_LUIS_MELGAREJO.pdf" target="_blank" class="app-btn-link">{{ headerInfo.resume[lang] }}</a>
+                    <a :href="`mailto:${mail}`" class="app-btn-link">{{ headerInfo.contact[lang] }}</a>
                 </div>
 
             </header>

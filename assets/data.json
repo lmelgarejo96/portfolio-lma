@@ -1,4 +1,5 @@
 {
+    "mail": "luismelgarejoalarcon@gmail.com",
     "menu": [{
             "name": {
                 "en": "About me",
@@ -96,12 +97,30 @@
                     "es": "EMILIMA S.A"
                 },
                 "date": {
-                    "en": "Oct. 2020 - present",
-                    "es": "Oct. 2020 - actualidad"
+                    "en": "Sep. 2020 - present",
+                    "es": "Sep. 2020 - actualidad"
                 },
                 "description": {
-                    "en": "At EMILIMA I have the opportunity to work as a FullStack Developer of Web, desktop and mobile technology solutions, under the MEVN stacks (Node.js, MongoDB and Vue.js together with Nuxt.js), MERN (Node.js, MongoDB and React/ React Native) and finally the PHP stack (HTML5, Bootstrap, CSS, Javascript, PHP, MySQL).\n\nSome of the functions I fulfill:\n- Construction of API's Rest in Node.js(Express) and PHP\n- API documentation\n- Development of desktop applications with Electron.js\n- Construction of web interfaces using Javascript technologies such as Vue.js, React and Nuxt.js.",
-                    "es": "En EMILIMA tengo la oportunidad de desempeñarme como Desarrollador FullStack de soluciones técnologicas Web, desktop y mobile, bajo los stacks MEVN (Node.js, MongoDB y Vue.js junto a Nuxt.js), MERN (Node.js, MongoDB y React/React Native) y por último el stack PHP (HTML5, Bootstrap, CSS, Javascript, PHP, MySQL).\n\nAlgunas de las funciones que cumplo:\n- Construcción de API's Rest en Node.js(Express) y PHP\n- Documentación de las API's\n- Desarrollo de aplicaciones de escritorio con Electron.js\n- Construcción de interfaces web utilizando tecnologías de Javascript como Vue.js, React y Nuxt.js."
+                    "en": "At EMILIMA I have the opportunity to work as a FullStack Developer of Web, desktop and mobile technology solutions, under the MEVN stacks (Node.js, MongoDB and Vue.js together with Nuxt.js), MERN (Node.js, MongoDB and React/ React Native) and finally the PHP stack (HTML5, Bootstrap, CSS, Javascript, PHP, MySQL).\n\nSome of the functions I fulfill:\n• Construction of API's Rest in Node.js(Express) and PHP\n• API documentation\n• Development of desktop applications with Electron.js\n• Construction of web interfaces using Javascript technologies such as Vue.js, React and Nuxt.js.",
+                    "es": "En EMILIMA tengo la oportunidad de desempeñarme como Desarrollador FullStack de soluciones técnologicas Web, desktop y mobile, bajo los stacks MEVN (Node.js, MongoDB y Vue.js junto a Nuxt.js), MERN (Node.js, MongoDB y React/React Native) y por último el stack PHP (HTML5, Bootstrap, CSS, Javascript, PHP, MySQL).\n\nAlgunas de las funciones que cumplo:\n• Construcción de API's Rest en Node.js(Express) y PHP\n• Documentación de las API's\n• Desarrollo de aplicaciones de escritorio con Electron.js\n• Construcción de interfaces web utilizando tecnologías de Javascript como Vue.js, React y Nuxt.js."
+                }
+            },
+            {
+                "jobTitle": {
+                    "en": "Web Developer - Freelancer",
+                    "es": "Desarrollador Web - Freelance"
+                },
+                "business": {
+                    "en": "Elengy SAC",
+                    "es": "Elengy SAC"
+                },
+                "date": {
+                    "en": "May. 2020 - Aug. 2020",
+                    "es": "May. 2020 - Aug. 2020"
+                },
+                "description": {
+                    "en": "In the Elengy company I had the opportunity to carry out my second large project as a Freelancer, in which I was contacted for the development of a manageable CMS.\n\nSome of the functions I performed were:\n• Taking requirements for the construction of a manageable CMS\n• Architecture design for the solution.\n• Construction of the backend with NodeJs and TypeScript.\n• Construction of responsive interfaces with VueJs and NuxtJs.\n• Rest API documentation and user manual.\n• Application Testing.\n• DigitalOcean cloud deployment.",
+                    "es": "En la empresa Elengy tuve la oportunidad de ejercer mi segundo proyecto grande como Freelancer, en el que se me contacto para el desarrollo de un CMS administrable.\n\nAlgunas de las funciones que realicé fueron:\n• Toma de requerimientos para la construcción de un CMS administrable\n• Diseño de la arquitectura para la solución.\n• Construcción del backend con NodeJs y TypeScript.\n• Construcción de interfaces responsivas con VueJs y NuxtJs.\n• Documentación de la API rest y el manual de usuario.\n• Testing de la Aplicación.\n• Despliegue en la nube de DigitalOcean."
                 }
             },
             {
@@ -204,6 +223,20 @@
         },
         "list": [{
                 "title": {
+                    "en": "Pokedex App with GraphQL",
+                    "es": "Pokedex App utilizando GraphQL"
+                },
+                "description": {
+                    "en": "Pokemons web application that allows you to save your pokemons, search for them by name, list them and view them in an intuitive pokedex.",
+                    "es": "Aplicación web de Pokemons que te permite guardar tus pokemons, buscarlos por su nombre, enlistarlos y poder visualizarlos en un intuitivo pokedex."
+                },
+                "demoURL": "",
+                "repoURL": "https://github.com/lmelgarejo96/poke-app-graphql",
+                "coverImg": "./assets/img/projects/graphql.png",
+                "technologies": ["Node.js", "GraphQL", "Vue", "Vuetify", "Apollo"]
+            },
+            {
+                "title": {
                     "en": "Poke App with Web Speech",
                     "es": "Poke App con Web Speech"
                 },
@@ -215,6 +248,20 @@
                 "repoURL": "https://github.com/lmelgarejo96/poke-api-web-speech",
                 "coverImg": "./assets/img/projects/pokeapp.png",
                 "technologies": ["Vue", "Bootstrap", "Axios"]
+            },
+            {
+                "title": {
+                    "en": "Landing Page - Castillo de talentos",
+                    "es": "Landing Page - Castillo de talentos"
+                },
+                "description": {
+                    "en": "Landing page and blog created for the Castillo de Talentos school, in order to promote its quality of teaching.",
+                    "es": "Landing page y blog creado para el colegio Castillo de Talentos, con el fin de promocionar su calidad de enseñanza."
+                },
+                "demoURL": "https://castillodetalentos.edu.pe/",
+                "repoURL": "",
+                "coverImg": "./assets/img/projects/castillodetalentos.png",
+                "technologies": ["Nuxt.js", "Vuetify", "Node.js", "Mongo DB"]
             },
             {
                 "title": {
@@ -246,31 +293,17 @@
             },
             {
                 "title": {
-                    "en": "Poke App with Web Speech",
-                    "es": "Poke App con Web Speech"
+                    "en": "Gsap - Tween Max animation",
+                    "es": "Animación con TweenMax - Gsap"
                 },
                 "description": {
-                    "en": "Pokemons web application created using the Vue.js framework, in which you can listen to the description of each Pokemon with the voice of the browser.",
-                    "es": "Aplicación web de Pokemons creada utilizando el framework Vue.js, en la cual se puede escuchar la descripción de cada Pokemon con la voz del navegador."
+                    "en": "University project requesting to test a Javascript technology for user friendly animations.",
+                    "es": "Proyecto de universidad que solicitaba probar una tecnología de Javascript para animaciones amigables para los usuarios."
                 },
-                "demoURL": "https://lmelgarejo96.github.io/poke-api-web-speech/",
-                "repoURL": "https://github.com/lmelgarejo96/poke-api-web-speech",
-                "coverImg": "./assets/img/projects/pokeapp.png",
-                "technologies": ["Vue", "Bootstrap", "Axios"]
-            },
-            {
-                "title": {
-                    "en": "Poke App with Web Speech",
-                    "es": "Poke App con Web Speech"
-                },
-                "description": {
-                    "en": "Pokemons web application created using the Vue.js framework, in which you can listen to the description of each Pokemon with the voice of the browser.",
-                    "es": "Aplicación web de Pokemons creada utilizando el framework Vue.js, en la cual se puede escuchar la descripción de cada Pokemon con la voz del navegador."
-                },
-                "demoURL": "https://lmelgarejo96.github.io/poke-api-web-speech/",
-                "repoURL": "https://github.com/lmelgarejo96/poke-api-web-speech",
-                "coverImg": "./assets/img/projects/pokeapp.png",
-                "technologies": ["Vue", "Bootstrap", "Axios"]
+                "demoURL": "https://lmelgarejo96.github.io/Elengy-GC/",
+                "repoURL": "https://github.com/lmelgarejo96/Elengy-GC",
+                "coverImg": "./assets/img/projects/elengygc.png",
+                "technologies": ["HTML", "CSS3", "JS", "TweenMax"]
             }
         ]
     }

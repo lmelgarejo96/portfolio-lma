@@ -908,7 +908,7 @@ ul.rb .item-toogle-btn {
 }
 
 .project .project-content {
-    padding: 2rem 1.75rem 1.5rem;
+    padding: 2rem 1.75rem 60px;
 }
 
 .project .project-description {
@@ -973,6 +973,10 @@ ul.rb .item-toogle-btn {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
+    position: absolute;
+    right: 1.75rem;
+    bottom: 15px;
+    width: 100%;
 }
 
 .project-share a {
