@@ -1,5 +1,9 @@
 {
     "mail": "luismelgarejoalarcon@gmail.com",
+    "github": "https://github.com/lmelgarejo96",
+    "linkedin": "https://www.linkedin.com/in/luis-alberto-melgarejo-alarc%C3%B3n-191370198/",
+    "instagram": "https://www.instagram.com/lmelgarejo96/",
+    "twitter": "https://twitter.com/lmelgarejo96",
     "menu": [{
             "name": {
                 "en": "About me",
@@ -265,31 +269,31 @@
             },
             {
                 "title": {
-                    "en": "Poke App with Web Speech",
-                    "es": "Poke App con Web Speech"
+                    "en": "I love Tunes App",
+                    "es": "I love Tunes App"
                 },
                 "description": {
-                    "en": "Pokemons web application created using the Vue.js framework, in which you can listen to the description of each Pokemon with the voice of the browser.",
-                    "es": "Aplicación web de Pokemons creada utilizando el framework Vue.js, en la cual se puede escuchar la descripción de cada Pokemon con la voz del navegador."
+                    "en": "Find the music you like the most and listen to a short demo provided by the Itunes Music API.",
+                    "es": "Busca la música que más te guste y escucha un pequeño demo que proporciona la API de música de Itunes."
                 },
-                "demoURL": "https://lmelgarejo96.github.io/poke-api-web-speech/",
-                "repoURL": "https://github.com/lmelgarejo96/poke-api-web-speech",
-                "coverImg": "./assets/img/projects/pokeapp.png",
+                "demoURL": "",
+                "repoURL": "https://github.com/lmelgarejo96/i-love-tunes",
+                "coverImg": "./assets/img/projects/lovetunes.png",
                 "technologies": ["Vue", "Bootstrap", "Axios"]
             },
             {
                 "title": {
-                    "en": "Poke App with Web Speech",
-                    "es": "Poke App con Web Speech"
+                    "en": "Basic Platzi clone with .NET and Vue",
+                    "es": "Clon básico de Platzi con .NET y Vue"
                 },
                 "description": {
-                    "en": "Pokemons web application created using the Vue.js framework, in which you can listen to the description of each Pokemon with the voice of the browser.",
-                    "es": "Aplicación web de Pokemons creada utilizando el framework Vue.js, en la cual se puede escuchar la descripción de cada Pokemon con la voz del navegador."
+                    "en": "University project that cloned a part of the business logic of the online education giant Platzi.",
+                    "es": "Proyecto de Universidad que clonaba una parte de la lógica de negocio del gigante de la educación online Platzi."
                 },
-                "demoURL": "https://lmelgarejo96.github.io/poke-api-web-speech/",
-                "repoURL": "https://github.com/lmelgarejo96/poke-api-web-speech",
-                "coverImg": "./assets/img/projects/pokeapp.png",
-                "technologies": ["Vue", "Bootstrap", "Axios"]
+                "demoURL": "https://www.youtube.com/watch?v=VH5k5h08mqE",
+                "repoURL": "",
+                "coverImg": "./assets/img/projects/platzi.png",
+                "technologies": [".Net", "SQL Server", "Vue", "Vuex"]
             },
             {
                 "title": {
@@ -304,7 +308,75 @@
                 "repoURL": "https://github.com/lmelgarejo96/Elengy-GC",
                 "coverImg": "./assets/img/projects/elengygc.png",
                 "technologies": ["HTML", "CSS3", "JS", "TweenMax"]
+            },
+            {
+                "title": {
+                    "en": "I love Tu",
+                    "es": "I love Tune"
+                },
+                "description": {
+                    "en": "Find the music you like the most and listen to a short demo provided by the Itunes Music API.",
+                    "es": "Busca la música que más te guste y escucha un pequeño demo que proporciona la API de música de Itunes."
+                },
+                "demoURL": "",
+                "repoURL": "https://github.com/lmelgarejo96/i-love-tunes",
+                "coverImg": "./assets/img/projects/lovetunes.png",
+                "technologies": ["Vue", "Bootstrap", "Axios"]
+            },
+            {
+                "title": {
+                    "en": "Basic Platzi clone with .N",
+                    "es": "Clon básico de Platzi con .NET "
+                },
+                "description": {
+                    "en": "University project that cloned a part of the business logic of the online education giant Platzi.",
+                    "es": "Proyecto de Universidad que clonaba una parte de la lógica de negocio del gigante de la educación online Platzi."
+                },
+                "demoURL": "https://www.youtube.com/watch?v=VH5k5h08mqE",
+                "repoURL": "",
+                "coverImg": "./assets/img/projects/platzi.png",
+                "technologies": [".Net", "SQL Server", "Vue", "Vuex"]
+            },
+            {
+                "title": {
+                    "en": "Gsap - Tween Max a",
+                    "es": "Animación con TweenMax - "
+                },
+                "description": {
+                    "en": "University project requesting to test a Javascript technology for user friendly animations.",
+                    "es": "Proyecto de universidad que solicitaba probar una tecnología de Javascript para animaciones amigables para los usuarios."
+                },
+                "demoURL": "https://lmelgarejo96.github.io/Elengy-GC/",
+                "repoURL": "https://github.com/lmelgarejo96/Elengy-GC",
+                "coverImg": "./assets/img/projects/elengygc.png",
+                "technologies": ["HTML", "CSS3", "JS", "TweenMax"]
             }
-        ]
+        ],
+        "btnMore": {
+            "en": "Show More",
+            "es": "Mostrar más"
+        },
+        "btnLess": {
+            "en": "Show Less",
+            "es": "Mostrar menos"
+        }
+    },
+    "contactSection": {
+        "title": {
+            "en": "Contact me",
+            "es": "Contáctame"
+        },
+        "subtitle": {
+            "en": "Get in touch",
+            "es": "Pongase en contacto"
+        },
+        "message": {
+            "en": "My mailbox is always open to new possibilities and opportunities, if you like my work, do not hesitate to contact me. Although sometimes it takes me a while to respond, I will do so as soon as I see your message. 😉",
+            "es": "Mi bandeja de correo siempre está abierta a nuevas posibilidades y oportunidades, si te gusta mi trabajo no dudes en contactarme conmigo. Si bien a veces demoro en responder, lo haré a penas vea tu mensaje. 😉"
+        },
+        "btnContact": {
+            "en": "Say Hello!",
+            "es": "Envíame un hola!"
+        }
     }
 }

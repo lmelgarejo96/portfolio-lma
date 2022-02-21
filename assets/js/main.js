@@ -47,7 +47,8 @@ const loadLangFromLS = () => {
 
 loadLangFromLS();
 readDataJson((json) => {
-    const { mail, headerInfo, menu, aboutSection, expSection, projectsSection } = json
+    const { mail, github, linkedin, instagram, twitter, headerInfo, menu, aboutSection, expSection, projectsSection, contactSection } = json
+    console.log(json);
     new Vue({
         el: "#app",
         data() {
@@ -58,7 +59,13 @@ readDataJson((json) => {
                 menuList: menu,
                 aboutSection,
                 expSection,
-                projectsSection,
+                projectsSection: {...projectsSection },
+                contactSection,
+                isShowMoreProjects: false,
+                github,
+                linkedin,
+                instagram,
+                twitter,
                 // elements
                 scroll: 0,
                 optionsIntersection: {
@@ -81,6 +88,9 @@ readDataJson((json) => {
                     this.nav.classList.remove("nav-shadow")
                 }
             }
+        },
+        created() {
+            this.seeLessProjects()
         },
         mounted() {
             this.hamburger = document.querySelector("#hamburger-btn")
@@ -127,6 +137,18 @@ readDataJson((json) => {
                             console.log("75%")
                         }
                     }
+                })
+            },
+            seeMoreProjects() {
+                this.isShowMoreProjects = true;
+                this.projectsSection.list = [...projectsSection.list]
+                console.log(this.projectsSection);
+            },
+            seeLessProjects() {
+                this.isShowMoreProjects = false;
+                this.projectsSection.list = projectsSection.list.filter((p, idx) => idx < 6)
+                document.querySelectorAll(".project.scroll-item").forEach(el => {
+                    el.classList.add("active-top")
                 })
             }
         }
