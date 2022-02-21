@@ -311,46 +311,33 @@
             },
             {
                 "title": {
-                    "en": "I love Tu",
-                    "es": "I love Tune"
+                    "en": "Accessibility tool",
+                    "es": "Herramienta de accesibilidad"
                 },
                 "description": {
-                    "en": "Find the music you like the most and listen to a short demo provided by the Itunes Music API.",
-                    "es": "Busca la música que más te guste y escucha un pequeño demo que proporciona la API de música de Itunes."
+                    "en": "This accessibility tool was developed for the website visitalima.pe (as an EMILIMA SA worker), which allows users with some slight disabilities to view the website in a better way, using the audio speaker and a set of extra combinations provided by the tool.",
+                    "es": "Esta herramienta de accesibilidad se desarrolló para la web visitalima.pe (como trabajador EMILIMA S.A), la cual permite a los usuarios con algunas discapacidades leves poder visualizar la web de mejor forma, utilizando el audio parlante y un conjunto de combinaciones extras que provee la herramienta."
                 },
-                "demoURL": "",
-                "repoURL": "https://github.com/lmelgarejo96/i-love-tunes",
-                "coverImg": "./assets/img/projects/lovetunes.png",
-                "technologies": ["Vue", "Bootstrap", "Axios"]
-            },
-            {
-                "title": {
-                    "en": "Basic Platzi clone with .N",
-                    "es": "Clon básico de Platzi con .NET "
-                },
-                "description": {
-                    "en": "University project that cloned a part of the business logic of the online education giant Platzi.",
-                    "es": "Proyecto de Universidad que clonaba una parte de la lógica de negocio del gigante de la educación online Platzi."
-                },
-                "demoURL": "https://www.youtube.com/watch?v=VH5k5h08mqE",
+                "demoURL": "https://visitalima.pe/",
                 "repoURL": "",
-                "coverImg": "./assets/img/projects/platzi.png",
-                "technologies": [".Net", "SQL Server", "Vue", "Vuex"]
+                "coverImg": "./assets/img/projects/accesibilidad.png",
+                "technologies": ["Javascript", "PHP", "Web Speech"]
             },
             {
                 "title": {
-                    "en": "Gsap - Tween Max a",
-                    "es": "Animación con TweenMax - "
+                    "en": "SVG Hover Animation",
+                    "es": "Animación hover en SVG's"
                 },
                 "description": {
-                    "en": "University project requesting to test a Javascript technology for user friendly animations.",
-                    "es": "Proyecto de universidad que solicitaba probar una tecnología de Javascript para animaciones amigables para los usuarios."
+                    "en": "Example of a Hover animation to an SVG tag that represents a 2D map of a parking lot, in which a tooltip is placed where the mouse is passed to get more information about each square.",
+                    "es": "Ejemplo de una animación de Hover a una etiqueta SVG que representa un mapa 2D de un parking, en la cual se coloca un tooltip por donde se pasa el mouse para conocer mayor información de cada cuadrado."
                 },
-                "demoURL": "https://lmelgarejo96.github.io/Elengy-GC/",
-                "repoURL": "https://github.com/lmelgarejo96/Elengy-GC",
-                "coverImg": "./assets/img/projects/elengygc.png",
-                "technologies": ["HTML", "CSS3", "JS", "TweenMax"]
+                "demoURL": "https://lmelgarejo96.github.io/svg-parking-example/",
+                "repoURL": "https://github.com/lmelgarejo96/svg-parking-example",
+                "coverImg": "./assets/img/projects/svg.png",
+                "technologies": ["Javascript"]
             }
+
         ],
         "btnMore": {
             "en": "Show More",
@@ -363,8 +350,8 @@
     },
     "contactSection": {
         "title": {
-            "en": "Contact me",
-            "es": "Contáctame"
+            "en": "Do you like my work?",
+            "es": "¿Te gusta mi trabajo?"
         },
         "subtitle": {
             "en": "Get in touch",

@@ -87,12 +87,26 @@ readDataJson((json) => {
                 } else {
                     this.nav.classList.remove("nav-shadow")
                 }
+            },
+            lang(val) {
+                console.log(this.$refs.languageToogle);
+                if (val == 'es') {
+                    this.$refs.languageToogle.checked = true;
+                } else {
+                    this.$refs.languageToogle.checked = false;
+                }
             }
         },
         created() {
             this.seeLessProjects()
         },
         mounted() {
+            if (this.lang == 'es') {
+                this.$refs.languageToogle.checked = true;
+            } else {
+                this.$refs.languageToogle.checked = false;
+            }
+
             this.hamburger = document.querySelector("#hamburger-btn")
             this.menu = document.querySelector(".app-menu")
             this.main = document.querySelector("main")
@@ -150,6 +164,15 @@ readDataJson((json) => {
                 document.querySelectorAll(".project.scroll-item").forEach(el => {
                     el.classList.add("active-top")
                 })
+            },
+            onLanguageChange(ev) {
+                if (ev.target.checked) {
+                    localStorage.setItem("lang", 'es')
+                    this.lang = 'es'
+                } else {
+                    localStorage.setItem("lang", 'en')
+                    this.lang = 'en'
+                }
             }
         }
     })

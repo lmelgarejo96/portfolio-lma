@@ -29,12 +29,21 @@
                     <li v-for="(item, idx) in menuList" :key="`M-`+idx">
                         <a @click="closeHamburger" :href="item.href" class="app-link">{{ item.name[lang] }}</a>
                     </li>
+
+                    <div class="switch">
+                        <input id="language-toggle" ref="languageToogle" @change="onLanguageChange" class="check-toggle check-toggle-round-flat" type="checkbox">
+                        <label for="language-toggle"></label>
+                        <span class="off">ES</span>
+                        <span class="on">EN</span>
+                    </div>
+
                 </ol>
                 <div @click="onHanburgerClick" class="hamburger" id="hamburger-btn">
                     <span class="line"></span>
                     <span class="line"></span>
                     <span class="line"></span>
                 </div>
+
             </div>
         </nav>
         <main @click="closeHamburger">
@@ -127,7 +136,7 @@
                         </div>
                     </div>
                     <div class="btn-container-center">
-                        <a href="#" @click.prevent="isShowMoreProjects ?  seeLessProjects() : seeMoreProjects() " class="app-btn-link">
+                        <a href="#" @click.prevent="isShowMoreProjects ?  seeLessProjects() : seeMoreProjects() " class="app-btn-link scroll-item">
                             {{ isShowMoreProjects ? projectsSection.btnLess[lang] : projectsSection.btnMore[lang] }}
                         </a>
                     </div>
@@ -136,10 +145,10 @@
             <section class="app-container padding-section" id="contact">
                 <div class="section-container last-container">
                     <h2 class="app-section-title contact-center scroll-item">{{ contactSection.title[lang] }}</h2>
-                    <div class="contact-subtitle"><span class="heading alternate-light">{{ contactSection.subtitle[lang] }}</span></div>
-                    <p class="text-center message-contact">{{ contactSection.message[lang] }}</p>
+                    <div class="contact-subtitle scroll-item"><span class="heading alternate-light">{{ contactSection.subtitle[lang] }}</span></div>
+                    <p class="text-center message-contact scroll-item">{{ contactSection.message[lang] }}</p>
                     <div class="btn-container-center">
-                        <a :href="`mailto:${mail}`" class="app-btn-link">{{ contactSection.btnContact[lang] }}</a>
+                        <a :href="`mailto:${mail}`" class="app-btn-link scroll-item">{{ contactSection.btnContact[lang] }}</a>
                     </div>
                 </div>
             </section>
