@@ -48,7 +48,6 @@ const loadLangFromLS = () => {
 loadLangFromLS();
 readDataJson((json) => {
     const { mail, github, linkedin, instagram, twitter, headerInfo, menu, aboutSection, expSection, projectsSection, contactSection } = json
-    console.log(json);
     new Vue({
         el: "#app",
         data() {
@@ -89,7 +88,6 @@ readDataJson((json) => {
                 }
             },
             lang(val) {
-                console.log(this.$refs.languageToogle);
                 if (val == 'es') {
                     this.$refs.languageToogle.checked = true;
                 } else {
@@ -147,16 +145,13 @@ readDataJson((json) => {
                     if (entry.isIntersecting) {
                         let elem = entry.target;
                         elem.classList.add("active-top")
-                        if (entry.intersectionRatio >= 0.75) {
-                            console.log("75%")
-                        }
+                        if (entry.intersectionRatio >= 0.75) {}
                     }
                 })
             },
             seeMoreProjects() {
                 this.isShowMoreProjects = true;
                 this.projectsSection.list = [...projectsSection.list]
-                console.log(this.projectsSection);
             },
             seeLessProjects() {
                 this.isShowMoreProjects = false;
