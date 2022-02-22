@@ -251,6 +251,20 @@
             },
             {
                 "title": {
+                    "en": "My portfolio",
+                    "es": "Mi portafolio"
+                },
+                "description": {
+                    "en": "My personal website shows particular information about me, my skills, work experience and completed projects. The added value of my portfolio is the incorporation of an accessibility tool that allows interaction with some users with mild disabilities.",
+                    "es": "Mi sitio web personal muestra información particular sobre mí, mís habilidades, experiencia laboral y proyectos realizados. El valor agregado de mi portafolio es la incorporación de una herramienta de accesibilidad que permite la interacción con algunos usuarios con discapacidad leve."
+                },
+                "demoURL": "https://luismelgarejo.com/",
+                "repoURL": "",
+                "coverImg": "./assets/img/projects/portfolio.png",
+                "technologies": ["HTML", "CSS3", "Javascript", "Vue", "Gsap"]
+            },
+            {
+                "title": {
                     "en": "Poke App with Web Speech",
                     "es": "Poke App con Web Speech"
                 },
