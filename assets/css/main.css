@@ -1,7 +1,4 @@
 @import url("./fonts.css");
-
-/* General */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -829,7 +826,6 @@ main {
 }
 
 .rb-container ul.rb li:hover::before {
-    /*  border-color: var(--pink-color); */
     transition: all .25s ease-in-out;
 }
 

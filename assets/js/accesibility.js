@@ -530,7 +530,3 @@ document.addEventListener('DOMContentLoaded', function() {
         execute();
     } catch (error) {}
 })
-
-setTimeout(() => {
-    document.body.classList.add("light")
-}, 2000);

@@ -41,8 +41,6 @@ Particles.init({
 loadLangFromLS();
 readDataJson((json) => {
 
-    const { projectsSection } = json
-
     const dataObj = {
         lang: gLang,
         ...json,
@@ -118,12 +116,9 @@ readDataJson((json) => {
             },
             seeMoreProjects() {
                 this.isShowMoreProjects = true;
-                //this.projectsSection.list = [...projectsSection.list]
             },
             seeLessProjects() {
                 this.isShowMoreProjects = false;
-                //this.projectsSection.list = projectsSection.list.filter((p, idx) => idx < 6)
-                //document.querySelectorAll(".project.scroll-item").forEach(el => el.classList.add("active-top"))
             },
             onLanguageChange(ev) {
                 ev.target.checked ?
