@@ -86,9 +86,7 @@ readDataJson((json) => {
             this.observer = new IntersectionObserver(this.handleIntersection, this.optionsIntersection);
             document.querySelectorAll(".scroll-item").forEach(el => this.observer.observe(el))
 
-            setTimeout(() => {
-                this.loadIndexAnimation()
-            }, 1200);
+            this.loadIndexAnimation()
 
             gtag('js', new Date());
             gtag('config', 'G-HHYSL9LMYC');
@@ -143,10 +141,10 @@ readDataJson((json) => {
                 const accesibilityElement = document.querySelector(".accesibility-activator")
 
                 t1.from(loaderElement, .5, { opacity: 1, ease: Expo.easeInOut, delay: .15, onComplete: () => loader.classList.add("no-active") })
-                    .staggerFrom([brandElement, hamburgerElement, ...navElements], .65, { y: -25, opacity: 0, ease: Expo.easeInOut }, 0.1)
+                    .staggerFrom([brandElement, hamburgerElement, ...navElements], .75, { y: -25, opacity: 0, ease: Expo.easeInOut }, 0.1)
                     .staggerFrom([...headerElements], .65, { y: 15, opacity: 0, ease: Expo.easeInOut }, 0.1)
                     .staggerFrom(accesibilityElement, .2, { left: "-100%", opacity: 0, ease: Expo.easeInOut }, .1)
-                    .from(accesibilityElement, .15, { x: -100, opacity: 0, ease: Expo.easeInOut, delay: .15 })
+                    .from(accesibilityElement, .45, { x: -100, opacity: 0, ease: Expo.easeInOut, delay: .15 })
 
                 t1.play()
             }
