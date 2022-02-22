@@ -184,3 +184,7 @@ body.voice-active button.active {
     color: var(--color-voice-active) !important;
     cursor: url('../img/icons/speaker.png'), auto;
 }
+
+body.voice-active {
+    user-select: none;
+}

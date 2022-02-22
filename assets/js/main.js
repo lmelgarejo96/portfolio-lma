@@ -135,7 +135,7 @@ readDataJson((json) => {
 
                 const loaderElement = document.querySelector(".loader-page")
                 const brandElement = document.querySelector(".app-brand")
-                const headerElements = document.querySelectorAll(".app-title > span, .app-hero > p, .app-hero > a")
+                const headerElements = document.querySelectorAll(".app-title > span, .app-hero > .app-description, .app-hero > a")
                 const hamburgerElement = document.querySelector("#hamburger-btn")
                 const navElements = document.querySelectorAll(".app-menu li, .app-menu .switch")
                 const accesibilityElement = document.querySelector(".accesibility-activator")

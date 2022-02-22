@@ -302,7 +302,7 @@ function selectedAllLinks() {
         }
         el.addEventListener("mouseover", (ev) => handleMouseOver(el, ev));
         el.addEventListener("focus", (ev) => handleMouseOver(el, ev));
-        el.addEventListener("touchstart", (ev) => handleMouseOver(el, ev), { passive: true });
+        el.addEventListener("touchstart", (ev) => { handleMouseOver(el, ev) }, { passive: true });
         el.addEventListener("mouseleave", (ev) => handleMouseLeave(el, ev));
         el.addEventListener("blur", (ev) => handleMouseLeave(el, ev));
         el.addEventListener("touchend", (ev) => handleMouseLeave(el, ev), { passive: true });
@@ -544,10 +544,7 @@ function speak(text) {
 document.addEventListener('DOMContentLoaded', function() {
     try {
         execute();
-        console.log("FIN CARGA");
-    } catch (error) {
-        console.log("error", error);
-    }
+    } catch (error) {}
 })
 
 setTimeout(() => {
