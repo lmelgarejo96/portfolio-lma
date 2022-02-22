@@ -178,7 +178,9 @@ body.voice-active h3.active span,
 body.voice-active h4.active,
 body.voice-active h5.active,
 body.voice-active h6.active,
-body.voice-active button.active {
+body.voice-active span.readable.active,
+body.voice-active button.active,
+body.voice-active img.active {
     background-color: var(--bg-voice-active) !important;
     outline: 2px dashed var(--color-voice-active);
     color: var(--color-voice-active) !important;

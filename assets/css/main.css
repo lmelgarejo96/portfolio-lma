@@ -834,10 +834,11 @@ main {
 }
 
 ul.rb li .timestamp {
+    display: block;
     color: var(--primary-color);
     position: relative;
-    width: 150px;
     font-size: var(--fsize-xs);
+    margin-bottom: 5px;
 }
 
 ul.rb li p {

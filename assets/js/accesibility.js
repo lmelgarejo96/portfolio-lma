@@ -295,7 +295,7 @@ function execute() {
 
 
 function selectedAllLinks() {
-    document.querySelectorAll("a, a.headerSubMenuTab, h1, h2, h3, h4, h5, h6, p, .g1_title, div > span a>span, .accesibility-bar li, .accesibility-activator, .wancho a, .b24Parrafo, .readable, .headerBtn, img, .switch, .reader").forEach(el => {
+    document.querySelectorAll("a, h1, h2, h3, h4, h5, h6, p, .accesibility-bar li, .accesibility-activator, .readable, img, .switch").forEach(el => {
         if (el.innerHTML == "" && el.nodeName != "IMG") {
             el.remove();
             return;

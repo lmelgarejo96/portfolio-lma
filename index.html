@@ -64,8 +64,8 @@
                     <div class="switch" :aria-label="lang == 'es' ? switchLang.spanish[lang] : switchLang.english[lang]">
                         <input id="language-toggle" ref="languageToogle" @change="onLanguageChange" class="check-toggle check-toggle-round-flat" type="checkbox">
                         <label for="language-toggle"></label>
-                        <span class="off reader">ES</span>
-                        <span class="on reader">EN</span>
+                        <span class="off readable">ES</span>
+                        <span class="on readable">EN</span>
                     </div>
 
                 </ol>
@@ -117,8 +117,8 @@
                                 <ul class="rb">
                                     <li class="rb-item short-description scroll-item" v-for="(exp, idx) in expSection.timeline" :ref="`expLi${idx}`">
                                         <h4 class="item-title">{{ exp.jobTitle[lang] }}</h4>
-                                        <span class="item-subtitle reader">{{ exp.business[lang] }}</span>
-                                        <span class="timestamp reader">
+                                        <span class="item-subtitle readable">{{ exp.business[lang] }}</span>
+                                        <span class="timestamp readable">
                                             {{ exp.date[lang] }}
                                         </span>
                                         <p class="pre-wrapp">{{ exp.description[lang] }}</p>
@@ -147,7 +147,7 @@
                     <div class="projects-list">
                         <div v-for="(project, idx) in projectsSection.list" :class="`project  scroll-item ${ idx > 5 && !isShowMoreProjects ? 'd-none' : ''}`">
                             <div class="project-img">
-                                <img decoding="async" loading="lazy" :src="project.coverImg" draggable="false" alt="">
+                                <img decoding="async" loading="lazy" :src="project.coverImg" draggable="false" :alt="project.title[lang]">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title"><a :href="project.demoURL ? project.demoURL : project.repoURL" target="_blank" class="project-link">{{ project.title[lang] }}</a></h3>
@@ -176,7 +176,7 @@
             <section class="app-container padding-section" id="contact">
                 <div class="section-container last-container">
                     <h2 class="app-section-title contact-center scroll-item">{{ contactSection.title[lang] }}</h2>
-                    <div class="contact-subtitle scroll-item"><span class="heading alternate-light">{{ contactSection.subtitle[lang] }}</span></div>
+                    <div class="contact-subtitle scroll-item"><span class="heading alternate-light readable">{{ contactSection.subtitle[lang] }}</span></div>
                     <p class="text-center message-contact scroll-item">{{ contactSection.message[lang] }}</p>
                     <div class="btn-container-center">
                         <a :href="`mailto:${mail}`" class="app-btn-link scroll-item">{{ contactSection.btnContact[lang] }}</a>
