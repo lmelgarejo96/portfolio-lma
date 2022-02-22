@@ -9,7 +9,7 @@
     scroll-behavior: smooth;
 }
 
-:root {
+body {
     --primary-color: #4dc9ac;
     --alternate-primary: #50d890;
     --white-color: #fff;
@@ -22,7 +22,10 @@
     --light-color: #d5d8e0;
     --alternate-light: #939aaf;
     --nav-shadow: rgba(2, 12, 27, 0.7);
+    --nav-shadow-bg: rgba(10, 25, 47, 0.85);
     --light-nav: #233554;
+    --bg-voice-active: #00a39c;
+    --color-voice-active: #000;
     --nav-height: 100px;
     --brand-height: 60px;
     --all-transition: all ease-in-out .25s;
@@ -40,7 +43,7 @@
 }
 
 @media screen and (max-width: 650px) {
-     :root {
+    body {
         --nav-height: 70px;
         --brand-height: 50px
     }
@@ -103,6 +106,10 @@ body {
 
 .secondary-color {
     color: var(--pink-color);
+}
+
+.d-none {
+    display: none;
 }
 
 h1,
@@ -177,15 +184,26 @@ p>a::after {
     top: 0;
     visibility: visible;
     opacity: 1;
-    z-index: 150;
+    z-index: 255;
     background: var(--bg-color);
 }
 
 .loader-page.no-active {
     transition: all ease-out .5s;
     visibility: hidden;
+    background: transparent;
     opacity: 0;
     z-index: -1;
+}
+
+.loader-page.no-active svg {
+    transition: all ease-in-out .25s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.loader-page.no-active svg g {
+    fill: var(--pink-color) !important;
 }
 
 .logo-splash {
@@ -264,7 +282,7 @@ p>a::after {
 }
 
 .app-nav.nav-shadow {
-    background-color: rgba(10, 25, 47, .85);
+    background-color: var(--nav-shadow-bg);
     box-shadow: 0 10px 30px -10px var(--nav-shadow);
     backdrop-filter: blur(10px);
     transition: var(--transition);
@@ -291,6 +309,16 @@ p>a::after {
     font-weight: 900;
     font-size: clamp(20px, 6vw, 40px);
     text-decoration: none;
+}
+
+.app-brand svg {
+    width: var(--brand-height);
+    height: var(--brand-height);
+}
+
+.app-brand svg g {
+    stroke: var(--pink-color) !important;
+    fill: var(--pink-color) !important;
 }
 
 .app-brand img {
@@ -463,6 +491,10 @@ main {
 
 .section-container {
     padding: 150px 0px 30px;
+}
+
+.section-container:first-of-type {
+    padding-bottom: 150px;
 }
 
 .section-container.last-container {

@@ -1,0 +1,186 @@
+/* ACCESIBILITY BAR */
+
+.accesibility-bar {
+    position: fixed;
+    bottom: 5%;
+    left: -200px;
+    display: flex;
+    flex-flow: column nowrap;
+    z-index: 250;
+    list-style: none;
+    background: var(--light-nav);
+    box-shadow: -1px 4px 24px -8px var(--nav-shadow);
+    color: var(--light-color);
+    width: 200px;
+    transition: all ease-in-out .25s;
+    box-sizing: border-box;
+    padding: .8em 0;
+}
+
+.accesibility-bar.active-accesibility {
+    left: 0;
+}
+
+.accesibility-bar li {
+    list-style: none;
+    padding: .8em .8em;
+    color: #000;
+    cursor: pointer;
+    transition: all ease-in-out .15s;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: .85rem;
+    border-bottom: 1px solid #eee !important;
+    user-select: none;
+}
+
+.accesibility-bar li i {
+    color: var(--light-color);
+}
+
+.accesibility-bar li:last-child {
+    border-bottom: none !important;
+}
+
+.accesibility-bar li span {
+    margin-left: 10px;
+}
+
+.accesibility-bar li.active-item {
+    background: rgb(0, 214, 165) !important;
+}
+
+.accesibility-bar .accesibility-activator {
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-color);
+    color: #191919;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: -1px 4px 24px -8px rgb(0 0 0 / 30%);
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 1400px) {
+    .accesibility-bar {
+        width: 270px;
+        left: -270px;
+    }
+    .accesibility-bar li {
+        font-size: .95rem;
+    }
+    .accesibility-bar .accesibility-activator {
+        width: 70px;
+        height: 70px;
+        right: -70px;
+    }
+}
+
+body.dark {
+    --primary-color: #00a39c;
+    --alternate-primary: #50d890;
+    --white-color: #fff;
+    --yellow-color: #fca700;
+    --pink-color: #00a39c;
+    --hover-color: #091619;
+    --bg-color: #eee;
+    --light-color: #444;
+    --alternate-light: #555;
+    --nav-shadow: rgba(4, 4, 4, 0.15);
+    --nav-shadow-bg: rgba(231, 238, 235, 0.85);
+    --light-nav: #fafafa;
+    --bg-voice-active: #00a39c;
+    --color-voice-active: #000;
+}
+
+html.gray-scale {
+    filter: grayscale(100%);
+}
+
+body.high-contrast {
+    --primary-color: #fca700;
+    --alternate-primary: #ff0266;
+    --white-color: #fff;
+    --yellow-color: #fca700;
+    --pink-color: #00a39c;
+    --hover-color: #091619;
+    --bg-color: #000;
+    --light-color: #fff;
+    --alternate-light: #eee;
+    --nav-shadow: rgba(4, 4, 4, 0.15);
+    --nav-shadow-bg: rgba(9, 22, 25, 0.85);
+    --light-nav: #111;
+    --bg-voice-active: #00a39c;
+    --color-voice-active: #000;
+}
+
+body.underline-links a {
+    text-decoration: underline !important;
+    text-underline-offset: 4px;
+}
+
+body.readable-font {
+    --primary-font: Arial;
+    --secondary-font: Arial;
+}
+
+body.readable-font a {
+    font-weight: bold;
+}
+
+body.zoom-1 a,
+body.zoom-1 a span,
+body.zoom-1 h1,
+body.zoom-1 h2,
+body.zoom-1 h3,
+body.zoom-1 h4,
+body.zoom-1 h5,
+body.zoom-1 h6,
+body.zoom-1 p,
+body.zoom-1 li {
+    zoom: 104%;
+}
+
+body.zoom-2 a,
+body.zoom-2 a span,
+body.zoom-2 h1,
+body.zoom-2 h2,
+body.zoom-2 h3,
+body.zoom-2 h4,
+body.zoom-2 h5,
+body.zoom-2 h6,
+body.zoom-2 p,
+body.zoom-2 li span {
+    zoom: 110%;
+}
+
+body.voice-active a.active,
+body.voice-active a.active span,
+body.voice-active a.active small,
+body.voice-active a.active strong,
+body.voice-active a.active h1,
+body.voice-active a.active h2,
+body.voice-active a.active h3,
+body.voice-active a.active i,
+body.voice-active p.active,
+body.voice-active h1.active,
+body.voice-active h1.active span,
+body.voice-active h2.active,
+body.voice-active h2.active span,
+body.voice-active h3.active,
+body.voice-active h3.active span,
+body.voice-active h4.active,
+body.voice-active h5.active,
+body.voice-active h6.active,
+body.voice-active button.active {
+    background-color: var(--bg-voice-active) !important;
+    outline: 2px dashed var(--color-voice-active);
+    color: var(--color-voice-active) !important;
+    cursor: url('../img/icons/speaker.png'), auto;
+}

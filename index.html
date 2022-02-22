@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Luis Melgarejo - Desarrollador de Software</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="icon" href="./favicon.ico">
 
     <meta name="description" content="Luis Melgarejo es un desarrollador de software y un estudiante de décimo ciclo de la carrera Ingeniería de Sistemas e Informática">
     <meta name="image" content="https://luismelgarejo.com/assets/img/hackathon.jpg">
@@ -23,11 +21,17 @@
     <meta name="twitter:description" content="Luis Melgarejo es un desarrollador de software y un estudiante de décimo ciclo de la carrera Ingeniería de Sistemas e Informática">
     <meta name="twitter:image" content="https://luismelgarejo.com/assets/img/hackathon.jpg">
 
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/accesibility.css">
 
     <script src="https://www.googletagmanager.com/gtag/js?id=G-HHYSL9LMYC" defer></script>
+    <script src="https://kit.fontawesome.com/73a9e59589.js" defer></script>
     <script src="assets/js/particles.min.js" defer></script>
     <script src="assets/js/vue.min.js" defer></script>
-    <script src="assets/js/main.js?v=21-02-2022" defer></script>
+    <script src="assets/js/tweenmax.min.js" defer></script>
+    <script src="assets/js/main.js?v=22-02-2022" defer></script>
+    <script src="assets/js/accesibility.js?v=22-02-2022" defer></script>
 
 </head>
 
@@ -38,19 +42,30 @@
     <div id="app">
         <nav class="app-nav">
             <div class="app-container-fluid navbar-container">
-                <a href="#" class="app-brand loader">
-                    <img draggable="false" src="./assets/img/logo.png" alt="Logo Portafolio Luis Melgarejo">
+                <a href="/" class="app-brand loader" title="Logo luismelgarejo.com">
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="239.000000pt" height="291.000000pt" viewBox="0 0 239.000000 291.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,291.000000) scale(0.100000,-0.100000)"
+                    fill="#000000" stroke="none">
+                    <path d="M971 2736 l-81 -84 0 -916 0 -916 480 0 c264 0 480 -4 480 -8 0 -4
+                    -28 -36 -63 -70 l-63 -62 -492 0 -492 0 0 899 c0 495 -4 902 -8 905 -10 6
+                    -475 -459 -491 -491 -8 -15 -11 -283 -11 -916 0 -748 2 -896 14 -906 10 -8
+                    174 -11 615 -9 l601 3 87 88 88 87 -613 0 -612 0 0 793 0 793 68 67 c37 37 71
+                    67 75 67 4 0 7 -351 7 -780 l0 -780 617 0 617 0 243 242 c134 133 243 246 243
+                    250 0 5 -272 8 -605 8 l-605 0 0 904 c0 498 -4 907 -9 910 -4 3 -45 -32 -90
+                    -78z"/>
+                    </g>
+                    </svg>
                 </a>
                 <ol class="app-menu">
                     <li v-for="(item, idx) in menuList" :key="`M-`+idx">
                         <a @click="closeHamburger" :href="item.href" class="app-link">{{ item.name[lang] }}</a>
                     </li>
 
-                    <div class="switch">
+                    <div class="switch" :aria-label="lang == 'es' ? switchLang.spanish[lang] : switchLang.english[lang]">
                         <input id="language-toggle" ref="languageToogle" @change="onLanguageChange" class="check-toggle check-toggle-round-flat" type="checkbox">
                         <label for="language-toggle"></label>
-                        <span class="off">ES</span>
-                        <span class="on">EN</span>
+                        <span class="off reader">ES</span>
+                        <span class="on reader">EN</span>
                     </div>
 
                 </ol>
@@ -86,7 +101,7 @@
                         <div v-html="aboutSection.content[lang]" class="resume-container scroll-item"></div>
                         <div class="img-about">
                             <div class="wrapper-img scroll-item">
-                                <img decoding="async" loading="lazy" src="assets/img/about.png" draggable="false" alt="Luis Melgarejo">
+                                <img decoding="async" loading="lazy" src="assets/img/about.png" draggable="false" alt="Luis Melgarejo img">
                             </div>
                         </div>
                     </div>
@@ -102,8 +117,8 @@
                                 <ul class="rb">
                                     <li class="rb-item short-description scroll-item" v-for="(exp, idx) in expSection.timeline" :ref="`expLi${idx}`">
                                         <h4 class="item-title">{{ exp.jobTitle[lang] }}</h4>
-                                        <span class="item-subtitle">{{ exp.business[lang] }}</span>
-                                        <span class="timestamp">
+                                        <span class="item-subtitle reader">{{ exp.business[lang] }}</span>
+                                        <span class="timestamp reader">
                                             {{ exp.date[lang] }}
                                         </span>
                                         <p class="pre-wrapp">{{ exp.description[lang] }}</p>
@@ -130,7 +145,7 @@
                 <div class="section-container">
                     <h2 class="app-section-title scroll-item">{{ projectsSection.title[lang] }}</h2>
                     <div class="projects-list">
-                        <div class="project  scroll-item" v-for="(project, idx) in projectsSection.list">
+                        <div v-for="(project, idx) in projectsSection.list" :class="`project  scroll-item ${ idx > 5 && !isShowMoreProjects ? 'd-none' : ''}`">
                             <div class="project-img">
                                 <img decoding="async" loading="lazy" :src="project.coverImg" draggable="false" alt="">
                             </div>
@@ -141,10 +156,10 @@
                                     <li v-for="(t, i) in project.technologies"><span>{{ t }}</span></li>
                                 </ul>
                                 <div class="project-share">
-                                    <a v-if="project.repoURL" :href="project.repoURL" target="_blank" class="repo-url">
+                                    <a v-if="project.repoURL" :href="project.repoURL" target="_blank" aria-label="repo URL" class="repo-url">
                                         <svg xmlns="http://www.w3.org/2000/svg" role="img" width="20" heigth="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                                     </a>
-                                    <a v-if="project.demoURL" :href="project.demoURL" target="_blank" class="demo-url">
+                                    <a v-if="project.demoURL" :href="project.demoURL" target="_blank" aria-label="demo URL" class="demo-url">
                                         <svg xmlns="http://www.w3.org/2000/svg" role="img" width="20" heigth="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                                     </a>
                                 </div>

@@ -34,6 +34,16 @@
         }
 
     ],
+    "switchLang": {
+        "spanish": {
+            "en": "Press to change the language to English",
+            "es": "Presiona para cambiar el idioma a Inglés"
+        },
+        "english": {
+            "en": "Press to change the language to Spanish",
+            "es": "Presiona para cambiar el idioma a Español"
+        }
+    },
     "headerInfo": {
         "title": {
             "greeting": {
@@ -322,6 +332,20 @@
                 "repoURL": "",
                 "coverImg": "./assets/img/projects/accesibilidad.png",
                 "technologies": ["Javascript", "PHP", "Web Speech"]
+            },
+            {
+                "title": {
+                    "en": "Github Profile - Vuex Workshop",
+                    "es": "Perfíl de Github - Taller Vuex"
+                },
+                "description": {
+                    "en": "I used this small project to show the functionalities of Vuex in a workshop by being able to visualize the profile and the created repositories of your Github account.",
+                    "es": "Este pequeño proyecto lo utilicé para mostrar las funcionalidades de Vuex en un taller al poder visualizar el perfíl y los repositorios creados de tu cuenta de Github."
+                },
+                "demoURL": "https://lmelgarejo96.github.io/Taller-vuex/#/",
+                "repoURL": "https://github.com/lmelgarejo96/Taller-vuex",
+                "coverImg": "./assets/img/projects/taller-vuex.png",
+                "technologies": ["Vue", "Vuex", "Axios"]
             },
             {
                 "title": {
