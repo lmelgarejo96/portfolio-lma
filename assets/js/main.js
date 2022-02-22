@@ -1,5 +1,27 @@
+let langs = ["en", "es"]
+let gLang = 'es'
+
 const loader = document.querySelector("#loader")
 const logoSplash = document.querySelector(".logo-splash")
+window.dataLayer = window.dataLayer || []
+
+async function readDataJson(callback) {
+    try {
+        const response = await fetch('./assets/data.json')
+        const json = await response.json()
+        logoSplash.classList.add("morph-color")
+        callback(json)
+    } catch (error) {}
+}
+
+function loadLangFromLS() {
+    const lang = localStorage.getItem("lang")
+    gLang = lang && langs.includes(lang) ? lang : 'es'
+}
+
+function gtag() {
+    dataLayer.push(arguments);
+}
 
 Particles.init({
     selector: ".background-particles",
@@ -16,113 +38,57 @@ Particles.init({
     }]
 });
 
-
-let data = null;
-let langs = ["en", "es"]
-let gLang = 'es'
-
-const readDataJson = async(callback) => {
-    try {
-        const response = await fetch('./assets/data.json')
-        const json = await response.json()
-        data = json;
-        logoSplash.classList.add("morph-color")
-        callback(data)
-    } catch (error) {
-        // catch error
-    }
-}
-
-const loadLangFromLS = () => {
-    const lang = localStorage.getItem("lang")
-    if (!lang) return
-    if (!langs.includes(lang)) return
-    gLang = lang
-}
-
-
-// Intersection API
-
-
-
 loadLangFromLS();
 readDataJson((json) => {
-    const { mail, github, linkedin, instagram, twitter, headerInfo, menu, aboutSection, expSection, projectsSection, contactSection } = json
+
+    const { projectsSection } = json
+
+    const dataObj = {
+        lang: gLang,
+        ...json,
+        projectsSection: {...json.projectsSection },
+        isShowMoreProjects: false,
+        scroll: 0,
+        optionsIntersection: {
+            root: document.body,
+            rootMargin: '0px',
+            threshold: 0.30
+        },
+        observer: null,
+        hamburger: null,
+        menu: null,
+        main: null,
+        nav: null
+    }
+
     new Vue({
         el: "#app",
-        data() {
-            return {
-                lang: gLang,
-                headerInfo,
-                mail,
-                menuList: menu,
-                aboutSection,
-                expSection,
-                projectsSection: {...projectsSection },
-                contactSection,
-                isShowMoreProjects: false,
-                github,
-                linkedin,
-                instagram,
-                twitter,
-                // elements
-                scroll: 0,
-                optionsIntersection: {
-                    root: document.body,
-                    rootMargin: '0px',
-                    threshold: 0.30
-                },
-                observer: null,
-                hamburger: null,
-                menu: null,
-                main: null,
-                nav: null
-            }
-        },
+        data: () => dataObj,
         watch: {
-            scroll(val) {
-                if (val > 50) {
-                    this.nav.classList.add("nav-shadow")
-                } else {
-                    this.nav.classList.remove("nav-shadow")
-                }
-            },
-            lang(val) {
-                if (val == 'es') {
-                    this.$refs.languageToogle.checked = true;
-                } else {
-                    this.$refs.languageToogle.checked = false;
-                }
-            }
+            scroll(val) { val > 50 ? this.nav.classList.add("nav-shadow") : this.nav.classList.remove("nav-shadow") },
+            lang(val) { this.$refs.languageToogle.checked = val === 'es' }
         },
-        created() {
-            this.seeLessProjects()
-        },
+        created() { this.seeLessProjects() },
         mounted() {
-            if (this.lang == 'es') {
-                this.$refs.languageToogle.checked = true;
-            } else {
-                this.$refs.languageToogle.checked = false;
-            }
+
+            this.$refs.languageToogle.checked = this.lang === 'es'
 
             this.hamburger = document.querySelector("#hamburger-btn")
             this.menu = document.querySelector(".app-menu")
             this.main = document.querySelector("main")
             this.nav = document.querySelector(".app-nav")
 
-            document.body.addEventListener("scroll", () => {
-                const scroll = window.scrollY || document.body.scrollTop || document.documentElement.scrollTop
-                this.scroll = scroll
-            })
+            document.body.addEventListener("scroll", this.handleScroll, { passive: true })
 
             this.observer = new IntersectionObserver(this.handleIntersection, this.optionsIntersection);
-            document.querySelectorAll(".scroll-item").forEach(el => {
-                this.observer.observe(el);
-            })
-            setTimeout(() => {
-                loader.classList.add("no-active")
-            }, 1200);
-        }, // on mounted
+            document.querySelectorAll(".scroll-item").forEach(el => this.observer.observe(el))
+
+            setTimeout(() => loader.classList.add("no-active"), 1200);
+
+            gtag('js', new Date());
+            gtag('config', 'G-HHYSL9LMYC');
+
+        },
         methods: {
             onHanburgerClick() {
                 this.hamburger.classList.toggle("is-active")
@@ -140,14 +106,12 @@ readDataJson((json) => {
             addShortDescription(ref) {
                 this.$refs[ref][0].classList.add("short-description")
             },
+            handleScroll(ev) {
+                const scroll = window.scrollY || document.body.scrollTop || document.documentElement.scrollTop
+                this.scroll = scroll
+            },
             handleIntersection(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        let elem = entry.target;
-                        elem.classList.add("active-top")
-                        if (entry.intersectionRatio >= 0.75) {}
-                    }
-                })
+                entries.forEach(entry => { entry.isIntersecting ? entry.target.classList.add("active-top") : null })
             },
             seeMoreProjects() {
                 this.isShowMoreProjects = true;
@@ -156,18 +120,12 @@ readDataJson((json) => {
             seeLessProjects() {
                 this.isShowMoreProjects = false;
                 this.projectsSection.list = projectsSection.list.filter((p, idx) => idx < 6)
-                document.querySelectorAll(".project.scroll-item").forEach(el => {
-                    el.classList.add("active-top")
-                })
+                document.querySelectorAll(".project.scroll-item").forEach(el => el.classList.add("active-top"))
             },
             onLanguageChange(ev) {
-                if (ev.target.checked) {
-                    localStorage.setItem("lang", 'es')
-                    this.lang = 'es'
-                } else {
-                    localStorage.setItem("lang", 'en')
-                    this.lang = 'en'
-                }
+                ev.target.checked ?
+                    (localStorage.setItem("lang", 'es'), this.lang = 'es') :
+                    (localStorage.setItem("lang", 'en'), this.lang = 'en');
             }
         }
     })
