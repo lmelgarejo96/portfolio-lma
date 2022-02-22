@@ -64,8 +64,8 @@
             }
         },
         "description": {
-            "en": "I am a tenth cycle student of the Systems Engineering and Computer Science degree at the Technological University of Peru.<br>I have experience in the development of web, desktop and mobile applications.",
-            "es": "Soy estudiante de décimo ciclo de la carrera Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú.<br>Cuento con experiencia en el desarrollo de aplicaciones web, desktop y mobile."
+            "en": "I am a tenth cycle student of the Systems Engineering and Computer Science degree at the Technological University of Peru.\nI have experience in the development of web, desktop and mobile applications.",
+            "es": "Soy estudiante de décimo ciclo de la carrera Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú.\nCuento con experiencia en el desarrollo de aplicaciones web, desktop y mobile."
         },
         "resume": {
             "en": "Download my CV",
