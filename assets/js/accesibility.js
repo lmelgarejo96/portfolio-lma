@@ -362,7 +362,6 @@ function loadAccesibilityHistory() {
         }
         if (accesibilityOPTS.talkingAudio) {
             talkingAudio(null, document.querySelector("[data-name='talkingAudio']"));
-            //speak("Bienvenido a Visita Lima")
         }
     } catch (error) {
         setDefaultAccesibilityOPTS();
@@ -470,9 +469,6 @@ function loadVoicesWhenAvailable(onComplete = () => {}) {
     }
 }
 
-/**
- * Returns the first found voice for a given language code.
- */
 
 function getVoices(locale) {
     if (!_speechSynth) {
@@ -484,19 +480,8 @@ function getVoices(locale) {
     return _cache[locale]
 }
 
-/**
- * Speak a certain text 
- * @param locale the locale this voice requires
- * @param text the text to speak
- * @param onEnd callback if tts is finished
- */
-
 function playByText(locale, text, onEnd) {
     const voices = [_voiceSelected]
-        //getVoices(locale)
-
-    // TODO load preference here, e.g. male / female etc.
-    // TODO but for now we just use the first occurrence
     const utterance = new window.SpeechSynthesisUtterance()
     utterance.voice = voices[0]
     utterance.pitch = 1
@@ -512,7 +497,7 @@ function playByText(locale, text, onEnd) {
         utterance.onend = onEnd
     }
 
-    _speechSynth.cancel() // cancel current speak, if any is running
+    _speechSynth.cancel()
     _speechSynth.speak(utterance)
 }
 
@@ -533,7 +518,6 @@ function speak(text) {
     if (isMobile()) {
         if (timeOut) {
             clearTimeout(timeOut);
-
         };
         timeOut = setTimeout(() => playByText(isMobile() ? "es-ES" : "es-MX", text), 300);
         return;
