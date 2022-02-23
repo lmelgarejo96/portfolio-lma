@@ -84,6 +84,8 @@ readDataJson((json) => {
             this.observer = new IntersectionObserver(this.handleIntersection, this.optionsIntersection);
             document.querySelectorAll(".scroll-item").forEach(el => this.observer.observe(el))
 
+            executeAccesibility()
+
             this.loadIndexAnimation()
 
             gtag('js', new Date());

@@ -274,7 +274,7 @@ function restore(ev) {
     setDefaultAccesibilityOPTS();
 }
 
-function execute() {
+var executeAccesibility = () => {
 
     document.body.appendChild(renderAccesibilityList());
     const elements = document.querySelectorAll(".accesibility-bar > li");
@@ -291,6 +291,7 @@ function execute() {
     loadVoicesWhenAvailable(function() {})
     loadAccesibilityHistory();
 
+    console.log("Accesibility Works!");
 }
 
 
@@ -525,8 +526,8 @@ function speak(text) {
     playByText(isMobile() ? "es-ES" : "es-MX", text)
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+/* document.addEventListener('DOMContentLoaded', function() {
     try {
-        execute();
+        
     } catch (error) {}
-})
+}) */
