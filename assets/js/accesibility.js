@@ -248,6 +248,20 @@ function disableTourActive() {
     speechSynthesis.cancel();
 }
 
+let cloneArrElements = []
+
+function resumeTour() {
+    if (cloneArrElements && cloneArrElements.length == 0) {
+        disableTourActive()
+        return
+    }
+    disableVoiceActive()
+    document.body.classList.add("tour-active");
+    voiceActive = true;
+    document.querySelectorAll(".accesibility-bar > li")[8].classList.add("active-item");
+    playElementsTour(cloneArrElements)
+}
+
 function tourPage(ev) {
     // pasar arr elements
     document.body.classList.toggle("tour-active");
@@ -277,6 +291,7 @@ function tourPage(ev) {
 
 
 function playElementsTour(elements) {
+    cloneArrElements = [...elements]
     if (timeOutSpeech) clearTimeout(timeOutSpeech)
     if (!voiceActive) return;
     if (elements && elements.length == 0) {
@@ -306,6 +321,12 @@ function playElementsTour(elements) {
                 if (currentElement.el) currentElement.el.classList.remove("tour-item-active")
                 playElementsTour(newElements)
             }, 500);
+        })
+        .catch(() => {
+            timeOutSpeech = setTimeout(() => {
+                if (currentElement.el) currentElement.el.classList.remove("tour-item-active")
+                playElementsTour(newElements)
+            })
         })
 }
 
@@ -636,6 +657,8 @@ function playByText(locale, text, onEnd) {
             utterance.onend = resolve
         }
 
+        utterance.onerror = reject
+
         _speechSynth.cancel()
         _speechSynth.speak(utterance)
     })
@@ -677,3 +700,30 @@ const terminationEvent = 'onpagehide' in self ? 'pagehide' : 'unload';
 addEventListener(terminationEvent, function(event) {
     disableTourActive()
 }, { capture: true });
+
+// Visibility API 
+var hidden, visibilityChange;
+if (typeof document.hidden !== "undefined") {
+    hidden = "hidden";
+    visibilityChange = "visibilitychange";
+} else if (typeof document.msHidden !== "undefined") {
+    hidden = "msHidden";
+    visibilityChange = "msvisibilitychange";
+} else if (typeof document.webkitHidden !== "undefined") {
+    hidden = "webkitHidden";
+    visibilityChange = "webkitvisibilitychange";
+}
+
+if (typeof document.addEventListener === "undefined" || hidden === undefined) {
+    console.warn("This demo requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");
+} else {
+    document.addEventListener(visibilityChange, handleVisibilityChange, false);
+}
+
+function handleVisibilityChange(ev) {
+    if (document[hidden]) {
+        disableTourActive()
+    } else {
+        resumeTour()
+    }
+}
