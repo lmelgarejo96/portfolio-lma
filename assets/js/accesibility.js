@@ -637,6 +637,8 @@ var setDefaultLang = (langProp) => {
         return
     }
 
+    alert("Lang encontrado: " + opt.getAttribute("value"))
+
     handleVoiceChange({ target: { value: opt.getAttribute("value") } })
 }
 
