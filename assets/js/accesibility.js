@@ -1,3 +1,5 @@
+var lang = localStorage.getItem("lang") || "es";
+var glangs = ["es", "en"]
 let lsAccesibleName = "accesibilityOPTS";
 let timeOutBar = null;
 let timeOutSpeech = null;
@@ -240,26 +242,37 @@ function disableVoiceActive() {
     saveAccesibility(localStorage.getItem(lsAccesibleName), "talkingAudio", "voice-active");
 }
 
-function disableTourActive() {
-    voiceActive = false;
-    if (timeOutSpeech) clearTimeout(timeOutSpeech)
-    document.body.classList.remove("tour-active");
-    document.querySelectorAll(".accesibility-bar > li")[8].classList.remove("active-item");
-    speechSynthesis.cancel();
-}
-
 let cloneArrElements = []
 
+function disableTourActive(paused) {
+    voiceActive = false;
+    if (timeOutSpeech) clearTimeout(timeOutSpeech)
+
+    if (!paused) {
+        document.body.classList.remove("tour-active");
+        document.querySelectorAll(".accesibility-bar > li")[8].classList.remove("active-item");
+        speechSynthesis.cancel();
+        cloneArrElements = []
+    }
+    /* else {
+           speechSynthesis.pause();
+       } */
+}
+
+
 function resumeTour() {
+    //disableVoiceActive()
     if (cloneArrElements && cloneArrElements.length == 0) {
         disableTourActive()
         return
     }
-    disableVoiceActive()
-    document.body.classList.add("tour-active");
     voiceActive = true;
+    document.body.classList.add("tour-active");
     document.querySelectorAll(".accesibility-bar > li")[8].classList.add("active-item");
-    playElementsTour(cloneArrElements)
+
+    if (speechSynthesis) speechSynthesis.cancel()
+    if (timeOutSpeech) clearTimeout(timeOutSpeech)
+    timeOutSpeech = setTimeout(() => playElementsTour(cloneArrElements), 500);
 }
 
 function tourPage(ev) {
@@ -302,6 +315,7 @@ function playElementsTour(elements) {
     };
 
     const currentElement = elements[0]
+
     if (currentElement.el) {
         currentElement.el.classList.add("tour-item-active")
         currentElement.el.classList.remove("scroll-item")
@@ -327,7 +341,7 @@ function playElementsTour(elements) {
             timeOutSpeech = setTimeout(() => {
                 if (currentElement.el) currentElement.el.classList.remove("tour-item-active")
                 playElementsTour(newElements)
-            })
+            }, 500)
         })
 }
 
@@ -413,6 +427,9 @@ function restore(ev) {
     document.body.classList.remove("gray-scale");
     document.body.classList.remove("dark");
     document.body.classList.remove("voice-active");
+    document.body.classList.remove("tour-active");
+    disableTourActive()
+    disableVoiceActive()
     document.querySelectorAll(".accesibility-bar li").forEach(li => li.classList.remove("active-item"));
     voiceActive = false;
     setDefaultAccesibilityOPTS();
@@ -601,15 +618,24 @@ function loadLSVoiceSelected() {
 }
 
 var setDefaultLang = (langProp) => {
+
     const LANG_SELECT = document.getElementById("voices-select");
-    let opt = LANG_SELECT.querySelector("option[value^='es-MX']");
-    if (langProp) {
-        opt = LANG_SELECT.querySelector(`option[value*='${langProp}-']`)
-    }
+
+    if (!glangs.includes(lang)) lang = 'es';
+
+    if (langProp) lang = langProp;
+
+    let opt = LANG_SELECT.querySelector(`option[value*='${lang}-']`); //LANG_SELECT.querySelector("option[value^='es-MX']");
+
     if (!opt) {
-        opt = LANG_SELECT.querySelector("option[value^='es-ES'], option[value^='es-US']");
-    };
-    //LANG_SELECT.setAttribute("value", FIRST_OPT.getAttribute("value"));
+        const noSpeechMsg = {
+            en: "The Browser does not support the Web Speech api in the selected language",
+            es: "El Navegador no soporta el api Weeb Speech en el idioma seleccionado"
+        }
+        alert(noSpeechMsg[lang])
+        return
+    }
+
     handleVoiceChange({ target: { value: opt.getAttribute("value") } })
 }
 
@@ -723,7 +749,9 @@ if (typeof document.addEventListener === "undefined" || hidden === undefined) {
 
 function handleVisibilityChange(ev) {
     if (document[hidden]) {
-        disableTourActive()
+
+        [...document.body.classList].includes("tour-active") ? disableTourActive(true) : disableTourActive();
+
     } else {
         resumeTour()
     }
