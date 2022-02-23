@@ -618,8 +618,9 @@ function loadLSVoiceSelected() {
 }
 
 var setDefaultLang = (langProp) => {
-
     const LANG_SELECT = document.getElementById("voices-select");
+
+    alert("Cambiando lang desde: " + lang + " a: " + langProp)
 
     if (!glangs.includes(lang)) lang = 'es';
 
