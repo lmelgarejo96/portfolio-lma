@@ -1,8 +1,10 @@
 let lsAccesibleName = "accesibilityOPTS";
 let timeOutBar = null;
+let timeOutSpeech = null;
 let zoom = 0;
 let voices = [];
 let voiceActive = false;
+let tourElements = []
 
 // dark = light
 
@@ -53,6 +55,12 @@ const options = [{
         action: talkingAudio
     },
     {
+        name: "Tour automático",
+        icon: "fa fa-caret-square-o-right",
+        dataName: "tourPage",
+        action: tourPage
+    },
+    {
         name: "Restablecer",
         icon: "fas fa-undo-alt",
         action: restore
@@ -98,6 +106,9 @@ function renderAccesibilityList() {
     ACTIVATOR.appendChild(ICON);
     ACTIVATOR.addEventListener("click", activeAccesibilityMenu);
     UL.appendChild(ACTIVATOR);
+    const OVERLAY = document.createElement("DIV")
+    OVERLAY.classList.add("app-accesibility-overlay")
+    document.body.appendChild(OVERLAY)
     options.forEach(opt => {
         const LI = document.createElement("li");
         const I = document.createElement("i");
@@ -212,11 +223,115 @@ function talkingAudio(ev, el) {
     document.body.classList.toggle("voice-active");
     validateClass("voice-active", el || this)
     if ([...document.body.classList].indexOf("voice-active") > -1) {
+        selectedAllLinks()
         voiceActive = true;
     } else {
+        unSelectedAllLinks()
         voiceActive = false;
     }
     saveAccesibility(localStorage.getItem(lsAccesibleName), "talkingAudio", "voice-active");
+}
+
+function disableVoiceActive() {
+    voiceActive = false;
+    document.querySelectorAll(".accesibility-bar li")[7].classList.remove("active-item");
+    unSelectedAllLinks()
+    document.body.classList.remove("voice-active");
+    saveAccesibility(localStorage.getItem(lsAccesibleName), "talkingAudio", "voice-active");
+}
+
+function disableTourActive() {
+    voiceActive = false;
+    if (timeOutSpeech) clearTimeout(timeOutSpeech)
+    document.body.classList.remove("tour-active");
+    document.querySelectorAll(".accesibility-bar > li")[8].classList.remove("active-item");
+    speechSynthesis.cancel();
+}
+
+function tourPage(ev) {
+    // pasar arr elements
+    document.body.classList.toggle("tour-active");
+    disableVoiceActive()
+    validateClass("tour-active", ev.currentTarget || this);
+    if ([...document.body.classList].indexOf("tour-active") > -1) {
+        voiceActive = true;
+    } else {
+        disableTourActive()
+        return;
+    }
+    const firstElement = {
+        scroll: 0,
+        el: document.querySelector(".app-accesibility-overlay"),
+        text: gLang == 'en' ?
+            "Hello, you are about to start the automatic tour of the page. If you want to cancel the tour, press the automatic tour button again" : "Hola, estás a punto de iniciar el tour automático por la pagina. Si deseas cancelar el tour vuelve a presionar en el botón de tour automático.\n"
+    }
+    document.querySelectorAll(".scroll-item").forEach(el => {
+        el.classList.remove("scroll-item");
+        el.classList.remove("active-top")
+    })
+    const allElements = [firstElement, ...getTimelineTourElements()]
+    playElementsTour(allElements)
+
+}
+
+
+
+function playElementsTour(elements) {
+    if (timeOutSpeech) clearTimeout(timeOutSpeech)
+    if (!voiceActive) return;
+    if (elements && elements.length == 0) {
+        // tour finalizado
+        disableTourActive()
+        return
+    };
+
+    const currentElement = elements[0]
+    if (currentElement.el) {
+        currentElement.el.classList.add("tour-item-active")
+        currentElement.el.classList.remove("scroll-item")
+        currentElement.el.classList.remove("active-top")
+        currentElement.el.classList.remove("d-none")
+    }
+
+    currentElement.el.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    });
+
+    const newElements = [...elements]
+    newElements.shift()
+    playByText("es-ES", currentElement.text, () => {})
+        .then(() => {
+            timeOutSpeech = setTimeout(() => {
+                if (currentElement.el) currentElement.el.classList.remove("tour-item-active")
+                playElementsTour(newElements)
+            }, 500);
+        })
+}
+
+function getTimelineTourElements(gap = 150) {
+
+    const timelineElements = []
+
+    tourElements.forEach(el => {
+
+        if (NodeList.prototype.isPrototypeOf(el)) {
+            el.forEach(subEl => {
+                timelineElements.push({
+                    el: subEl,
+                    scroll: (subEl.scrollTop || subEl.offsetTop || subEl.scrollTop) - gap,
+                    text: getTextByElement(subEl)
+                })
+            })
+        } else {
+            timelineElements.push({
+                el: el,
+                scroll: (el.scrollTop || el.offsetTop || subEl.scrollTop) - gap,
+                text: getTextByElement(el)
+            })
+        }
+    })
+    return timelineElements
 }
 
 function readText(text) {
@@ -228,31 +343,38 @@ function loadVoices() {
 
 }
 
-function handleMouseOver(el, ev) {
+function getTextByElement(el) {
+    return el.getAttribute("title") || el.getAttribute("aria-label") || el.getAttribute("alt") || el.innerText;
+}
+
+function handleMouseOver(ev) {
+    const el = ev.currentTarget
     el.classList.add("active");
     if (voiceActive) {
-        const text = el.getAttribute("title") || el.getAttribute("aria-label") || el.getAttribute("alt") || el.innerText;
+        const text = getTextByElement(el);
         readText(text);
         return;
     }
 }
 
-function handleLinkClick(el, event) {
+function handleLinkClick(event) {
+    const el = event.currentTarget
     el.classList.remove("active");
-    el.removeEventListener("mouseover", (ev) => handleMouseOver(el, ev));
-    el.removeEventListener("focus", (ev) => handleMouseOver(el, ev));
-    el.removeEventListener("touchstart", (ev) => handleMouseOver(el, ev));
-    el.removeEventListener("mouseleave", (ev) => handleMouseLeave(el));
-    el.removeEventListener("touchend", (ev) => handleMouseLeave(el));
-    el.removeEventListener("blur", (ev) => handleMouseLeave(el));
+    el.removeEventListener("mouseenter", handleMouseOver);
+    el.removeEventListener("focus", handleMouseOver);
+    el.removeEventListener("touchstart", handleMouseOver);
+    el.removeEventListener("mouseleave", handleMouseLeave);
+    el.removeEventListener("touchend", handleMouseLeave);
+    el.removeEventListener("blur", handleMouseLeave);
     if (voiceActive) {
-        const text = el.getAttribute("title") || el.getAttribute("aria-label") || el.getAttribute("alt") || el.innerText;
+        const text = getTextByElement(el)
         readText(`Dirigiendonos a: ${text}`);
         return;
     }
 }
 
-function handleMouseLeave(el) {
+function handleMouseLeave(ev) {
+    const el = ev.currentTarget
     el.classList.remove("active");
     speechSynthesis.cancel();
 }
@@ -274,7 +396,7 @@ function restore(ev) {
     setDefaultAccesibilityOPTS();
 }
 
-var executeAccesibility = () => {
+var executeAccesibility = (tourElementsProp) => {
 
     document.body.appendChild(renderAccesibilityList());
     const elements = document.querySelectorAll(".accesibility-bar > li");
@@ -287,26 +409,39 @@ var executeAccesibility = () => {
         speechSynthesis.onvoiceschanged = loadVoices;
     }
 
-    // on document ready
+    tourElements = tourElementsProp;
+
     loadVoicesWhenAvailable(function() {})
     loadAccesibilityHistory();
 
     console.log("Accesibility Works!");
 }
 
+const readableElements = "a, h1, h2, h3, h4, h5, h6, p, .accesibility-bar li, .accesibility-activator, .readable, img, .switch"
 
 function selectedAllLinks() {
-    document.querySelectorAll("a, h1, h2, h3, h4, h5, h6, p, .accesibility-bar li, .accesibility-activator, .readable, img, .switch").forEach(el => {
+    document.querySelectorAll(readableElements).forEach(el => {
         if (el.innerHTML == "" && el.nodeName != "IMG") {
             el.remove();
             return;
         }
-        el.addEventListener("mouseover", (ev) => handleMouseOver(el, ev));
-        el.addEventListener("focus", (ev) => handleMouseOver(el, ev));
-        el.addEventListener("touchstart", (ev) => { handleMouseOver(el, ev) }, { passive: true });
-        el.addEventListener("mouseleave", (ev) => handleMouseLeave(el, ev));
-        el.addEventListener("blur", (ev) => handleMouseLeave(el, ev));
-        el.addEventListener("touchend", (ev) => handleMouseLeave(el, ev), { passive: true });
+        el.addEventListener("mouseenter", handleMouseOver);
+        el.addEventListener("focus", handleMouseOver);
+        el.addEventListener("touchstart", handleMouseOver, { passive: true });
+        el.addEventListener("mouseleave", handleMouseLeave);
+        el.addEventListener("blur", handleMouseLeave);
+        el.addEventListener("touchend", handleMouseLeave, { passive: true });
+    })
+}
+
+function unSelectedAllLinks() {
+    document.querySelectorAll(readableElements).forEach(el => {
+        el.removeEventListener("mouseenter", handleMouseOver);
+        el.removeEventListener("focus", handleMouseOver);
+        el.removeEventListener("touchstart", handleMouseOver, { passive: true });
+        el.removeEventListener("mouseleave", handleMouseLeave);
+        el.removeEventListener("blur", handleMouseLeave);
+        el.removeEventListener("touchend", handleMouseLeave, { passive: true });
     })
 }
 
@@ -463,7 +598,7 @@ function loadVoicesWhenAvailable(onComplete = () => {}) {
         _voices = voices
         renderVoicesList(_voices)
         loadLSVoiceSelected();
-        selectedAllLinks();
+        //selectedAllLinks();
         onComplete()
     } else {
         return setTimeout(function() { loadVoicesWhenAvailable(onComplete) }, 100)
@@ -482,26 +617,28 @@ function getVoices(locale) {
 }
 
 function playByText(locale, text, onEnd) {
-    const voices = [_voiceSelected]
-    const utterance = new window.SpeechSynthesisUtterance()
-    utterance.voice = voices[0]
-    utterance.pitch = 1
-    utterance.rate = 1
-    utterance.voiceURI = _voiceSelected._voiceSelected || 'native'
-    utterance.volume = 1
-    utterance.rate = 1
-    utterance.pitch = 0.8
-    utterance.text = text
-    utterance.lang = _voiceSelected.lang || locale
 
-    console.log(_voiceSelected, utterance);
+    return new Promise((resolve, reject) => {
 
-    if (onEnd) {
-        utterance.onend = onEnd
-    }
+        const voices = [_voiceSelected]
+        const utterance = new window.SpeechSynthesisUtterance()
+        utterance.voice = voices[0]
+        utterance.pitch = 1
+        utterance.rate = 1
+        utterance.voiceURI = _voiceSelected._voiceSelected || 'native'
+        utterance.volume = 1
+        utterance.rate = 1
+        utterance.pitch = 0.8
+        utterance.text = text
+        utterance.lang = _voiceSelected.lang || locale
 
-    _speechSynth.cancel()
-    _speechSynth.speak(utterance)
+        if (onEnd) {
+            utterance.onend = resolve
+        }
+
+        _speechSynth.cancel()
+        _speechSynth.speak(utterance)
+    })
 }
 
 
@@ -530,6 +667,13 @@ function speak(text) {
 
 /* document.addEventListener('DOMContentLoaded', function() {
     try {
-        
+        disableVoiceActive()
+        disableTourActive()
     } catch (error) {}
 }) */
+
+const terminationEvent = 'onpagehide' in self ? 'pagehide' : 'unload';
+
+addEventListener(terminationEvent, function(event) {
+    disableTourActive()
+}, { capture: true });

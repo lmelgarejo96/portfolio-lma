@@ -84,7 +84,7 @@ readDataJson((json) => {
             this.observer = new IntersectionObserver(this.handleIntersection, this.optionsIntersection);
             document.querySelectorAll(".scroll-item").forEach(el => this.observer.observe(el))
 
-            executeAccesibility()
+            executeAccesibility(this.getTourElements())
 
             this.loadIndexAnimation()
 
@@ -144,6 +144,30 @@ readDataJson((json) => {
                     .from(accesibilityElement, .45, { x: -100, opacity: 0, ease: Expo.easeInOut, delay: .15 })
 
                 t1.play()
+            },
+            getTourElements() {
+                return [
+                    document.querySelector(".app-hero .app-title"),
+                    document.querySelector(".app-hero .app-description"),
+                    document.querySelectorAll(".app-hero .app-btn-link"),
+                    document.querySelectorAll("#about-me .app-section-title"),
+                    document.querySelectorAll("#about-me p"),
+                    document.querySelectorAll("#about-me .img-about"),
+                    document.querySelectorAll("#experience .app-section-title"),
+                    document.querySelectorAll("#experience li.rb-item"),
+                    document.querySelectorAll("#experience .skills .item-title"),
+                    document.querySelectorAll("#experience .skills-list li"),
+                    document.querySelectorAll("#projects .app-section-title"),
+                    document.querySelectorAll("#projects .projects-list .project"),
+                    document.querySelectorAll("#contact .app-section-title"),
+                    document.querySelectorAll("#contact .contact-subtitle"),
+                    document.querySelectorAll("#contact .message-contact"),
+                    document.querySelectorAll("#contact .app-btn-link"),
+                    document.querySelectorAll("footer li a"),
+                    document.querySelectorAll("footer .copyright")
+
+
+                ]
             }
         }
     })

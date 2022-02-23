@@ -440,7 +440,7 @@ p>a::after {
         padding: 130px 40px;
     }
     .hamburger {
-        transform: scale(.68);
+        transform: scale(.68) !important;
     }
 }
 
@@ -449,7 +449,7 @@ p>a::after {
         padding: 100px 20px;
     }
     .hamburger {
-        transform: scale(.58);
+        transform: scale(.58) !important;
     }
 }
 
@@ -490,8 +490,10 @@ main {
     padding: 150px 0px 30px;
 }
 
-.section-container:first-of-type {
-    padding-bottom: 150px;
+@media screen and (min-width: 600px) {
+    .section-container:first-of-type {
+        padding-bottom: 150px;
+    }
 }
 
 .section-container.last-container {

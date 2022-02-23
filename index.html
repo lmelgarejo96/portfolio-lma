@@ -45,7 +45,7 @@
 
     <canvas class="background-particles active"></canvas>
 
-    <div id="app">
+    <div id="app" class="app-wrapper">
         <nav class="app-nav">
             <div class="app-container-fluid navbar-container">
                 <a href="/" class="app-brand loader" title="Logo luismelgarejo.com">
@@ -105,7 +105,7 @@
                     <h2 class="app-section-title scroll-item">{{ aboutSection.title[lang] }}</h2>
                     <div class="about-inner">
                         <div v-html="aboutSection.content[lang]" class="resume-container scroll-item"></div>
-                        <div class="img-about">
+                        <div class="img-about" title="Luis Melgarejo">
                             <div class="wrapper-img scroll-item">
                                 <img decoding="async" loading="lazy" src="assets/img/about.png" draggable="false" alt="Luis Melgarejo img">
                             </div>
@@ -139,7 +139,7 @@
                         <div class="skills">
                             <h4 class="item-title scroll-item">{{ expSection.skills.title[lang] }}</h4>
                             <ul class="skills-list">
-                                <li v-for="(skill, idx) in expSection.skills.list" class="scroll-item">
+                                <li v-for="(skill, idx) in expSection.skills.list" class="scroll-item" :aria-label="skill.name">
                                     <img height="48" draggable="false" decoding="async" loading="lazy" class="skill-item" :src="`${skill.src}`" :alt="skill.name" :title="skill.name">
                                 </li>
                             </ul>
