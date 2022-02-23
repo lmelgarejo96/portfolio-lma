@@ -265,6 +265,7 @@ function resumeTour() {
 function tourPage(ev) {
     // pasar arr elements
     document.body.classList.toggle("tour-active");
+    cloneArrElements = []
     disableVoiceActive()
     validateClass("tour-active", ev.currentTarget || this);
     if ([...document.body.classList].indexOf("tour-active") > -1) {
