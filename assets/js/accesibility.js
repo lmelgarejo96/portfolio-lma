@@ -9,7 +9,10 @@ let voiceActive = false;
 let tourElements = []
 
 // dark = light
-
+const activator = {
+    en: "Accessibility tools",
+    es: "herramientas de accesibilidad"
+}
 const options = [{
         name: {
             es: "Aumentar texto",
@@ -122,7 +125,7 @@ function renderAccesibilityList() {
     UL.setAttribute("role", "list");
     const ACTIVATOR = document.createElement("button");
     ACTIVATOR.setAttribute("role", "button");
-    ACTIVATOR.setAttribute("aria-label", "Herramientas de accesibilidad");
+    ACTIVATOR.setAttribute("aria-label", activator[lang]);
     ACTIVATOR.setAttribute("aria-pressed", "false");
     ACTIVATOR.classList.add("accesibility-activator");
     if (isMobile()) {
@@ -145,7 +148,7 @@ function renderAccesibilityList() {
         const LI = document.createElement("li");
         const I = document.createElement("i");
         const SPAN = document.createElement("span");
-        LI.setAttribute("data-name", opt.dataName || opt.name)
+        LI.setAttribute("data-name", opt.dataName || opt.name[lang])
         LI.setAttribute("data-es", opt.name['es'])
         LI.setAttribute("data-en", opt.name['en'])
         I.setAttribute("class", opt.icon);
@@ -153,7 +156,7 @@ function renderAccesibilityList() {
         LI.appendChild(I);
         LI.appendChild(SPAN);
         LI.setAttribute("role", "listitem");
-        LI.setAttribute("aria-label", `${opt.name}`);
+        LI.setAttribute("aria-label", `${opt.name[lang]}`);
         if (opt.dataName == "talkingAudio") {
             const SELECT_LANG = document.createElement("select");
             SELECT_LANG.setAttribute("id", "voices-select");
@@ -295,7 +298,6 @@ function disableTourActive(paused) {
 
 
 function resumeTour() {
-    //disableVoiceActive()
     if (cloneArrElements && cloneArrElements.length == 0) {
         disableTourActive()
         return
@@ -312,7 +314,6 @@ function resumeTour() {
 }
 
 function tourPage(ev) {
-    // pasar arr elements
     document.body.classList.toggle("tour-active");
     cloneArrElements = []
     disableVoiceActive()
@@ -650,6 +651,16 @@ function loadLSVoiceSelected() {
 
 }
 
+function changeLangTextInAccesibilityList(lang) {
+    document.querySelectorAll(".accesibility-bar > li")
+        .forEach(li => {
+            li.setAttribute("aria-label", li.getAttribute(`data-${lang}`))
+            li.querySelector("span").innerHTML = li.getAttribute(`data-${lang}`)
+        })
+    const activator = document.querySelector(".accesibility-bar > button")
+    activator.setAttribute("aria-label", activator.getAttribute(`data-${lang}`))
+}
+
 var setDefaultLang = (langProp) => {
 
     const LANG_SELECT = document.getElementById("voices-select");
@@ -657,9 +668,9 @@ var setDefaultLang = (langProp) => {
     if (!glangs.includes(lang)) lang = 'es';
 
     if (langProp) {
-        document.querySelectorAll(".accesibility-bar > li").forEach(li => li.querySelector("span").innerHTML = li.getAttribute(`data-${langProp}`))
-        disableVoiceActive()
-        disableTourActive()
+        changeLangTextInAccesibilityList(langProp)
+            //disableVoiceActive()
+            //disableTourActive()
         lang = langProp;
         const voicesPerLang = getVoicesPerLang()
         renderVoicesList(voicesPerLang);
@@ -766,13 +777,6 @@ function speak(text) {
         .then(() => {})
         .catch(() => {})
 }
-
-/* document.addEventListener('DOMContentLoaded', function() {
-    try {
-        disableVoiceActive()
-        disableTourActive()
-    } catch (error) {}
-}) */
 
 const terminationEvent = 'onpagehide' in self ? 'pagehide' : 'unload';
 

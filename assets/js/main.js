@@ -5,13 +5,13 @@ const loader = document.querySelector("#loader")
 const logoSplash = document.querySelector(".logo-splash")
 window.dataLayer = window.dataLayer || []
 
-async function readDataJson(callback) {
-    try {
-        const response = await fetch('./assets/data.json')
-        const json = await response.json()
-        logoSplash.classList.add("morph-color")
-        callback(json)
-    } catch (error) {}
+function readDataJson(callback) {
+    fetch('./assets/data.json')
+        .then(res => res.json())
+        .then(data => {
+            logoSplash.classList.add("morph-color")
+            callback(data)
+        })
 }
 
 function loadLangFromLS() {
@@ -38,9 +38,8 @@ Particles.init({
     }]
 });
 
-loadLangFromLS();
-readDataJson((json) => {
 
+function initVue(json) {
     const dataObj = {
         lang: gLang,
         ...json,
@@ -66,7 +65,7 @@ readDataJson((json) => {
             scroll(val) { val > 50 ? this.nav.classList.add("nav-shadow") : this.nav.classList.remove("nav-shadow") },
             lang(val) {
                 this.$refs.languageToogle.checked = val === 'es'
-                setDefaultLang(val)
+                setDefaultLang(val) // from window.setDefaultLang
             }
         },
         created() { this.seeLessProjects() },
@@ -171,4 +170,7 @@ readDataJson((json) => {
             }
         }
     })
-})
+}
+
+loadLangFromLS();
+readDataJson(initVue)
