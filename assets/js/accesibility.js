@@ -629,7 +629,7 @@ var setDefaultLang = (langProp) => {
         alert("Cambiando lang desde: " + lang + " a: " + langProp)
         lang = langProp;
         const voicesPerLang = _voices.filter(vo => vo.lang.indexOf(`${lang}`) > -1)
-        alert("Voices: " + JSON.stringify(voicesPerLang.map(vo => vo.lang).join("_")))
+        alert("Voices: " + JSON.stringify(voicesPerLang.map(vo => vo.lang).join(" ")))
         renderVoicesList(voicesPerLang);
     }
 
