@@ -633,7 +633,7 @@ var setDefaultLang = (langProp) => {
         renderVoicesList(voicesPerLang);
     }
 
-    let opt = LANG_SELECT.querySelector(`option`);
+    let opt = LANG_SELECT.querySelectorAll(`OPTION`)[0];
 
     if (!opt) {
         const noSpeechMsg = {
