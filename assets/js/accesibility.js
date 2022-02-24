@@ -565,26 +565,27 @@ let timeOut = null
 
 
 function renderVoicesList(voices) {
+
     const LANG_SELECT = document.getElementById("voices-select");
+    LANG_SELECT.innerHTML = ""
+    console.log("voces a renderizar", voices);
     voices.forEach((voi, idx) => {
-        const voiKey = voi.lang.split("-")[0].toLowerCase();
-        if (voiKey && voiKey.indexOf("es") > -1 || voiKey.indexOf("en") > -1) {
-            const OPT = document.createElement("option");
-            OPT.innerText = voi.name.toString().toUpperCase();
-            OPT.setAttribute("value", voi.lang + (idx + 1));
-            OPT.setAttribute("style", "max-width:100%; overflow: hidden;");
-            LANG_SELECT.appendChild(OPT);
-        }
+        const OPT = document.createElement("option");
+        OPT.innerText = voi.name.toString().toUpperCase();
+        OPT.setAttribute("value", voi.lang + (idx + 1));
+        OPT.setAttribute("style", "max-width:100%; overflow: hidden;");
+        LANG_SELECT.appendChild(OPT);
     })
 
 }
 
 function handleVoiceChange(ev) {
+    console.log("voice changed", ev);
     document.getElementById("voices-select").value = ev.target.value;
     const val = ev.target.value;
     if (!val) return;
     const voiceFounded = _voices.find((vo, idx) => (vo.lang + (idx + 1)) == val);
-    if (!voiceFounded) return setDefaultLang();
+    if (!voiceFounded) return;
     _voiceSelected = voiceFounded;
     saveAccesibility(localStorage.getItem(lsAccesibleName), "vLangSelected", {
         default: voiceFounded.default,
@@ -611,6 +612,7 @@ function loadLSVoiceSelected() {
         });
         if (!voiceFounded) return setDefaultLang();
         handleVoiceChange({ target: { value: (voiceFounded.lang + (indexF + 1)) } })
+        console.log("invocando voices LS");
     } catch (error) {
         setDefaultLang();
     }
@@ -618,15 +620,20 @@ function loadLSVoiceSelected() {
 }
 
 var setDefaultLang = (langProp) => {
+
     const LANG_SELECT = document.getElementById("voices-select");
 
-    alert("Cambiando lang desde: " + lang + " a: " + langProp)
 
     if (!glangs.includes(lang)) lang = 'es';
 
-    if (langProp) lang = langProp;
+    if (langProp) {
+        alert("Cambiando lang desde: " + lang + " a: " + langProp)
+        lang = langProp;
+        const voicesPerLang = _voices.filter(vo => vo.lang.indexOf(`${lang}-`) > -1)
+        renderVoicesList(voicesPerLang);
+    }
 
-    let opt = LANG_SELECT.querySelector(`option[value*='${lang}-']`); //LANG_SELECT.querySelector("option[value^='es-MX']");
+    let opt = LANG_SELECT.querySelector(`option`);
 
     if (!opt) {
         const noSpeechMsg = {
@@ -636,6 +643,8 @@ var setDefaultLang = (langProp) => {
         alert(noSpeechMsg[lang])
         return
     }
+
+    LANG_SELECT.value = opt.getAttribute("value")
 
     alert("Lang encontrado: " + opt.getAttribute("value"))
 
@@ -647,7 +656,7 @@ function loadVoicesWhenAvailable(onComplete = () => {}) {
     const voices = _speechSynth.getVoices()
     if (voices.length !== 0) {
         _voices = voices
-        renderVoicesList(_voices)
+        renderVoicesList(_voices.filter(vo => vo.lang.indexOf(`${lang}-`) > -1))
         loadLSVoiceSelected();
         //selectedAllLinks();
         onComplete()
