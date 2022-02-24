@@ -11,59 +11,89 @@ let tourElements = []
 // dark = light
 
 const options = [{
-        name: "Aumentar texto",
+        name: {
+            es: "Aumentar texto",
+            en: "Increase text"
+        },
         icon: "fas fa-search-plus",
         action: increaseText
     },
     {
-        name: "Disminuir texto",
+        name: {
+            en: "Decrease text",
+            es: "Disminuir texto"
+        },
         icon: "fas fa-search-minus",
         action: decreaseText
     },
     {
-        name: "Escala de grises",
+        name: {
+            es: "Escala de grises",
+            en: "Grayscale"
+        },
         icon: "fas fa-adjust",
         dataName: "grayScale",
         action: grayScale
     },
     {
-        name: "Alto contraste",
+        name: {
+            es: "Alto contraste",
+            en: "High contrast"
+        },
         icon: "fas fa-sun",
         dataName: "highContrast",
         action: highContrast
     },
     {
-        name: "Estilo ligero",
+        name: {
+            es: "Estilo ligero",
+            en: "Light style"
+        },
         icon: "fas fa-lightbulb",
         dataName: "negativeContrast",
         action: negativeContrast
     },
     {
-        name: "Subrayar enlaces",
+        name: {
+            es: "Subrayar enlaces",
+            en: "Underline links"
+        },
         icon: "fas fa-underline",
         dataName: "underlineLinks",
         action: underlineLinks
     },
     {
-        name: "Fuente legible",
+        name: {
+            es: "Fuente legible",
+            en: "Readable font"
+        },
         icon: "fas fa-font",
         dataName: "readableFont",
         action: readableFont
     },
     {
-        name: "Audio parlante",
+        name: {
+            es: "Audio parlante",
+            en: "Speaking audio"
+        },
         icon: "fas fa-volume-up",
         dataName: "talkingAudio",
         action: talkingAudio
     },
     {
-        name: "Tour automático",
+        name: {
+            es: "Tour automático",
+            en: "Automatic tour"
+        },
         icon: "fa fa-caret-square-o-right",
         dataName: "tourPage",
         action: tourPage
     },
     {
-        name: "Restablecer",
+        name: {
+            es: "Restablecer",
+            en: "Restore"
+        },
         icon: "fas fa-undo-alt",
         action: restore
     },
@@ -116,8 +146,10 @@ function renderAccesibilityList() {
         const I = document.createElement("i");
         const SPAN = document.createElement("span");
         LI.setAttribute("data-name", opt.dataName || opt.name)
+        LI.setAttribute("data-es", opt.name['es'])
+        LI.setAttribute("data-en", opt.name['en'])
         I.setAttribute("class", opt.icon);
-        SPAN.innerText = opt.name;
+        SPAN.innerText = opt.name[lang];
         LI.appendChild(I);
         LI.appendChild(SPAN);
         LI.setAttribute("role", "listitem");
@@ -225,6 +257,7 @@ function talkingAudio(ev, el) {
     document.body.classList.toggle("voice-active");
     validateClass("voice-active", el || this)
     if ([...document.body.classList].indexOf("voice-active") > -1) {
+        disableTourActive()
         selectedAllLinks()
         voiceActive = true;
     } else {
@@ -243,20 +276,21 @@ function disableVoiceActive() {
 }
 
 let cloneArrElements = []
+let tourActive = false
 
 function disableTourActive(paused) {
-    voiceActive = false;
+
+
     if (timeOutSpeech) clearTimeout(timeOutSpeech)
 
     if (!paused) {
         document.body.classList.remove("tour-active");
         document.querySelectorAll(".accesibility-bar > li")[8].classList.remove("active-item");
-        speechSynthesis.cancel();
         cloneArrElements = []
+        speechSynthesis.cancel();
     }
-    /* else {
-           speechSynthesis.pause();
-       } */
+    tourActive = false
+    voiceActive = false;
 }
 
 
@@ -267,6 +301,8 @@ function resumeTour() {
         return
     }
     voiceActive = true;
+    tourActive = true;
+
     document.body.classList.add("tour-active");
     document.querySelectorAll(".accesibility-bar > li")[8].classList.add("active-item");
 
@@ -283,6 +319,7 @@ function tourPage(ev) {
     validateClass("tour-active", ev.currentTarget || this);
     if ([...document.body.classList].indexOf("tour-active") > -1) {
         voiceActive = true;
+        tourActive = true;
     } else {
         disableTourActive()
         return;
@@ -290,7 +327,7 @@ function tourPage(ev) {
     const firstElement = {
         scroll: 0,
         el: document.querySelector(".app-accesibility-overlay"),
-        text: gLang == 'en' ?
+        text: lang == 'en' ?
             "Hello, you are about to start the automatic tour of the page. If you want to cancel the tour, press the automatic tour button again" : "Hola, estás a punto de iniciar el tour automático por la pagina. Si deseas cancelar el tour vuelve a presionar en el botón de tour automático.\n"
     }
     document.querySelectorAll(".scroll-item").forEach(el => {
@@ -307,7 +344,7 @@ function tourPage(ev) {
 function playElementsTour(elements) {
     cloneArrElements = [...elements]
     if (timeOutSpeech) clearTimeout(timeOutSpeech)
-    if (!voiceActive) return;
+    if (!voiceActive || !tourActive) return;
     if (elements && elements.length == 0) {
         // tour finalizado
         disableTourActive()
@@ -568,11 +605,10 @@ function renderVoicesList(voices) {
 
     const LANG_SELECT = document.getElementById("voices-select");
     LANG_SELECT.innerHTML = ""
-    console.log("voces a renderizar", voices);
     voices.forEach((voi, idx) => {
         const OPT = document.createElement("option");
         OPT.innerText = voi.name.toString().toUpperCase();
-        OPT.setAttribute("value", voi.lang + (idx + 1));
+        OPT.setAttribute("value", voi.name);
         OPT.setAttribute("style", "max-width:100%; overflow: hidden;");
         LANG_SELECT.appendChild(OPT);
     })
@@ -580,12 +616,13 @@ function renderVoicesList(voices) {
 }
 
 function handleVoiceChange(ev) {
-    console.log("voice changed", ev);
     document.getElementById("voices-select").value = ev.target.value;
     const val = ev.target.value;
     if (!val) return;
-    const voiceFounded = _voices.find((vo, idx) => (vo.lang + (idx + 1)) == val);
-    if (!voiceFounded) return;
+    const voiceFounded = getVoicesPerLang().find(vo => vo.name == val);
+    if (!voiceFounded) {
+        return
+    };
     _voiceSelected = voiceFounded;
     saveAccesibility(localStorage.getItem(lsAccesibleName), "vLangSelected", {
         default: voiceFounded.default,
@@ -602,17 +639,11 @@ function loadLSVoiceSelected() {
         if (!obj) return setDefaultLang();
         if (!obj.vLangSelected) return setDefaultLang();
         if (typeof obj.vLangSelected != "object") return setDefaultLang();
-        const voiceLS = obj.vLangSelected;
+        const voiceLS = obj.name;
         let indexF = -1;
-        const voiceFounded = _voices.find((vo, idx) => {
-            if (vo.lang == voiceLS.lang && vo.voiceURI == voiceLS.voiceURI) {
-                indexF = idx;
-                return true;
-            }
-        });
+        const voiceFounded = _voices.find(vo => vo.name == voiceLS);
         if (!voiceFounded) return setDefaultLang();
         handleVoiceChange({ target: { value: (voiceFounded.lang + (indexF + 1)) } })
-        console.log("invocando voices LS");
     } catch (error) {
         setDefaultLang();
     }
@@ -626,10 +657,11 @@ var setDefaultLang = (langProp) => {
     if (!glangs.includes(lang)) lang = 'es';
 
     if (langProp) {
-        alert("Cambiando lang desde: " + lang + " a: " + langProp)
+        document.querySelectorAll(".accesibility-bar > li").forEach(li => li.querySelector("span").innerHTML = li.getAttribute(`data-${langProp}`))
+        disableVoiceActive()
+        disableTourActive()
         lang = langProp;
-        const voicesPerLang = _voices.filter(vo => vo.lang.indexOf(`${lang}`) > -1)
-        alert("Voices: " + JSON.stringify(voicesPerLang.map(vo => vo.lang).join(" ")))
+        const voicesPerLang = getVoicesPerLang()
         renderVoicesList(voicesPerLang);
     }
 
@@ -646,9 +678,11 @@ var setDefaultLang = (langProp) => {
 
     LANG_SELECT.value = opt.getAttribute("value")
 
-    alert("Lang encontrado: " + opt.getAttribute("value"))
-
     handleVoiceChange({ target: { value: opt.getAttribute("value") } })
+}
+
+function getVoicesPerLang() {
+    return _voices.filter(v => v.lang.indexOf(lang) > -1)
 }
 
 function loadVoicesWhenAvailable(onComplete = () => {}) {
@@ -656,7 +690,7 @@ function loadVoicesWhenAvailable(onComplete = () => {}) {
     const voices = _speechSynth.getVoices()
     if (voices.length !== 0) {
         _voices = voices
-        renderVoicesList(_voices.filter(vo => vo.lang.indexOf(`${lang}`) > -1))
+        renderVoicesList(getVoicesPerLang())
         loadLSVoiceSelected();
         //selectedAllLinks();
         onComplete()
@@ -721,10 +755,16 @@ function speak(text) {
         if (timeOut) {
             clearTimeout(timeOut);
         };
-        timeOut = setTimeout(() => playByText(isMobile() ? "es-ES" : "es-MX", text), 300);
+        timeOut = setTimeout(() => {
+            playByText(isMobile() ? "es-ES" : "es-MX", text)
+                .then(() => {})
+                .catch(() => {})
+        }, 300);
         return;
     }
     playByText(isMobile() ? "es-ES" : "es-MX", text)
+        .then(() => {})
+        .catch(() => {})
 }
 
 /* document.addEventListener('DOMContentLoaded', function() {
