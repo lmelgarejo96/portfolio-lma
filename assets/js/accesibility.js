@@ -358,6 +358,7 @@ function playElementsTour(elements) {
         currentElement.el.classList.add("tour-item-active")
         currentElement.el.classList.remove("scroll-item")
         currentElement.el.classList.remove("active-top")
+        currentElement.el.classList.remove("short-description")
         currentElement.el.classList.remove("d-none")
     }
 
