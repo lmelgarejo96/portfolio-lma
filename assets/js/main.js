@@ -53,6 +53,7 @@ function initVue(json) {
         },
         observer: null,
         hamburger: null,
+        accesibilityTool: null,
         menu: null,
         main: null,
         nav: null
@@ -65,7 +66,10 @@ function initVue(json) {
             scroll(val) { val > 50 ? this.nav.classList.add("nav-shadow") : this.nav.classList.remove("nav-shadow") },
             lang(val) {
                 this.$refs.languageToogle.checked = val === 'es'
-                setDefaultLang(val) // from window.setDefaultLang
+                this.accesibilityTool.setLanguage(val)
+                setTimeout(() => this.loadIndexAnimation(), 200);
+                setTimeout(() => this.accesibilityTool.setTourElements(this.getTourElements()), 1200);
+
             }
         },
         created() { this.seeLessProjects() },
@@ -83,7 +87,8 @@ function initVue(json) {
             this.observer = new IntersectionObserver(this.handleIntersection, this.optionsIntersection);
             document.querySelectorAll(".scroll-item").forEach(el => this.observer.observe(el))
 
-            executeAccesibility(this.getTourElements())
+            this.accesibilityTool = new AccesibilityTool(this.getTourElements());
+            this.accesibilityTool.setLanguage(this.lang)
 
             this.loadIndexAnimation()
 
@@ -136,6 +141,9 @@ function initVue(json) {
                 const navElements = document.querySelectorAll(".app-menu li, .app-menu .switch")
                 const accesibilityElement = document.querySelector(".accesibility-activator")
 
+                loaderElement.classList.remove("no-active")
+                this.closeHamburger()
+
                 t1.from(loaderElement, .5, { opacity: 1, ease: Expo.easeInOut, delay: .15, onComplete: () => loader.classList.add("no-active") })
                     .staggerFrom([brandElement, hamburgerElement, ...navElements], .75, { y: -25, opacity: 0, ease: Expo.easeInOut }, 0.1)
                     .staggerFrom([...headerElements], .65, { y: 15, opacity: 0, ease: Expo.easeInOut }, 0.1)
@@ -164,8 +172,6 @@ function initVue(json) {
                     document.querySelectorAll("#contact .app-btn-link"),
                     document.querySelectorAll("footer li a"),
                     document.querySelectorAll("footer .copyright")
-
-
                 ]
             }
         }

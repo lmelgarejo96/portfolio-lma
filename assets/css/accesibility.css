@@ -241,3 +241,9 @@ body.tour-active .app-wrapper .tour-item-active * {
     position: relative;
     z-index: 200;
 }
+
+body.tour-active.dark .app-wrapper .tour-item-active,
+body.tour-active.dark .app-wrapper .tour-item-active * {
+    color: #fafafa;
+    fill: #fafafa;
+}

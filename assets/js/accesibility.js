@@ -1,12 +1,12 @@
-var lang = localStorage.getItem("lang") || "es";
-var glangs = ["es", "en"]
+let lang = localStorage.getItem("lang") || "es";
+let glangs = ["es", "en"]
+let tourElements = []
 let lsAccesibleName = "accesibilityOPTS";
 let timeOutBar = null;
 let timeOutSpeech = null;
 let zoom = 0;
 let voices = [];
 let voiceActive = false;
-let tourElements = []
 
 // dark = light
 const activator = {
@@ -371,12 +371,18 @@ function playElementsTour(elements) {
     newElements.shift()
     playByText("es-ES", currentElement.text, () => {})
         .then(() => {
+            if (currentElement.onComplete) {
+                currentElement.onComplete()
+            }
             timeOutSpeech = setTimeout(() => {
                 if (currentElement.el) currentElement.el.classList.remove("tour-item-active")
                 playElementsTour(newElements)
             }, 500);
         })
         .catch(() => {
+            if (currentElement.onComplete) {
+                currentElement.onComplete()
+            }
             timeOutSpeech = setTimeout(() => {
                 if (currentElement.el) currentElement.el.classList.remove("tour-item-active")
                 playElementsTour(newElements)
@@ -680,11 +686,11 @@ var setDefaultLang = (langProp) => {
     let opt = LANG_SELECT.querySelectorAll("option")[0];
 
     if (!opt) {
-        const noSpeechMsg = {
-            en: "The Browser does not support the Web Speech api in the selected language",
-            es: "El Navegador no soporta el api Weeb Speech en el idioma seleccionado"
-        }
-        alert(noSpeechMsg[lang])
+        //const noSpeechMsg = {
+        //    en: "The Browser does not support the Web Speech api in the selected language",
+        //    es: "El Navegador no soporta el api Weeb Speech en el idioma seleccionado"
+        //}
+        //alert(noSpeechMsg[lang])
         return
     }
 
@@ -694,6 +700,7 @@ var setDefaultLang = (langProp) => {
 }
 
 function getVoicesPerLang() {
+    if (!_voices) return []
     return _voices.filter(v => v.lang.indexOf(lang) > -1)
 }
 
@@ -812,4 +819,22 @@ function handleVisibilityChange(ev) {
     } else {
         resumeTour()
     }
+}
+
+
+
+class AccesibilityTool {
+
+    constructor(props) {
+        executeAccesibility(props)
+    }
+
+    setLanguage(langParam) {
+        setDefaultLang(langParam)
+    }
+
+    setTourElements(elements) {
+        tourElements = elements;
+    }
+
 }
