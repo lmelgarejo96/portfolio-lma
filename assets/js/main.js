@@ -65,9 +65,9 @@ function initVue(json) {
         watch: {
             scroll(val) { val > 50 ? this.nav.classList.add("nav-shadow") : this.nav.classList.remove("nav-shadow") },
             lang(val) {
+                this.loadIndexAnimation()
                 this.$refs.languageToogle.checked = val === 'es'
                 this.accesibilityTool.setLanguage(val)
-                setTimeout(() => this.loadIndexAnimation(), 200);
                 setTimeout(() => this.accesibilityTool.setTourElements(this.getTourElements()), 1200);
 
             }
