@@ -623,17 +623,16 @@ var setDefaultLang = (langProp) => {
 
     const LANG_SELECT = document.getElementById("voices-select");
 
-
     if (!glangs.includes(lang)) lang = 'es';
 
     if (langProp) {
         alert("Cambiando lang desde: " + lang + " a: " + langProp)
         lang = langProp;
-        const voicesPerLang = _voices.filter(vo => vo.lang.indexOf(`${lang}-`) > -1)
+        const voicesPerLang = _voices.filter(vo => vo.lang.indexOf(`${lang}`) > -1)
         renderVoicesList(voicesPerLang);
     }
 
-    let opt = LANG_SELECT.querySelectorAll(`OPTION`)[0];
+    let opt = LANG_SELECT.querySelectorAll("option")[0];
 
     if (!opt) {
         const noSpeechMsg = {
@@ -656,7 +655,7 @@ function loadVoicesWhenAvailable(onComplete = () => {}) {
     const voices = _speechSynth.getVoices()
     if (voices.length !== 0) {
         _voices = voices
-        renderVoicesList(_voices.filter(vo => vo.lang.indexOf(`${lang}-`) > -1))
+        renderVoicesList(_voices.filter(vo => vo.lang.indexOf(`${lang}`) > -1))
         loadLSVoiceSelected();
         //selectedAllLinks();
         onComplete()
