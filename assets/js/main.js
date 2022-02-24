@@ -23,20 +23,22 @@ function gtag() {
     dataLayer.push(arguments);
 }
 
-Particles.init({
-    selector: ".background-particles",
-    color: ["#4dc9ac", "#ff0266", "#4dc9ac"],
-    maxParticles: 200,
-    connectParticles: false,
-    responsive: [{
-        breakpoint: 768,
-        options: {
-            color: ["#4dc9ac", "#ff0266", "#4dc9ac"],
-            maxParticles: 43,
-            connectParticles: false
-        }
-    }]
-});
+function initParticles() {
+    Particles.init({
+        selector: ".background-particles",
+        color: ["#4dc9ac", "#ff0266", "#4dc9ac"],
+        maxParticles: 200,
+        connectParticles: false,
+        responsive: [{
+            breakpoint: 768,
+            options: {
+                color: ["#4dc9ac", "#ff0266", "#4dc9ac"],
+                maxParticles: 43,
+                connectParticles: false
+            }
+        }]
+    });
+}
 
 
 function initVue(json) {
@@ -91,6 +93,8 @@ function initVue(json) {
             this.accesibilityTool.setLanguage(this.lang)
 
             this.loadIndexAnimation()
+
+
 
             gtag('js', new Date());
             gtag('config', 'G-HHYSL9LMYC');
@@ -148,7 +152,7 @@ function initVue(json) {
                     .staggerFrom([brandElement, hamburgerElement, ...navElements], .75, { y: -25, opacity: 0, ease: Expo.easeInOut }, 0.1)
                     .staggerFrom([...headerElements], .65, { y: 15, opacity: 0, ease: Expo.easeInOut }, 0.1)
                     .staggerFrom(accesibilityElement, .2, { left: "-100%", opacity: 0, ease: Expo.easeInOut }, .1)
-                    .from(accesibilityElement, .45, { x: -100, opacity: 0, ease: Expo.easeInOut, delay: .15 })
+                    .from(accesibilityElement, .45, { x: -100, opacity: 0, ease: Expo.easeInOut, delay: .15, onComplete: () => initParticles() })
 
                 t1.play()
             },
