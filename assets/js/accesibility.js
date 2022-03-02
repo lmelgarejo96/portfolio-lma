@@ -9,9 +9,9 @@ let voices = [];
 let voiceActive = false;
 
 // dark = light
-const activator = {
+const activatorText = {
     en: "Accessibility tools",
-    es: "herramientas de accesibilidad"
+    es: "Herramientas de accesibilidad"
 }
 const options = [{
         name: {
@@ -125,7 +125,7 @@ function renderAccesibilityList() {
     UL.setAttribute("role", "list");
     const ACTIVATOR = document.createElement("button");
     ACTIVATOR.setAttribute("role", "button");
-    ACTIVATOR.setAttribute("aria-label", activator[lang]);
+    ACTIVATOR.setAttribute("title", activatorText[lang]);
     ACTIVATOR.setAttribute("aria-pressed", "false");
     ACTIVATOR.classList.add("accesibility-activator");
     if (isMobile()) {
@@ -329,7 +329,7 @@ function tourPage(ev) {
         scroll: 0,
         el: document.querySelector(".app-accesibility-overlay"),
         text: lang == 'en' ?
-            "Hello, you are about to start the automatic tour of the page. If you want to cancel the tour, press the automatic tour button again" : "Hola, estás a punto de iniciar el tour automático por la pagina. Si deseas cancelar el tour vuelve a presionar en el botón de tour automático.\n"
+            "Hello, you are about to start the automatic tour of the page. If you want to cancel the tour, press the automatic tour button again" : "Hola, estás a punto de iniciar el tour automático por la página. Si deseas cancelar el tour vuelve a presionar en el botón de tour automático.\n"
     }
     document.querySelectorAll(".scroll-item").forEach(el => {
         el.classList.remove("scroll-item");
