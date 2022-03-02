@@ -491,7 +491,7 @@ main {
 }
 
 @media screen and (min-width: 600px) {
-    .section-container:first-of-type {
+    header .section-container {
         padding-bottom: 150px;
     }
 }
@@ -745,7 +745,7 @@ main {
     z-index: -1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 927px) {
     .about-inner {
         display: block;
     }
