@@ -101,7 +101,26 @@
                 "es": "Ver menos"
             }
         },
-        "timeline": [{
+        "timeline": [
+            {
+                "jobTitle": {
+                    "en": "FullStack Developer",
+                    "es": "Desarrollador FullStack"
+                },
+                "business": {
+                    "en": "Polysistemas",
+                    "es": "Polysistemas"
+                },
+                "date": {
+                    "en": "May. 2022 - present",
+                    "es": "May. 2022 - actualidad"
+                },
+                "description": {
+                    "en": "At Polysistemas I have the opportunity to work as a MEVN Fullstack Developer in a document management project for the BBVA company.\nSome of the functions I perform:\n•\tSupport in the construction of the api rest in Node.js + Typescript\n• \tConstruction of the Frontend architecture.\n•\tConstruction of the interfaces with vue.js in its version 3.2.\n•\tConstruction of a custom PDF viewer with Angular.\n•\tIntegration of the frontend with the built rest services. \n•\tIntegration of websockets in the frontend for notification management.",
+                    "es": "En Polysistemas tengo la oportunidad de trabajar como Desarrollador Fullstack MEVN en un proyecto de gestión documental para la empresa BBVA.\nAlgunas de las funciones que cumplo:\n•\tApoyo en la construcción del api rest en Node.js + Typescript\n•\tConstrucción de la arquitectura Frontend.\n•\tConstrucción de las interfaces con vue.js en su versión 3.2.\n•\tConstrucción de un visor PDF personalizado con Angular.\n•\tIntegración del frontend con los servicios rest construidos.\n•\tIntegración de websockets en el frontend para la gestión de notificaciones."
+                }
+            },
+            {
                 "jobTitle": {
                     "en": "FullStack Developer",
                     "es": "Desarrollador FullStack"
@@ -111,8 +130,8 @@
                     "es": "EMILIMA S.A"
                 },
                 "date": {
-                    "en": "Sep. 2020 - present",
-                    "es": "Sep. 2020 - actualidad"
+                    "en": "Sep. 2020 - May. 2022",
+                    "es": "Set. 2020 - May. 2022"
                 },
                 "description": {
                     "en": "At EMILIMA I have the opportunity to work as a FullStack Developer of Web, desktop and mobile technology solutions, under the MEVN stacks (Node.js, MongoDB and Vue.js together with Nuxt.js), MERN (Node.js, MongoDB and React/ React Native) and finally the PHP stack (HTML5, Bootstrap, CSS, Javascript, PHP, MySQL).\n\nSome of the functions I fulfill:\n• Construction of API's Rest in Node.js(Express) and PHP\n• API documentation\n• Development of desktop applications with Electron.js\n• Construction of web interfaces using Javascript technologies such as Vue.js, React and Nuxt.js.",
