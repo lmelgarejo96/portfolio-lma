@@ -845,7 +845,16 @@ ul.rb li p {
     font-weight: 400;
 }
 
-ul.rb li.short-description p {
+.position-item > p.short-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--short-lines-text);
+    height: calc(var(--short-lines-text) * 1.8);
+    overflow-y: hidden;
+    transition: height ease-in-out .25s;
+}
+
+/* ul.rb li > p.short-description {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: var(--short-lines-text);
@@ -855,13 +864,30 @@ ul.rb li.short-description p {
     transition: height ease-in-out .25s;
 }
 
-ul.rb li.short-description p a.see-more,
-ul.rb li p a.see-less {
+ul.rb li > p.short-description:first-of-type ~ p > a.see-more,
+ul.rb li > p:not(.short-description):first-of-type ~ p > a.see-less {
     display: inline-block;
 }
 
-ul.rb li p a.see-more,
-ul.rb li.short-description p a.see-less {
+ul.rb li > p.short-description:first-of-type ~ p > a.see-less,
+ul.rb li > p:not(.short-description):first-of-type ~ p > a.see-more
+{
+    display: none;
+} */
+
+.position-item > p.short-description ~ p.item-toogle-btn > a.see-more {
+    display: inline-block;
+}
+
+.position-item > p.short-description ~ p.item-toogle-btn > a.see-less {
+    display: none;
+}
+
+.position-item > p:not(.short-description) ~ p.item-toogle-btn > a.see-less {
+    display: inline-block;
+}
+
+.position-item > p:not(.short-description) ~ p.item-toogle-btn > a.see-more {
     display: none;
 }
 

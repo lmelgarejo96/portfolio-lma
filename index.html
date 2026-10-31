@@ -17,21 +17,25 @@
     <link rel="apple-touch-icon" sizes="144x144" type="image/png" href="assets/img//icons/logo-144x144.png">
     <link rel="apple-touch-icon" sizes="250x250" type="image/png" href="assets/img//icons/logo-250x250.png">
 
-    <meta name="description" content="Luis Melgarejo es un desarrollador de software y un estudiante de décimo ciclo de la carrera Ingeniería de Sistemas e Informática">
-    <meta name="keywords" content="Luis melgarejo alarcon, desarrollador, software, fullstack, programador, melgarejo, alarcon" />
+    <meta name="description"
+        content="Luis Melgarejo es un desarrollador de software y un estudiante de décimo ciclo de la carrera Ingeniería de Sistemas e Informática">
+    <meta name="keywords"
+        content="Luis melgarejo alarcon, desarrollador, software, fullstack, programador, melgarejo, alarcon" />
     <meta name="author" content="Luis Melgarejo Alarcón" />
     <meta name="robots" content="index" />
     <meta name="image" content="https://luismelgarejo.com/assets/img/hackathon.jpg">
 
     <meta property="og:title" content="Luis Melgarejo">
-    <meta property="og:description" content="Luis Melgarejo es un desarrollador de software y un estudiante de décimo ciclo de la carrera Ingeniería de Sistemas e Informática">
+    <meta property="og:description"
+        content="Luis Melgarejo es un desarrollador de software y un estudiante de décimo ciclo de la carrera Ingeniería de Sistemas e Informática">
     <meta property="og:image" content="https://luismelgarejo.com/assets/img/hackathon.jpg">
     <meta property="og:url" content="https://luismelgarejo.com/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@lmelgarejo96">
     <meta name="twitter:title" content="Luis Melgarejo">
-    <meta name="twitter:description" content="Luis Melgarejo es un desarrollador de software y un estudiante de décimo ciclo de la carrera Ingeniería de Sistemas e Informática">
+    <meta name="twitter:description"
+        content="Luis Melgarejo es un desarrollador de software y un estudiante de décimo ciclo de la carrera Ingeniería de Sistemas e Informática">
     <meta name="twitter:image" content="https://luismelgarejo.com/assets/img/hackathon.jpg">
 
     <link rel="stylesheet" href="assets/css/main.css">
@@ -53,17 +57,18 @@
         <nav class="app-nav">
             <div class="app-container-fluid navbar-container">
                 <a href="/" class="app-brand loader" title="Logo luismelgarejo.com">
-                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="239.000000pt" height="291.000000pt" viewBox="0 0 239.000000 291.000000" preserveAspectRatio="xMidYMid meet">
-                    <g transform="translate(0.000000,291.000000) scale(0.100000,-0.100000)"
-                    fill="#000000" stroke="none">
-                    <path d="M971 2736 l-81 -84 0 -916 0 -916 480 0 c264 0 480 -4 480 -8 0 -4
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="239.000000pt" height="291.000000pt"
+                        viewBox="0 0 239.000000 291.000000" preserveAspectRatio="xMidYMid meet">
+                        <g transform="translate(0.000000,291.000000) scale(0.100000,-0.100000)" fill="#000000"
+                            stroke="none">
+                            <path d="M971 2736 l-81 -84 0 -916 0 -916 480 0 c264 0 480 -4 480 -8 0 -4
                     -28 -36 -63 -70 l-63 -62 -492 0 -492 0 0 899 c0 495 -4 902 -8 905 -10 6
                     -475 -459 -491 -491 -8 -15 -11 -283 -11 -916 0 -748 2 -896 14 -906 10 -8
                     174 -11 615 -9 l601 3 87 88 88 87 -613 0 -612 0 0 793 0 793 68 67 c37 37 71
                     67 75 67 4 0 7 -351 7 -780 l0 -780 617 0 617 0 243 242 c134 133 243 246 243
                     250 0 5 -272 8 -605 8 l-605 0 0 904 c0 498 -4 907 -9 910 -4 3 -45 -32 -90
-                    -78z"/>
-                    </g>
+                    -78z" />
+                        </g>
                     </svg>
                 </a>
                 <ol class="app-menu">
@@ -71,8 +76,10 @@
                         <a @click="closeHamburger" :href="item.href" class="app-link">{{ item.name[lang] }}</a>
                     </li>
 
-                    <div class="switch" :aria-label="lang == 'es' ? switchLang.spanish[lang] : switchLang.english[lang]">
-                        <input id="language-toggle" ref="languageToogle" @change="onLanguageChange" class="check-toggle check-toggle-round-flat" type="checkbox">
+                    <div class="switch"
+                        :aria-label="lang == 'es' ? switchLang.spanish[lang] : switchLang.english[lang]">
+                        <input id="language-toggle" ref="languageToogle" @change="onLanguageChange"
+                            class="check-toggle check-toggle-round-flat" type="checkbox">
                         <label for="language-toggle"></label>
                         <span class="off readable">ES</span>
                         <span class="on readable">EN</span>
@@ -98,7 +105,8 @@
                         <span>{{ headerInfo.title.country[lang] }}</span>
                     </h1>
                     <p class="app-description pre-wrapp">{{ headerInfo.description[lang] }}</p>
-                    <a href="./assets/CV_LUIS_MELGAREJO.pdf" target="_blank" class="app-btn-link">{{ headerInfo.resume[lang] }}</a>
+                    <a href="./assets/CV_LUIS_MELGAREJO.pdf" target="_blank" class="app-btn-link">{{
+                        headerInfo.resume[lang] }}</a>
                     <a :href="`mailto:${mail}`" class="app-btn-link">{{ headerInfo.contact[lang] }}</a>
                 </div>
 
@@ -111,7 +119,8 @@
                         <div v-html="aboutSection.content[lang]" class="resume-container scroll-item"></div>
                         <div class="img-about" title="Luis Melgarejo">
                             <div class="wrapper-img scroll-item">
-                                <img decoding="async" loading="lazy" src="assets/img/about.png" draggable="false" alt="Luis Melgarejo img">
+                                <img decoding="async" loading="lazy" src="assets/img/about.png" draggable="false"
+                                    alt="Luis Melgarejo img">
                             </div>
                         </div>
                     </div>
@@ -125,17 +134,51 @@
                         <div class="experience-list">
                             <div class="rb-container">
                                 <ul class="rb">
-                                    <li class="rb-item short-description scroll-item" v-for="(exp, idx) in expSection.timeline" :ref="`expLi${idx}`">
-                                        <h4 class="item-title">{{ exp.jobTitle[lang] }}</h4>
-                                        <span class="item-subtitle readable">{{ exp.business[lang] }}</span>
-                                        <span class="timestamp readable">
-                                            {{ exp.date[lang] }}
-                                        </span>
-                                        <p class="pre-wrapp">{{ exp.description[lang] }}</p>
-                                        <p class="item-toogle-btn">
-                                            <a @click.prevent="removeShortDescription(`expLi${idx}`)" class="see-more" href="#">{{ expSection.timelineBtn.seeMore[lang] }}</a>
-                                            <a @click.prevent="addShortDescription(`expLi${idx}`)" class="see-less" href="#">{{ expSection.timelineBtn.seeLess[lang] }}</a>
-                                        </p>
+                                    <li class="rb-item scroll-item" v-for="(exp, idx) in expSection.timeline"
+                                        :ref="`exp-parent-li-${idx}`">
+                                        <h4 class="item-title">{{ exp.business[lang] }}</h4>
+
+                                        <template v-if="!exp.positions">
+                                            <div class="position-item">
+                                                <span class="item-subtitle readable">{{ exp.jobTitle[lang] }}</span>
+                                                <span class="timestamp readable">{{ exp.date[lang] }}</span>
+
+                                                <p class="pre-wrapp short-description" :ref="`exp-li-${idx}`">{{ exp.description[lang] }}</p>
+
+                                                <p v-if="exp.description[lang]" class="item-toogle-btn">
+                                                    <a @click.prevent="removeShortDescription(`exp-li-${idx}`)"
+                                                        class="see-more" href="#">
+                                                        {{ expSection.timelineBtn.seeMore[lang] }}
+                                                    </a>
+                                                    <a @click.prevent="addShortDescription(`exp-li-${idx}`)"
+                                                        class="see-less" href="#">
+                                                        {{ expSection.timelineBtn.seeLess[lang] }}
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </template>
+
+                                        <template v-else>
+                                            <div class="position-item" v-for="(position, idxPosition) in exp.positions"
+                                                :key="`pos-${idx}-${idxPosition}`">
+                                                <span class="item-subtitle readable">{{ position.title[lang] }}</span>
+                                                <span class="timestamp readable">{{ position.date[lang] }}</span>
+
+                                                <p class="pre-wrapp short-description"
+                                                    :ref="`exp-li-${idx}-${idxPosition}`">{{ position.description[lang] }}</p>
+
+                                                <p v-if="position.description[lang]" class="item-toogle-btn">
+                                                    <a @click.prevent="removeShortDescription(`exp-li-${idx}-${idxPosition}`)"
+                                                        class="see-more" href="#">
+                                                        {{ expSection.timelineBtn.seeMore[lang] }}
+                                                    </a>
+                                                    <a @click.prevent="addShortDescription(`exp-li-${idx}-${idxPosition}`)"
+                                                        class="see-less" href="#">
+                                                        {{ expSection.timelineBtn.seeLess[lang] }}
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </template>
                                     </li>
                                 </ul>
                             </div>
@@ -143,8 +186,10 @@
                         <div class="skills">
                             <h4 class="item-title scroll-item">{{ expSection.skills.title[lang] }}</h4>
                             <ul class="skills-list">
-                                <li v-for="(skill, idx) in expSection.skills.list" class="scroll-item" :aria-label="skill.name">
-                                    <img height="48" draggable="false" decoding="async" loading="lazy" class="skill-item" :src="`${skill.src}`" :alt="skill.name" :title="skill.name">
+                                <li v-for="(skill, idx) in expSection.skills.list" class="scroll-item"
+                                    :aria-label="skill.name">
+                                    <img height="48" draggable="false" decoding="async" loading="lazy"
+                                        class="skill-item" :src="`${skill.src}`" :alt="skill.name" :title="skill.name">
                                 </li>
                             </ul>
                         </div>
@@ -155,29 +200,51 @@
                 <div class="section-container">
                     <h2 class="app-section-title scroll-item">{{ projectsSection.title[lang] }}</h2>
                     <div class="projects-list">
-                        <div v-for="(project, idx) in projectsSection.list" :class="`project  scroll-item ${ idx > 5 && !isShowMoreProjects ? 'd-none' : ''}`">
+                        <div v-for="(project, idx) in projectsSection.list"
+                            :class="`project  scroll-item ${ idx > 5 && !isShowMoreProjects ? 'd-none' : ''}`">
                             <div class="project-img">
-                                <img decoding="async" loading="lazy" :src="project.coverImg" draggable="false" :alt="project.title[lang]">
+                                <img decoding="async" loading="lazy" :src="project.coverImg" draggable="false"
+                                    :alt="project.title[lang]">
                             </div>
                             <div class="project-content">
-                                <h3 class="project-title"><a :href="project.demoURL ? project.demoURL : project.repoURL" target="_blank" class="project-link">{{ project.title[lang] }}</a></h3>
+                                <h3 class="project-title"><a :href="project.demoURL ? project.demoURL : project.repoURL"
+                                        target="_blank" class="project-link">{{ project.title[lang] }}</a></h3>
                                 <p class="project-description">{{ project.description[lang] }}</p>
                                 <ul class="project-technologies">
                                     <li v-for="(t, i) in project.technologies"><span>{{ t }}</span></li>
                                 </ul>
                                 <div class="project-share">
-                                    <a v-if="project.repoURL" :href="project.repoURL" target="_blank" aria-label="repo URL" class="repo-url">
-                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" width="20" heigth="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    <a v-if="project.repoURL" :href="project.repoURL" target="_blank"
+                                        aria-label="repo URL" class="repo-url">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" width="20" heigth="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-github">
+                                            <title>GitHub</title>
+                                            <path
+                                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                            </path>
+                                        </svg>
                                     </a>
-                                    <a v-if="project.demoURL" :href="project.demoURL" target="_blank" aria-label="demo URL" class="demo-url">
-                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" width="20" heigth="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    <a v-if="project.demoURL" :href="project.demoURL" target="_blank"
+                                        aria-label="demo URL" class="demo-url">
+                                        <svg xmlns="http://www.w3.org/2000/svg" role="img" width="20" heigth="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-external-link">
+                                            <title>External Link</title>
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="btn-container-center">
-                        <a href="#" @click.prevent="isShowMoreProjects ?  seeLessProjects() : seeMoreProjects() " class="app-btn-link scroll-item">
+                        <a href="#" @click.prevent="isShowMoreProjects ?  seeLessProjects() : seeMoreProjects() "
+                            class="app-btn-link scroll-item">
                             {{ isShowMoreProjects ? projectsSection.btnLess[lang] : projectsSection.btnMore[lang] }}
                         </a>
                     </div>
@@ -186,20 +253,56 @@
             <section class="app-container padding-section" id="contact">
                 <div class="section-container last-container">
                     <h2 class="app-section-title contact-center scroll-item">{{ contactSection.title[lang] }}</h2>
-                    <div class="contact-subtitle scroll-item"><span class="heading alternate-light readable">{{ contactSection.subtitle[lang] }}</span></div>
+                    <div class="contact-subtitle scroll-item"><span class="heading alternate-light readable">{{
+                            contactSection.subtitle[lang] }}</span></div>
                     <p class="text-center message-contact scroll-item">{{ contactSection.message[lang] }}</p>
                     <div class="btn-container-center">
-                        <a :href="`mailto:${mail}`" class="app-btn-link scroll-item">{{ contactSection.btnContact[lang] }}</a>
+                        <a :href="`mailto:${mail}`" class="app-btn-link scroll-item">{{ contactSection.btnContact[lang]
+                            }}</a>
                     </div>
                 </div>
             </section>
             <footer>
                 <div class="socials">
                     <ul>
-                        <li><a :href="github" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></li>
-                        <li><a :href="linkedin" aria-label="Linkedin" rel="noopener noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><title>Linkedin</title><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></li>
-                        <li><a :href="instagram" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><title>Instagram</title><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></li>
-                        <li><a :href="twitter" aria-label="Twitter" rel="noopener noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><title>Twitter</title><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a></li>
+                        <li><a :href="github" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><svg
+                                    xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-github">
+                                    <title>GitHub</title>
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg></a></li>
+                        <li><a :href="linkedin" aria-label="Linkedin" rel="noopener noreferrer" target="_blank"><svg
+                                    xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-linkedin">
+                                    <title>Linkedin</title>
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg></a></li>
+                        <li><a :href="instagram" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><svg
+                                    xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-instagram">
+                                    <title>Instagram</title>
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg></a></li>
+                        <li><a :href="twitter" aria-label="Twitter" rel="noopener noreferrer" target="_blank"><svg
+                                    xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-twitter">
+                                    <title>Twitter</title>
+                                    <path
+                                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                    </path>
+                                </svg></a></li>
                     </ul>
                 </div>
                 <p class="copyright">Ⓒ Luis Melgarejo 2022</p>
@@ -209,17 +312,17 @@
 
     <div class="loader-page" id="loader">
         <div class="logo-splash">
-            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="239.000000pt" height="291.000000pt" viewBox="0 0 239.000000 291.000000" preserveAspectRatio="xMidYMid meet">
-            <g transform="translate(0.000000,291.000000) scale(0.100000,-0.100000)"
-            fill="#d5d8e0" stroke="none">
-            <path d="M971 2736 l-81 -84 0 -916 0 -916 480 0 c264 0 480 -4 480 -8 0 -4
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="239.000000pt" height="291.000000pt"
+                viewBox="0 0 239.000000 291.000000" preserveAspectRatio="xMidYMid meet">
+                <g transform="translate(0.000000,291.000000) scale(0.100000,-0.100000)" fill="#d5d8e0" stroke="none">
+                    <path d="M971 2736 l-81 -84 0 -916 0 -916 480 0 c264 0 480 -4 480 -8 0 -4
             -28 -36 -63 -70 l-63 -62 -492 0 -492 0 0 899 c0 495 -4 902 -8 905 -10 6
             -475 -459 -491 -491 -8 -15 -11 -283 -11 -916 0 -748 2 -896 14 -906 10 -8
             174 -11 615 -9 l601 3 87 88 88 87 -613 0 -612 0 0 793 0 793 68 67 c37 37 71
             67 75 67 4 0 7 -351 7 -780 l0 -780 617 0 617 0 243 242 c134 133 243 246 243
             250 0 5 -272 8 -605 8 l-605 0 0 904 c0 498 -4 907 -9 910 -4 3 -45 -32 -90
-            -78z"/>
-            </g>
+            -78z" />
+                </g>
             </svg>
         </div>
     </div>

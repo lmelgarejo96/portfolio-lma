@@ -4,7 +4,8 @@
     "linkedin": "https://www.linkedin.com/in/luis-alberto-melgarejo-alarc%C3%B3n-191370198/",
     "instagram": "https://www.instagram.com/lmelgarejo96/",
     "twitter": "https://twitter.com/lmelgarejo96",
-    "menuList": [{
+    "menuList": [
+        {
             "name": {
                 "en": "About me",
                 "es": "Acerca de mi"
@@ -32,7 +33,6 @@
             },
             "href": "#contact"
         }
-
     ],
     "switchLang": {
         "spanish": {
@@ -55,8 +55,8 @@
                 "es": "Luis Melgarejo."
             },
             "position": {
-                "en": "FullStack Developer",
-                "es": "Desarrollador FullStack"
+                "en": "Software Architect",
+                "es": "Arquitecto de Software"
             },
             "country": {
                 "en": "From Peru",
@@ -64,8 +64,8 @@
             }
         },
         "description": {
-            "en": "I am a graduate of Systems Engineering and Computer Science at the Technological University of Peru.\nI have experience in the development of web, desktop and mobile applications.",
-            "es": "Soy egresado de la carrera Ingeniería de Sistemas e Informática en la Universidad Tecnológica del Perú.\nCuento con experiencia en el desarrollo de aplicaciones web, desktop y mobile."
+            "en": "I hold a Bachelor's degree in Systems Engineering and Computer Science from the Technological University of Peru (UTP).\nI have experience in solution architecture and platform integration across Web, Desktop, and Mobile environments.",
+            "es": "Soy Bachiller en Ingeniería de Sistemas e Informática por la Universidad Tecnológica del Perú (UTP).\nCuento con experiencia en arquitectura de soluciones e integración de plataformas para entornos Web, Desktop y Mobile."
         },
         "resume": {
             "en": "Download my CV",
@@ -82,8 +82,8 @@
             "es": "Acerca de mi"
         },
         "content": {
-            "en": "<p>Hello! My name is Luis and I am a Peruvian software developer who has just completed his studies in Systems Engineering and IT at the Technological University of Peru.</p><p>I have experience as a Software Developer at the Web, Desktop and Mobile level, using technologies such as JavaScript (<a href='https://nodejs.org/es/' target='_blank'>NodeJs</a>, <a href='https: //vuejs.org/' target='_blank'>Vue.js</a>, <a href='https://es.reactjs.org/' target='_blank'>React</a>, <a href='https://angular.io/' target='_blank'>Angular</a> and <a href='https://reactnative.dev/' target='_blank'>React Native</a >), TypeScript, SQL(<a href='https://www.microsoft.com/es-es/sql-server' target='_blank'>SQL Server</a>, <a href='https: //www.mysql.com/' target='_blank'>MySQL</a>), NoSQL(<a href='https://www.mongodb.com/atlas/database' target='_blank'>Mongo DB</a>), C++(<a href='https://www.arduino.cc/' target='_blank'>Arduino</a>) and cloud deployment co mo <a href='https://www.digitalocean.com/' target='_blank'>DigitalOcean</a> and <a href='https://www.heroku.com/' target='_blank' >Heroku</a>.</p><p>I have always had an interest in working in a technological area that allows me to continue learning more about the technological world we inhabit every day.</p><p>My job objective is to demonstrate all my potential and skills acquired over several years of university education and my knowledge acquired in my previous jobs, apart from making an important objective for me, the vision of the company in the to work.</p>",
-            "es": "<p>Hola! Me llamo Luis y soy un Desarrollador de software peruano que acaba de culminar sus estudios de la carrera de Ingeniería de Sistemas e informática en la Universidad Tecnológica del Perú.</p><p>Tengo experiencia como Desarrollador de software a nivel Web, Desktop y Mobile, utilizando tecnologías como JavaScript (<a href='https://nodejs.org/es/' target='_blank'>NodeJs</a>, <a href='https://vuejs.org/' target='_blank'>Vue.js</a>, <a href='https://es.reactjs.org/' target='_blank'>React</a>, <a href='https://angular.io/' target='_blank'>Angular</a> y <a href='https://reactnative.dev/' target='_blank'>React Native</a>), TypeScript, SQL(<a href='https://www.microsoft.com/es-es/sql-server' target='_blank'>SQL Server</a>, <a href='https://www.mysql.com/' target='_blank'>MySQL</a>), NoSQL(<a href='https://www.mongodb.com/atlas/database' target='_blank'>Mongo DB</a>), C++(<a href='https://www.arduino.cc/' target='_blank'>Arduino</a>) y despliegue en nubes como <a href='https://www.digitalocean.com/' target='_blank'>DigitalOcean</a> y <a href='https://www.heroku.com/' target='_blank'>Heroku</a>.</p><p>Siempre he tenido el interés de trabajar en un área tecnológica que me permita seguir aprendiendo cada día más acerca del mundo tecnologizado en el que habitamos.</p><p>Mi objetivo laboral es el de demostrar todo mi potencial y habilidades adquiridas a lo largo de varios años de formación universitaria y de mi conocimiento adquirido en mis anteriores puestos laborales, muy aparte de convertir en un objetivo importante para mí, la visión de la empresa en la que labore.</p>"
+            "en": "<p>Hello! My name is Luis, and I am a Peruvian software professional with a Bachelor's degree in Systems Engineering and Computer Science from the Technological University of Peru (UTP).</p><p>I have professional experience in software development, technical leadership, and software architecture, working across Web, Desktop, and Mobile platforms. My technical background includes JavaScript and TypeScript (<a href='https://nodejs.org/' target='_blank'>Node.js</a>, <a href='https://vuejs.org/' target='_blank'>Vue.js</a>, <a href='https://react.dev/' target='_blank'>React</a>, <a href='https://angular.dev/' target='_blank'>Angular</a>, and <a href='https://reactnative.dev/' target='_blank'>React Native</a>), Go, Java, .NET, SQL and NoSQL databases, and cloud technologies, particularly <a href='https://cloud.google.com/' target='_blank'>Google Cloud Platform (GCP)</a>.</p><p>Throughout my career, I have participated in the design and implementation of scalable, resilient, and cloud-native solutions, leveraging serverless architectures, microservices, and event-driven patterns. I also have experience leading development teams, defining technical strategies, and collaborating with cross-functional teams to deliver solutions aligned with business objectives.</p><p>I am passionate about software engineering, technology, and continuous learning. My professional goal is to drive technological innovation, contribute to architectural decisions, and build high-quality solutions that generate real business value.</p>",
+            "es": "<p>¡Hola! Me llamo Luis y soy un profesional peruano de tecnología, Bachiller en Ingeniería de Sistemas e Informática por la Universidad Tecnológica del Perú (UTP).</p><p>Cuento con experiencia profesional en desarrollo de software, liderazgo técnico y arquitectura de soluciones, trabajando en plataformas Web, Desktop y Mobile. Mi experiencia técnica comprende JavaScript y TypeScript (<a href='https://nodejs.org/' target='_blank'>Node.js</a>, <a href='https://vuejs.org/' target='_blank'>Vue.js</a>, <a href='https://react.dev/' target='_blank'>React</a>, <a href='https://angular.dev/' target='_blank'>Angular</a> y <a href='https://reactnative.dev/' target='_blank'>React Native</a>), Go, Java, .NET, bases de datos SQL y NoSQL, y tecnologías Cloud, principalmente <a href='https://cloud.google.com/' target='_blank'>Google Cloud Platform (GCP)</a>.</p><p>A lo largo de mi trayectoria he participado en el diseño e implementación de soluciones escalables, resilientes y Cloud Native, aplicando arquitecturas Serverless, microservicios y patrones Event-Driven. Asimismo, cuento con experiencia liderando equipos de desarrollo, definiendo estrategias técnicas y colaborando con equipos multidisciplinarios para implementar soluciones alineadas con los objetivos del negocio.</p><p>Me apasionan la ingeniería de software, la tecnología y el aprendizaje continuo. Mi objetivo profesional es impulsar la innovación tecnológica, contribuir en la toma de decisiones arquitectónicas y construir soluciones de alta calidad que generen valor real para el negocio.</p>"
         }
     },
     "expSection": {
@@ -102,6 +102,114 @@
             }
         },
         "timeline": [
+            {
+                "business": {
+                    "en": "Scotiabank Perú",
+                    "es": "Scotiabank Perú"
+                },
+                "positions": [
+                    {
+                        "title": {
+                            "en": "Technical Lead Engineer",
+                            "es": "Technical Lead Engineer"
+                        },
+                        "date": {
+                            "en": "Jul. 2026 - Present",
+                            "es": "Jul. 2026 - Actualidad"
+                        },
+                        "description": {
+                            "en": "",
+                            "es": ""
+                        }
+                    }
+                ]
+            },
+            {
+                "business": {
+                    "en": "Interseguro S.A",
+                    "es": "Interseguro S.A"
+                },
+                "positions": [
+                    {
+                        "title": {
+                            "en": "Software Architect",
+                            "es": "Software Architect"
+                        },
+                        "date": {
+                            "en": "Mar. 2026 - Jul. 2026",
+                            "es": "Mar. 2026 - Jul. 2026"
+                        },
+                        "description": {
+                            "en": "Responsible for designing and defining scalable, resilient, and cloud-native software architectures aligned with business requirements and technical objectives. My main responsibilities included:\n• Designing cloud-native architectures based on Google Cloud Platform (GCP), leveraging serverless and event-driven patterns.\n• Defining architectural solutions for synchronous and asynchronous processing, selecting the most suitable integration patterns and communication mechanisms.\n• Designing distributed systems with a focus on scalability, high availability, fault tolerance, and resilience.\n• Defining the use of GCP services such as Cloud Run, Cloud Functions, Compute Engine, Pub/Sub, and Cloud Storage according to workload requirements.\n• Establishing architectural guidelines, design patterns, and technical standards to ensure consistency across solutions.\n• Evaluating technology alternatives and architectural trade-offs, considering performance, security, maintainability, and operational costs.\n• Providing technical guidance to development teams throughout the solution design and implementation lifecycle.\n• Supporting the modernization and integration of legacy systems built with Java and .NET into modern cloud-native architectures.",
+                            "es": "Responsable del diseño y definición de arquitecturas de software escalables, resilientes y Cloud Native, alineadas con las necesidades del negocio y los objetivos tecnológicos. Entre mis principales responsabilidades se encontraron:\n• Diseño de arquitecturas Cloud Native sobre Google Cloud Platform (GCP), aprovechando patrones Serverless y Event-Driven.\n• Definición de soluciones arquitectónicas para el procesamiento síncrono y asíncrono, seleccionando los patrones de integración y mecanismos de comunicación más adecuados.\n• Diseño de sistemas distribuidos considerando escalabilidad, alta disponibilidad, tolerancia a fallos y resiliencia.\n• Definición del uso de servicios GCP como Cloud Run, Cloud Functions, Compute Engine, Pub/Sub y Cloud Storage, según las necesidades de cada carga de trabajo.\n• Establecimiento de lineamientos arquitectónicos, patrones de diseño y estándares técnicos para garantizar la consistencia entre soluciones.\n• Evaluación de alternativas tecnológicas y decisiones arquitectónicas considerando rendimiento, seguridad, mantenibilidad y costos operativos.\n• Acompañamiento y asesoramiento técnico a los equipos de desarrollo durante el diseño e implementación de soluciones.\n• Participación en la modernización e integración de sistemas legacy desarrollados en Java y .NET hacia arquitecturas Cloud Native."
+                        }
+                    },
+                    {
+                        "title": {
+                            "en": "Technical Lead",
+                            "es": "Technical Lead"
+                        },
+                        "date": {
+                            "en": "Feb. 2025 - Mar. 2026",
+                            "es": "Feb. 2025 - Mar. 2026"
+                        },
+                        "description": {
+                            "en": "Led software development teams, driving technical execution and ensuring the delivery of high-quality solutions aligned with business objectives. My main responsibilities and achievements included:\n• Leading and coordinating development teams, promoting collaboration, technical ownership, and continuous improvement.\n• Defining technical solutions and development approaches for business requirements, ensuring alignment with architectural guidelines.\n• Driving the implementation of serverless and event-driven solutions on GCP using Cloud Run, Cloud Functions, Pub/Sub, and other managed services.\n• Overseeing backend development using Node.js and Go, as well as frontend solutions using Vue.js and React.\n• Guiding the integration and modernization of legacy applications built with Java and .NET.\n• Promoting best practices in software engineering, including clean code, code reviews, design patterns, and refactoring.\n• Coordinating with Architecture, Infrastructure, QA, Operations, Data, and Security teams to ensure successful delivery.\n• Supporting production deployments, incident resolution, and critical technical decisions.\n• Recognized as 'The Most Resilient' and 'The One Who Gets Things Done', highlighting my commitment, adaptability, ownership, and ability to drive initiatives through to completion.",
+                            "es": "Lideré equipos de desarrollo de software, impulsando la ejecución técnica y asegurando la entrega de soluciones de calidad alineadas con los objetivos del negocio. Entre mis principales responsabilidades y logros destacaron:\n• Liderazgo y coordinación de equipos de desarrollo, promoviendo la colaboración, autonomía técnica y mejora continua.\n• Definición de soluciones técnicas y enfoques de desarrollo para atender requerimientos de negocio, asegurando su alineación con los lineamientos arquitectónicos.\n• Impulso de la implementación de soluciones Serverless y Event-Driven en GCP mediante Cloud Run, Cloud Functions, Pub/Sub y otros servicios administrados.\n• Supervisión del desarrollo backend utilizando Node.js y Go, así como de soluciones frontend con Vue.js y React.\n• Orientación técnica para la integración y modernización de aplicaciones legacy desarrolladas en Java y .NET.\n• Promoción de buenas prácticas de ingeniería de software, incluyendo Clean Code, revisiones de código, patrones de diseño y refactorización.\n• Coordinación transversal con las áreas de Arquitectura, Infraestructura, QA, Operaciones, Data y Seguridad para asegurar la correcta entrega de soluciones.\n• Acompañamiento en despliegues productivos, resolución de incidentes y toma de decisiones técnicas críticas.\n• Reconocido con las distinciones 'El más resiliente' y 'El que hace que las cosas pasen', destacando mi compromiso, capacidad de adaptación, sentido de responsabilidad y orientación a resultados."
+                        }
+                    },
+                    {
+                        "title": {
+                            "en": "Backend Engineer",
+                            "es": "Backend Engineer"
+                        },
+                        "date": {
+                            "en": "Oct. 2023 - Feb. 2025",
+                            "es": "Oct. 2023 - Feb. 2025"
+                        },
+                        "description": {
+                            "en": "Participated in the design, development, and maintenance of backend solutions within a cloud-based ecosystem, contributing to the implementation and integration of business services. My main responsibilities included:\n• Developing backend services and APIs using Node.js and Go.\n• Building serverless solutions on GCP using Cloud Run and Cloud Functions.\n• Implementing asynchronous communication and event-driven integrations using Pub/Sub.\n• Integrating cloud services such as Cloud Storage and Cloud SQL to support business processes and data management.\n• Developing and integrating REST APIs and microservices to connect internal and external systems.\n• Working with relational and non-relational databases, ensuring efficient data access and processing.\n• Maintaining and integrating legacy applications developed in Java and .NET.\n• Applying software engineering best practices, including code quality, refactoring, testing, and version control.\n• Collaborating with cross-functional teams to analyze requirements, troubleshoot incidents, and deliver solutions aligned with business needs.",
+                            "es": "Participé en el diseño, desarrollo y mantenimiento de soluciones backend dentro de un ecosistema tecnológico basado en la nube, contribuyendo a la implementación e integración de servicios de negocio. Entre mis principales responsabilidades se encontraron:\n• Desarrollo de servicios backend y APIs utilizando Node.js y Go.\n• Construcción de soluciones Serverless sobre GCP mediante Cloud Run y Cloud Functions.\n• Implementación de mecanismos de comunicación asíncrona e integraciones orientadas a eventos utilizando Pub/Sub.\n• Integración de servicios cloud como Cloud Storage y Cloud SQL para soportar procesos de negocio y gestión de información.\n• Desarrollo e integración de APIs REST y microservicios para la comunicación entre sistemas internos y externos.\n• Trabajo con bases de datos relacionales y no relacionales, asegurando un acceso y procesamiento eficiente de la información.\n• Mantenimiento e integración de aplicaciones legacy desarrolladas en Java y .NET.\n• Aplicación de buenas prácticas de ingeniería de software, incluyendo calidad de código, refactorización, pruebas y control de versiones.\n• Colaboración con equipos multidisciplinarios para analizar requerimientos, resolver incidentes e implementar soluciones alineadas con las necesidades del negocio."
+                        }
+                    }
+                ]
+            },
+            {
+                "jobTitle": {
+                    "en": "Senior Analyst Programmer",
+                    "es": "Analista Programador Senior"
+                },
+                "business": {
+                    "en": "Quality Development Software",
+                    "es": "Quality Development Software"
+                },
+                "date": {
+                    "en": "Mar. 2023 - Oct. 2023",
+                    "es": "Mar. 2023 - Oct. 2023"
+                },
+                "description": {
+                    "en": "At QDS company I had the pleasure of working under the position of Full Stack Analyst/Programmer, thanks to this I was able to develop the following functions:\n• Analysis of technical/functional requirements\n• Agile work under the Scrumban methodology\n• Construction of Cloud solutions in GCP (Cloud run, Cloud Storage, Cloud SQL, Pub/sub, etc.)\n• Data manipulation from different DB managers (Mongo DB, MySQL, SQL Server, PostgreSQL)\n• Construction of Microservices (Express - Hapi)\n• Construction of interfaces and microfrontends (Single SPA – Vue)\n• Integration of own and external services (rest)\n• Support in the construction of Software Architecture diagrams (HLD)\n• Incident/hotfix handling\n• Refactoring functionalities",
+                    "es": "En la empresa QDS tuve el agrado de desempeñarme bajo el puesto de Analista/Programador Full Stack, gracias a ello pude desarrollar las siguientes funciones:\n• Análisis de los requerimientos técnicos/funcionales\n• Trabajo ágil bajo la metodología Scrumban\n• Construcción de soluciones a nivel Cloud en GCP (Cloud run, Cloud Storage, Cloud SQL, Pub/sub, etc.)\n• Manipulación de datos de diferentes gestores de BD (Mongo DB, MySQL, SQL Server, PostgreSQL)\n• Construcción de Microservicios (Express - Hapi)\n• Construcción de interfaces y microfrontends (Single SPA – Vue)\n• Integración de servicios propios y externos (rest)\n• Apoyo en la construcción de diagramas de Arquitectura de Software (HLD)\n• Atención de incidentes/hotfix\n• Refactorización de funcionalidades"
+                }
+            },
+            {
+                "jobTitle": {
+                    "en": "Analyst Programmer",
+                    "es": "Analista Programador"
+                },
+                "business": {
+                    "en": "Polysistemas",
+                    "es": "Polysistemas"
+                },
+                "date": {
+                    "en": "May. 2022 - Nov. 2022",
+                    "es": "May. 2022 - Nov. 2022"
+                },
+                "description": {
+                    "en": "During my time at Polysistemas, I worked as an Analyst/Developer on a Document Management project for a client in the banking sector, participating in the analysis, development, and implementation of technological solutions. My main responsibilities included:\n• Analyzing functional and technical requirements to define and implement solutions aligned with business needs.\n• Collaborating within agile teams, using the Kanban methodology to manage and track development activities.\n• Deploying and implementing solutions in On-Premises infrastructure.\n• Integrating, querying, and processing data from different database management systems and data sources (SQL Server, PostgreSQL, and data streams).\n• Developing microservices using Node.js and Express.\n• Building user interfaces using Vue.js 3.\n• Integrating internal and external services through REST APIs.\n• Refactoring and optimizing existing functionalities to improve maintainability and performance.\n\nThe main features developed and implemented included:\n• Document Centralization: consolidation of customer documentation into a centralized platform.\n• Document Viewer: development of a module for document visualization and retrieval.\n• Tracking Markers: implementation of mechanisms to identify and track documents throughout their lifecycle.\n• Reassignment Module: development of features to manage document and task reassignment.\n• Document Submission Workflow: implementation of workflows to manage and track document submission processes.",
+                    "es": "Durante mi experiencia en Polysistemas, me desempeñé como Analista/Programador en un proyecto de Gestión Documental para un cliente del sector bancario, participando en el análisis, desarrollo e implementación de soluciones tecnológicas. Entre mis principales responsabilidades se encontraron:\n• Análisis de requerimientos funcionales y técnicos para definir e implementar soluciones alineadas con las necesidades del negocio.\n• Participación en equipos de trabajo bajo metodologías ágiles, utilizando Kanban para la gestión y seguimiento de actividades.\n• Implementación y despliegue de soluciones en infraestructura On-Premise.\n• Integración, consulta y procesamiento de información proveniente de diferentes gestores y fuentes de datos (SQL Server, PostgreSQL y tramas).\n• Desarrollo de microservicios utilizando Node.js y Express.\n• Desarrollo de interfaces de usuario utilizando Vue.js 3.\n• Integración de servicios internos y externos mediante APIs REST.\n• Refactorización y optimización de funcionalidades existentes para mejorar su mantenibilidad y rendimiento.\n\nEntre las principales funcionalidades desarrolladas e implementadas destacan:\n• Centralización documental: consolidación de la documentación de clientes en una plataforma centralizada.\n• Visor documentario: desarrollo de un módulo para la visualización y consulta de documentos.\n• Marcadores de seguimiento: implementación de mecanismos para identificar y realizar el seguimiento de documentos.\n• Módulo de reasignaciones: desarrollo de funcionalidades para gestionar la reasignación de documentos y actividades.\n• Workflow de envío documentario: implementación de flujos de trabajo para gestionar y dar seguimiento al envío de documentación."
+                }
+            },
             {
                 "jobTitle": {
                     "en": "FullStack Developer",
@@ -180,7 +288,8 @@
                 "en": "Technologies I currently use",
                 "es": "Tecnologías que utilizo"
             },
-            "list": [{
+            "list": [
+                {
                     "src": "assets/img/icons/javascript.svg",
                     "name": "Javascript (ES6+)"
                 },
@@ -236,7 +345,8 @@
             "en": "My projects",
             "es": "Mis proyectos"
         },
-        "list": [{
+        "list": [
+            {
                 "title": {
                     "en": "Pokedex App with GraphQL",
                     "es": "Pokedex App utilizando GraphQL"
@@ -248,7 +358,13 @@
                 "demoURL": "",
                 "repoURL": "https://github.com/lmelgarejo96/poke-app-graphql",
                 "coverImg": "./assets/img/projects/graphql.png",
-                "technologies": ["Node.js", "GraphQL", "Vue", "Vuetify", "Apollo"]
+                "technologies": [
+                    "Node.js",
+                    "GraphQL",
+                    "Vue",
+                    "Vuetify",
+                    "Apollo"
+                ]
             },
             {
                 "title": {
@@ -262,7 +378,13 @@
                 "demoURL": "https://luismelgarejo.com/",
                 "repoURL": "",
                 "coverImg": "./assets/img/projects/portfolio.png",
-                "technologies": ["HTML", "CSS3", "Javascript", "Vue", "Gsap"]
+                "technologies": [
+                    "HTML",
+                    "CSS3",
+                    "Javascript",
+                    "Vue",
+                    "Gsap"
+                ]
             },
             {
                 "title": {
@@ -276,7 +398,11 @@
                 "demoURL": "https://lmelgarejo96.github.io/poke-api-web-speech/",
                 "repoURL": "https://github.com/lmelgarejo96/poke-api-web-speech",
                 "coverImg": "./assets/img/projects/pokeapp.png",
-                "technologies": ["Vue", "Bootstrap", "Axios"]
+                "technologies": [
+                    "Vue",
+                    "Bootstrap",
+                    "Axios"
+                ]
             },
             {
                 "title": {
@@ -290,7 +416,12 @@
                 "demoURL": "https://castillodetalentos.edu.pe/",
                 "repoURL": "",
                 "coverImg": "./assets/img/projects/castillodetalentos.png",
-                "technologies": ["Nuxt.js", "Vuetify", "Node.js", "Mongo DB"]
+                "technologies": [
+                    "Nuxt.js",
+                    "Vuetify",
+                    "Node.js",
+                    "Mongo DB"
+                ]
             },
             {
                 "title": {
@@ -304,7 +435,11 @@
                 "demoURL": "",
                 "repoURL": "https://github.com/lmelgarejo96/i-love-tunes",
                 "coverImg": "./assets/img/projects/lovetunes.png",
-                "technologies": ["Vue", "Bootstrap", "Axios"]
+                "technologies": [
+                    "Vue",
+                    "Bootstrap",
+                    "Axios"
+                ]
             },
             {
                 "title": {
@@ -318,7 +453,12 @@
                 "demoURL": "https://www.youtube.com/watch?v=VH5k5h08mqE",
                 "repoURL": "",
                 "coverImg": "./assets/img/projects/platzi.png",
-                "technologies": [".Net", "SQL Server", "Vue", "Vuex"]
+                "technologies": [
+                    ".Net",
+                    "SQL Server",
+                    "Vue",
+                    "Vuex"
+                ]
             },
             {
                 "title": {
@@ -332,7 +472,12 @@
                 "demoURL": "https://lmelgarejo96.github.io/Elengy-GC/",
                 "repoURL": "https://github.com/lmelgarejo96/Elengy-GC",
                 "coverImg": "./assets/img/projects/elengygc.png",
-                "technologies": ["HTML", "CSS3", "JS", "TweenMax"]
+                "technologies": [
+                    "HTML",
+                    "CSS3",
+                    "JS",
+                    "TweenMax"
+                ]
             },
             {
                 "title": {
@@ -346,7 +491,11 @@
                 "demoURL": "https://visitalima.pe/",
                 "repoURL": "",
                 "coverImg": "./assets/img/projects/accesibilidad.png",
-                "technologies": ["Javascript", "PHP", "Web Speech"]
+                "technologies": [
+                    "Javascript",
+                    "PHP",
+                    "Web Speech"
+                ]
             },
             {
                 "title": {
@@ -360,7 +509,11 @@
                 "demoURL": "https://lmelgarejo96.github.io/Taller-vuex/#/",
                 "repoURL": "https://github.com/lmelgarejo96/Taller-vuex",
                 "coverImg": "./assets/img/projects/taller-vuex.png",
-                "technologies": ["Vue", "Vuex", "Axios"]
+                "technologies": [
+                    "Vue",
+                    "Vuex",
+                    "Axios"
+                ]
             },
             {
                 "title": {
@@ -374,9 +527,10 @@
                 "demoURL": "https://lmelgarejo96.github.io/svg-parking-example/",
                 "repoURL": "https://github.com/lmelgarejo96/svg-parking-example",
                 "coverImg": "./assets/img/projects/svg.png",
-                "technologies": ["Javascript"]
+                "technologies": [
+                    "Javascript"
+                ]
             }
-
         ],
         "btnMore": {
             "en": "Show More",
